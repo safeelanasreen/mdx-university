@@ -1,0 +1,124 @@
+@import '../../styles/util';
+.count_tabs {
+    display: block;
+    max-width: 100%;
+    
+    position: -webkit-sticky;
+    position: sticky;
+    top: 114px;
+    &_item {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        // opacity: .2;
+        color: $black-color;
+        
+        position: relative;
+        overflow: hidden;
+        line-height: 1;
+        cursor: pointer;
+        padding: size(25);
+        background-color: var(--tab-background);
+        @include min(992) {
+            padding: size(32);
+
+        }
+        &::before, &::after {
+            content: '';
+            display: block;
+            height: 2px;
+            bottom: 0;
+            position: absolute;
+            width: 100%;
+        }
+        &::before {
+            left: 0;
+            background-color: var(--tab-background);
+        }
+        &::after {
+            left: -100%;
+            background-color: var(--tab-background);
+            transition: left cubic-bezier(0.165, 0.84, 0.44, 1) .5s;
+        }
+        &_count {
+            font-size: size(35);
+            // font-family: $secondary-font;
+            padding-right: size(20);
+            flex-basis: 95px;
+            max-width: 95px;
+            @include min(1200) {
+                font-size: size(45);
+            }
+            @include min(1600) {
+                flex-basis: 120px;
+                max-width: 120px;
+            }
+        }
+        &_label {
+            margin-right: auto;
+            padding-right: size(20);
+            font-size: size(20);
+            font-weight: 400;
+            flex-basis: calc(100% - 33px);
+            max-width: calc(100% - 33px);
+            line-height: calc(26.4/20);
+            // font-family: $secondary-font;
+            font-family: $primary-font;
+            @include min(1200) {
+                font-size: size(22);
+            }
+        }
+        &_arrow {
+            opacity: 0;
+            visibility: hidden;
+            overflow: hidden;
+            flex-basis: 33px;
+            max-width: 33px;
+            svg {
+                max-width: 100%;
+                transform: scale(.5) translateX(-20px);
+                transition: all cubic-bezier(0.165, 0.84, 0.44, 1) .3s;
+            }
+        }
+        &:hover {
+            color: $black-color;
+        }
+        &.active {
+            opacity: 1;
+            color: $white-color;
+            pointer-events: none;
+            --tab-background: #292152;
+            &::before {
+                opacity: .2;
+            }
+            &::after {
+                left: 0%;
+            }
+            .count_tabs {
+                &_item {
+                    &_count {
+                        color: $white-color;
+                    }
+                    &_arrow {
+                        opacity: 1;
+                        svg {
+                            transform: scale(1) translateX(0px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* Dark Theme */
+:global(.INDblackwhite) {
+    .count_tabs {
+        &_item {
+            &::before {
+                background-color: $white-color;
+            }
+        }
+    }
+}

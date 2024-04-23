@@ -1,0 +1,135 @@
+@import '../../styles/util';
+.mdx_cardstack {
+
+    :global(.title) {
+        margin-bottom: 30px;
+
+        @include min(992) {
+            margin-bottom: size(50);
+        }
+    }
+    &_swiper {
+        @include max(1199.98) {
+            padding-bottom: size(25) !important;
+            overflow: visible;
+        }
+        :global(.swiper-slide) {
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    &_item {
+        &_gap {
+            cursor: pointer;
+            &>* {
+                // pointer-events: none;
+            }
+        }
+    }
+
+}
+.cardstack {
+    &_head {
+        position: relative;
+        margin-bottom: 10px;
+        @include min(1200) {
+            margin-bottom: size(30);
+        }
+        &_title {
+            flex-basis: calc(100% - 100px);
+            width: 100%;
+            max-width: calc(100% - 100px);
+        }
+        &_nav {
+            display: flex;
+            margin-top: -7px;
+            .swiper_navs {
+                &_prev, &_next {
+                    position: relative;
+                    width: 30px;
+                    height: 30px;
+                    @include min(992) {
+                        width: size(40);
+                        height: size(40);
+                    }
+                    @include min(1200) {
+                        &:hover {
+                            opacity: .6;
+                        }
+                    }
+                    svg {
+                        max-width: 10px;
+                        max-height: 10px;
+                        @include min(992) {
+                            max-width: size(20);
+                            max-height: size(20);
+                        }
+                    }
+                }
+                &_prev {
+                    position: relative;
+                }
+                &_next {
+                    position: relative;
+                }
+            }
+        }
+    }
+    &_slider {
+        @include randomColorImportant('.course_card', '> div');
+        padding: 40px 0;
+        @include min(1200) {
+            padding: size(80) 0;
+        }
+        :global(.row) {
+            --bs-gutter-y: 20px;
+        }
+        :global(.swiper-scrollbar) {
+            @include min(1200) {
+                visibility: hidden;
+            }
+        }
+        &_wrap {
+            position: relative;
+            @include max(1199.98) {
+                // padding-right: var(--bs-gutter-x, 0.75rem);
+                // padding-left: var(--bs-gutter-x, 0.75rem);
+            } 
+        }
+    }
+}
+
+:global(.container), :global(.container-fluid) {
+    .cardstack_slider {
+        &_wrap {
+            @include min(768) {
+                
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            }
+            position: relative;
+        }
+    }
+}
+:global(html:not(#INDdummy) body:not(#INDdummy).INDwhiteblack>:not(#INDWrap) *:not(img):not(video)),:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)),
+:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)) {
+    .cardstack_slider {
+      @include randomColorImportant('.course_card', '> div');
+    }
+  }
+  
+  /* High Contrast */
+  :global(html:not(#INDdummy) body:not(#INDdummy).INDwhiteblack>:not(#INDWrap)) {
+    .cardstack_slider {
+      @include randomColorImportant('.course_card', '> div');
+    }
+  }
+
+  .swiper_main {
+    :global{
+        .swiper-slide {
+            height: auto;
+        }
+    }
+  }

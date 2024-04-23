@@ -1,0 +1,74 @@
+@import "../../styles/util";
+.section {
+  --section-padding-y: #{size(60)};
+  --section-padding-x: 0;
+  padding: var(--section-padding-y) var(--section-padding-x);
+  background-color: var(--background-color);
+  &_row {
+    --bs-gutter-y: 25px;
+    .col {
+      &_img {
+        @include min(992) {
+          max-width: calc(50% - 53px);
+          flex-basis: calc(50% - 53px);
+        }
+      }
+      &_content {
+        @include min(992) {
+          max-width: calc(50% + 53px);
+          flex-basis: calc(50% + 53px);
+        }
+        --item-gap: #{size(25)};
+        p {
+          font-size: size(17);
+          line-height: 1.4;
+        }
+        ul {
+          margin-left: calc(-1 * (0.5 * var(--item-gap)));
+          margin-right: calc(-1 * (0.5 * var(--item-gap)));
+          padding-left: 0;
+          li {
+            display: inline-block;
+            padding-left: calc(0.5 * var(--item-gap));
+            padding-right: calc(0.5 * var(--item-gap));
+            font-size: size(23.3);
+            font-weight: 700;
+            position: relative;
+            &:not(:last-child) {
+              &::after {
+                content: "";
+                display: block;
+                width: 3px;
+                height: 60%;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: #f30000;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.figure {
+  --bs-aspect-ratio: calc((413.86 / 679) * 100%);
+  @include min(992) {
+    width: 679px;
+    max-width: 99%;
+  }
+}
+/* High Contrast */
+/* :global(html:not(#INDdummy) body:not(#INDdummy).INDwhiteblack>:not(#INDWrap)) {
+  .section  {
+    background-color: var(--background-color) !important;
+  }
+}
+:global(html:not(#INDdummy) body:not(#INDdummy).INDblackwhite>:not(#INDWrap) *:not(img):not(video)),:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)),
+:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)) {
+  .section {
+    background-color: var(--background-color) !important;
+  }
+} */

@@ -1,0 +1,24 @@
+@import '../../styles/util';
+.news_cardstack {
+    &_box {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -15px;
+        margin-right: -15px;
+        &>* {
+            flex-basis: 100%;
+            max-width: 100%;
+            width: 100%;
+            padding-left: 15px;
+            padding-right: 15px;
+            @include min(1200) {
+                flex-basis: 50%;
+                max-width: 50%;
+            }
+        }
+        &_left {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+}

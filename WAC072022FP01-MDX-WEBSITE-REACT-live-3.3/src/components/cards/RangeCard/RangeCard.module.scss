@@ -1,0 +1,51 @@
+@import '../../../styles/util';
+.range_card {
+    padding: 30px 0 0;
+    &:first-child {
+        @include max(575.98) {
+            padding-top: 10px;
+        }
+    }
+    padding-right: size(30);
+    @include min(576) {
+        padding: size(25) 0;
+    }
+    &_year {
+        // font-family: $secondary-font;
+        margin-bottom: size(25);
+        line-height: 1;
+        position: relative;
+        padding-left: size(14);
+        font-size: 20px;
+        @include min(992) {
+            font-size: size(24);
+        }
+        @include min(1200) {
+            font-size: size(26);
+        }
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: size(2);
+            height: calc(100% - size(4));
+            background-color: $primary-color;
+        }
+    }
+    &_title {
+        font-size: 16px;
+        @include min(992) {
+            font-size: size(17);
+        }
+        @include min(1200) {
+            font-size: size(20);
+        }
+        margin-bottom: size(30);
+    }
+    &_location {
+        font-weight: 500;
+        font-size: 16px;
+    }
+}

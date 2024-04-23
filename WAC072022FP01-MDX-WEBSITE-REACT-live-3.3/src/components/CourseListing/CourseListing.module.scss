@@ -1,0 +1,49 @@
+@import "../../styles/util";
+.course_listing {
+  padding:  0 0 size(40);
+
+  @include min(992) {
+    padding: 0 0 size(80);
+  }
+
+  &_wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &_swiper {
+    padding-bottom: size(32);
+    @include max(991.98) {
+      overflow: visible;
+    }
+  }
+  @include randomColor('.course_listing_item','> div');
+  &_item {
+    min-height: 340px;
+    @include min(992) {
+        flex: 0 1 33.33%;
+        min-height: 400px;
+    }
+    @include min(1600) {
+        flex: 0 1 33.33%;
+        min-height: 490px;
+    }
+    &>div {
+      min-height: 330px;
+    }
+  }
+}
+
+
+:global(html:not(#INDdummy) body:not(#INDdummy).INDwhiteblack>:not(#INDWrap) *:not(img):not(video)),:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)),
+:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)) {
+  .course_listing {
+    @include randomColor('.course_listing_item','> div');
+  }
+}
+
+/* High Contrast */
+:global(html:not(#INDdummy) body:not(#INDdummy).INDwhiteblack>:not(#INDWrap)) {
+  .course_listing {
+    @include randomColor('.course_listing_item','> div');
+  }
+}

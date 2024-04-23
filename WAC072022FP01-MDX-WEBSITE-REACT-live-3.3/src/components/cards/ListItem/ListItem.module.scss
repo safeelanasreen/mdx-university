@@ -1,0 +1,78 @@
+@import '../../../styles/util';
+.list {
+    &_item {
+        padding: size(40) 0;
+        border-bottom: 1px solid $border-color;
+        &:first-child {
+            border-top: 1px solid $border-color;
+        }
+        &:first-child {
+            border-top: none;
+        }
+        @include min(1200) {
+            border-bottom-width: 2px;
+            &:first-child {
+                padding-top: size(30);
+            }
+        }
+        &_title {
+            text-transform: uppercase;
+            margin-bottom: size(20);
+            font-size: 17px;
+            transition: all 0.2s ease-in-out;
+            @include min(768) {
+                font-size: size(19);
+            }
+            @include min(1200) {
+                font-size: size(20);
+            }
+        }
+        &_content {
+            word-break:break-word ;
+            p {
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+            li {
+                
+                + li {
+                    margin-top: size(20);
+                }
+            }
+            ul {
+                list-style: none !important;
+                padding-left: 0;
+                margin-bottom: 20px;
+                > li {
+                    position: relative;
+                    padding-left: 28px;
+                    &::before {
+                        content: '';
+                        display: inline-block;
+                        width: size(7);
+                        height: size(11);
+                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6.458' height='10.051' viewBox='0 0 6.458 10.051'%3E%3Cg id='Group_124718' data-name='Group 124718' transform='translate(0.472 0.586)'%3E%3Cpath id='Path_43174' data-name='Path 43174' d='M.472 9.465-.472 8.3l4.79-3.884L-.469.586.469-.586 5.982 3.827 5.985 5Z' transform='translate(0)' fill='red'/%3E%3C/g%3E%3C/svg%3E");
+                        background-size: contain;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        margin-right: size(15);
+                        left: 0;
+                        position: absolute;
+                        top: 0.3rem;
+                    }
+                    + li {
+                        margin-top: size(16);
+                    }
+                }
+                &+p, &+ul {
+                    margin-top: size(25);
+                }
+            }
+            &_range {
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+    }
+}

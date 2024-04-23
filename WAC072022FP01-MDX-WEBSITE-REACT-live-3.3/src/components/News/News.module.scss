@@ -1,0 +1,14 @@
+@import "../../styles/util";
+@import "../../styles/colors";
+
+.mdx_news_sec {
+    padding: 40px 0 0;
+    @include min(1200) {
+        background-color: $light-color;
+        padding: size(80) 0 size(95);
+    }
+}
+
+.row {
+    --bs-gutter-x: 28px
+}

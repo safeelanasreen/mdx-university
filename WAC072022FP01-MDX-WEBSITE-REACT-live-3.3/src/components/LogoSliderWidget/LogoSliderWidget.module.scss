@@ -1,0 +1,197 @@
+@import "../../styles/util";
+
+.head_wrap {
+  max-width: 1143px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .logo_slider_cnt {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: size(24);
+    text-align: center;
+    color: $black-color;
+    p {
+      font-weight: 500;
+      font-size: 16px;
+      color: $black-color;
+    }
+    @include min(992) {
+      font-size: size(16);
+      line-height: size(24);
+      margin-bottom: size(30);
+      p {
+        font-size: size(16);
+        line-height: size(24);
+      }
+    }
+  }
+}
+
+.logo_slider {
+  padding: 40px 0;
+  background-color: $light-color;
+
+  @include min(992) {
+    padding: size(80) 0;
+  }
+
+  &_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    @include min(768) {
+      padding-top: size(25);
+    }
+
+    @include min(1200) {
+      padding-top: size(55);
+    }
+
+    @include max(767.98) {
+      justify-content: center;
+    }
+    :global(.swiper-button-lock) {
+      display: none;
+    }
+  }
+
+  &_swiper {
+    width: 100%;
+    :global(.swiper-wrapper) {
+      // justify-content: center;
+      align-items: center;
+    }
+    @include max(991.98) {
+      :global(.swiper-wrapper) {
+        align-items: center;
+      }
+    }
+    &_center {
+      :global(.swiper-wrapper) {
+        justify-content: center;
+      }
+
+      &::before,
+      &::after {
+        display: none;
+        visibility: hidden;
+      }
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 30px;
+      height: 100%;
+      z-index: 2;
+      top: 0;
+      background: $light-color;
+    }
+
+    &::before {
+      left: -10px;
+      background: linear-gradient(90deg,
+          $light-color 50%,
+          rgba(255, 255, 255, 0) 100%);
+    }
+
+    &::after {
+      right: -10px;
+      background: linear-gradient(-90deg,
+          $light-color 50%,
+          rgba(245, 245, 245, 0) 100%);
+    }
+
+    @include min(768) {
+      max-width: calc(100% - 150px);
+    }
+
+    @include min(1200) {
+      max-width: calc(100% - 190px);
+    }
+
+    .logo_slider_swiper {
+      &_item {
+        width: calc(50%);
+        max-width: 215px;
+        padding-left: 10px;
+        padding-right: 10px;
+
+        @include min-max(768, 991.98) {
+          width: calc(33.3333% - 30px);
+        }
+
+        @include min(992) {
+          width: 100%;
+        }
+      }
+      &_img {
+        position: relative;
+        @include aspectRatio(var(--image-width),var(--image-height));
+      }
+    }
+  }
+
+  &_next,
+  &_prev {
+    cursor: pointer;
+    // display: none;
+    svg {
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
+      width: size(30) !important;
+      height: size(30) !important;
+
+      @include min(1200) {
+        width: size(40) !important;
+        height: size(40) !important;
+      }
+    }
+
+    width: 45px;
+    height: 45px;
+
+    @include min(1200) {
+      width: 68px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &:hover {
+      svg {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  @include max(767.98) {
+    &_swiper {
+      order: 1;
+      padding-bottom: 25px;
+    }
+
+    &_prev {
+      order: 2;
+      margin-right: size(22);
+    }
+
+    &_next {
+      order: 3;
+      margin-left: size(22);
+    }
+  }
+}
+:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)),
+:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)) {
+  .logo_slider_swiper {
+    &::before, &::after {
+      background: inherit !important;
+    }
+  }
+}

@@ -1,0 +1,243 @@
+@import "./colors";
+
+$primary-font: "Dax", sans-serif, sans-serif;
+$secondary-font: "Monument Extended", sans-serif;
+
+@mixin px-rem($pxValue, $property: "font-size", $standard-size: 18) {
+  #{$property}: $pxValue/$standard-size + rem;
+}
+
+$base-size: 18;
+
+@function size($target, $context: $base-size) {
+  @return ($target / $context) * 1rem;
+}
+
+@mixin min-max($resMin, $resMax) {
+  @media (min-width: $resMin+px) and (max-width: $resMax+px) {
+    @content;
+  }
+}
+
+@mixin max($res) {
+  @media (max-width: $res+px) {
+    @content;
+  }
+}
+
+@mixin min($res) {
+  @media (min-width: $res+px) {
+    @content;
+  }
+}
+
+@mixin lineClamp($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin aspectRatio($w, $h) {
+  padding-bottom: calc(($h / $w) * 100%);
+  position: relative;
+
+  & > img,
+  & > picture {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+// %randomColor {
+//   $colors: $red-color,
+//   $yellow-color,
+//   $orange-color,
+//   $pink-color,
+//   $blue-color,
+//   $grey-color,
+//   $black-color;
+
+//   @for $i from 1 through length($colors) {
+//     &:nth-child(#{length($colors)}n+#{$i}) {
+//       background: nth($colors, $i);
+//     }
+//   }
+// }
+
+@mixin randomColor($parent, $child: "") {
+  $colors: $red-color, $orange-color, $yellow-color, $pink-color, $red-color,
+    $yellow-color, $blue-color, $grey-color, $black-color;
+
+  @for $i from 1 through length($colors) {
+    @if $child != "" {
+      #{$parent}:nth-child(#{length($colors)}n + #{$i}) #{$child} {
+        background-color: nth($colors, $i);
+        -webkit-box-shadow: inset 0px 0px 1px 0px nth($colors, $i);
+        -moz-box-shadow: inset 0px 0px 1px 0px nth($colors, $i);
+        box-shadow: inset 0px 0px 1px 0px nth($colors, $i);
+      }
+    } @else {
+      #{$parent}:nth-child(#{length($colors)}n + #{$i}) {
+        background-color: nth($colors, $i);
+        -webkit-box-shadow: inset 0px 0px 1px 0px nth($colors, $i);
+        -moz-box-shadow: inset 0px 0px 1px 0px nth($colors, $i);
+        box-shadow: inset 0px 0px 1px 0px nth($colors, $i);
+      }
+    }
+  }
+}@mixin randomProgramColor($parent, $child: "") {
+  $colors: $red-color, $pink-color, $yellow-color, $orange-color, $red-color,
+    $yellow-color, $blue-color, $grey-color, $black-color;
+
+  @for $i from 1 through length($colors) {
+    @if $child != "" {
+      #{$parent}:nth-child(#{length($colors)}n + #{$i}) #{$child} {
+        background-color: nth($colors, $i);
+        -webkit-box-shadow: inset 0px 0px 1px 0px nth($colors, $i);
+        -moz-box-shadow: inset 0px 0px 1px 0px nth($colors, $i);
+        box-shadow: inset 0px 0px 1px 0px nth($colors, $i);
+      }
+    } @else {
+      #{$parent}:nth-child(#{length($colors)}n + #{$i}) {
+        background-color: nth($colors, $i);
+        -webkit-box-shadow: inset 0px 0px 1px 0px nth($colors, $i);
+        -moz-box-shadow: inset 0px 0px 1px 0px nth($colors, $i);
+        box-shadow: inset 0px 0px 1px 0px nth($colors, $i);
+      }
+    }
+  }
+}
+%ul {
+  list-style: none !important;
+  padding-left: 0;
+  margin-bottom: 0;
+  > li {
+    position: relative;
+    padding-left: 28px;
+    &::before {
+      content: "";
+      display: inline-block;
+      width: size(7);
+      height: size(11);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6.458' height='10.051' viewBox='0 0 6.458 10.051'%3E%3Cg id='Group_124718' data-name='Group 124718' transform='translate(0.472 0.586)'%3E%3Cpath id='Path_43174' data-name='Path 43174' d='M.472 9.465-.472 8.3l4.79-3.884L-.469.586.469-.586 5.982 3.827 5.985 5Z' transform='translate(0)' fill='red'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin-right: size(15);
+      left: 0;
+      position: absolute;
+      top: 0.3rem;
+    }
+    + li {
+      margin-top: size(16);
+    }
+  }
+}
+
+@mixin randomColorImportant($parent, $child: "") {
+  $colors: $red-color, $orange-color, $yellow-color, $pink-color, $red-color,
+    $yellow-color, $blue-color, $grey-color, $black-color;
+
+  @for $i from 1 through length($colors) {
+    @if $child != "" {
+      #{$parent}:nth-child(#{length($colors)}n + #{$i}) #{$child} {
+        background-color: nth($colors, $i) !important;
+        -webkit-box-shadow: inset 0px 0px 1px 0px nth($colors, $i);
+        -moz-box-shadow: inset 0px 0px 1px 0px nth($colors, $i);
+        box-shadow: inset 0px 0px 1px 0px nth($colors, $i);
+      }
+    } @else {
+      #{$parent}:nth-child(#{length($colors)}n + #{$i}) {
+        background-color: nth($colors, $i) !important;
+        -webkit-box-shadow: inset 0px 0px 1px 0px nth($colors, $i);
+        -moz-box-shadow: inset 0px 0px 1px 0px nth($colors, $i);
+        box-shadow: inset 0px 0px 1px 0px nth($colors, $i);
+      }
+    }
+  }
+}
+%ul {
+  list-style: none !important;
+  padding-left: 0;
+  margin-bottom: 0;
+  > li {
+    position: relative;
+    padding-left: 28px;
+    &::before {
+      content: "";
+      display: inline-block;
+      width: size(7);
+      height: size(11);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6.458' height='10.051' viewBox='0 0 6.458 10.051'%3E%3Cg id='Group_124718' data-name='Group 124718' transform='translate(0.472 0.586)'%3E%3Cpath id='Path_43174' data-name='Path 43174' d='M.472 9.465-.472 8.3l4.79-3.884L-.469.586.469-.586 5.982 3.827 5.985 5Z' transform='translate(0)' fill='red'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin-right: size(15);
+      left: 0;
+      position: absolute;
+      top: 0.3rem;
+    }
+    + li {
+      margin-top: size(16);
+    }
+  }
+}
+
+@mixin randomColor1($parent, $child: "") {
+  $colors: $blue-color, $pink-color, $yellow-color, $orange-color, $black-color,
+    $red-color, $grey-color, $blue-color, $yellow-color;
+  @for $i from 1 through length($colors) {
+    @if $child != "" {
+      #{$parent}:nth-child(#{length($colors)}n + #{$i}) #{$child} {
+        background: nth($colors, $i);
+      }
+    } @else {
+      #{$parent}:nth-child(#{length($colors)}n + #{$i}) {
+        background: nth($colors, $i);
+      }
+    }
+  }
+}
+@mixin randomColor1Important($parent, $child: "") {
+	$colors: $blue-color, $pink-color, $yellow-color, $orange-color, $black-color,
+	  $red-color, $grey-color, $blue-color, $yellow-color;
+	@for $i from 1 through length($colors) {
+	  @if $child != "" {
+		#{$parent}:nth-child(#{length($colors)}n + #{$i}) #{$child} {
+		  background: nth($colors, $i) !important;
+		}
+	  } @else {
+		#{$parent}:nth-child(#{length($colors)}n + #{$i}) {
+		  background: nth($colors, $i) !important;
+		}
+	  }
+	}
+  }
+
+@mixin box-shadow($x-axis: 0, $y-axis: 1px, $blur: 2px, $color: $default) {
+  -webkit-box-shadow: $x-axis $y-axis $blur $color;
+  -moz-box-shadow: $x-axis $y-axis $blur $color;
+  box-shadow: $x-axis $y-axis $blur $color;
+}
+
+
+@mixin afterBg {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+}
+

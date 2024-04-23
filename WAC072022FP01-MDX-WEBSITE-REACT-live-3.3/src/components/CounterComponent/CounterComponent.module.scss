@@ -1,0 +1,144 @@
+@import "../../styles/util";
+.counter_section {
+  padding: 40px 0;
+  overflow: hidden;
+  @include min(992) {
+    padding: size(70) 0;
+  }
+  @include min(1200) {
+    padding: size(120.7) 0 size(158.9) 0;
+  }
+  .counter_inner {
+    .plus {
+      font-size: 60px;
+      line-height: 1.1;
+      overflow: hidden;
+      opacity: 0;
+      transform: scale(0.5);
+      transition: all 0.4s ease-in-out;
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 15px;
+      @include min(1200) {
+        margin-left: size(40);
+        font-size: 100px;
+      }
+    }
+  }
+
+  &.loaded {
+    .text_wrap {
+      p {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    .counter {
+      opacity: 1;
+    }
+    .btn_wrap {
+      a {
+        transform: translateY(0);
+      }
+    }
+    .plus {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  .ttl_wrap {
+    @include min(768) {
+      max-width: 80%;
+      width: 100%;
+    }
+    @include min(1200) {
+      max-width: 70%;
+    }
+    @include min(1600) {
+      max-width: 46%;
+    }
+  }
+  .counter_area {
+    padding-top: 30px;
+    @include min(768) {
+      padding-top: size(50);
+    }
+    @include min(1200) {
+      padding-top: size(105.9);
+    }
+  }
+  .text_wrap {
+    overflow: hidden;
+    margin-bottom: 30px;
+    @include min(1200) {
+      margin-bottom: size(105);
+      max-width: 96%;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.59;
+      font-weight: 500;
+      letter-spacing: 0.44px;
+      @include min(1200) {
+        transform: translateY(120px);
+        will-change: opacity, transform;
+        transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;
+
+        opacity: 0;
+      }
+      @include min(1600) {
+        font-size: size(23.3);
+      }
+    }
+  }
+  .counter {
+    height: 160px;
+    line-height: 160px;
+    overflow: hidden;
+    opacity: 0;
+    position: relative;
+
+    transition: opacity cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;
+    @include max(575.98) {
+      justify-content: center;
+    }
+    @include min(1200) {
+      height: 260px;
+      line-height: 260px;
+    }
+    @include min(1600) {
+      height: 320px;
+      line-height: 320px;
+    }
+    &_inner {
+      span {
+        font-size: 140px;
+        font-weight: 500;
+        text-align: right;
+        display: inline-block;
+        background: linear-gradient(180deg, #ff7a00 0%, #e7057b 100%);
+        background-size: 200%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: $secondary-font;
+        @include min(1200) {
+          font-size: 260px;
+        }
+        @include min(1600) {
+          font-size: 320px;
+        }
+      }
+    }
+  }
+  .btn_wrap {
+    overflow: hidden;
+    a {
+      @include min(1200) {
+        transform: translateY(60px);
+        transition: transform cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;
+      }
+    }
+  }
+}

@@ -1,0 +1,135 @@
+@import "../../styles/util";
+.news_cardstack_widget {
+  padding: 40px 0;
+  background-color: var(--background-color) !important;
+  @include min(992) {
+    padding: size(80) 0;
+  }
+  .card_item {
+    & > * {
+      padding: size(15) 0;
+      @include min(992) {
+        padding: size(25) 0;
+      }
+    }
+  }
+  .btn_wrap {
+    text-align: center;
+    padding-top: size(50);
+    .loadmore {
+      width: 100%;
+      @include min(576) {
+        width: auto;
+      }
+    }
+  }
+}
+
+.pagination_wrap {
+  padding-top: 40px;
+  @include min(992) {
+    padding-top: size(70);
+  }
+  @include min(1200) {
+    padding-top: size(80);
+  }
+}
+
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: size(30) 0 size(20);
+  align-items: center;
+  @include min(768) {
+    align-items: flex-start;
+  }
+  @include min(1200) {
+    margin: size(40) 0 size(25);
+  }
+  &_categories {
+    display: flex;
+    overflow: hidden;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    padding: 7px 0;
+    @include max(575.98) {
+      width: calc(100% + size(10));
+      margin-right: size(-10);
+    }
+    @include min(576) {
+      flex-basis: calc(100% - 190px);
+      max-width: calc(100% - 190px);
+    }
+    @include min(768) {
+      flex-wrap: wrap;
+    }
+    @include min(1200) {
+      flex-basis: calc(100% - 220px);
+      max-width: calc(100% - 220px);
+    }
+    &>* {
+      margin-right: size(10);
+      margin-top: 5px;
+      margin-bottom: 5px;
+      @include min(1200) {
+        margin-right: size(15);
+      }
+    }
+  }
+  &_btn {
+    border: 1px solid $black-color;
+    color: $black-color;
+    background-color: $white-color;
+    line-height: 1.1;
+    font-weight: 500;
+    position: relative;
+    white-space: nowrap;
+    opacity: 0.4;
+    transition: all ease-in-out .15s;
+    padding: size(15) size(18);
+    @include min(1200) {
+      padding: size(15) size(21);
+    }
+    @include min(1200) {
+      &:hover {
+        opacity: 1;
+      }
+    }
+    @include min(1600) {
+      min-width: 201px;
+      font-size: size(22);
+    }
+    &.active {
+      background-color: $black-color;
+      color: $white-color;
+      pointer-events: none;
+      opacity: 1;
+      &::before {
+        display: none;
+      }
+    }
+  }
+  &_sort {
+    display: flex;
+    justify-content: flex-end;
+    padding: 7px 0;
+    width: 100%;
+    flex-basis: 100%;
+    max-width: 100%;
+    
+    @include min(576) {
+      flex-basis: 190px;
+      max-width: 190px;
+    }
+    @include min(768) {
+      padding: 11px 0;
+    }
+    @include min(1200) {
+      flex-basis: 220px;
+      max-width: 220px;
+    }
+  }
+}

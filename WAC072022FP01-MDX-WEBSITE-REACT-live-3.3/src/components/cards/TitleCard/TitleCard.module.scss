@@ -1,0 +1,19 @@
+@import "../../../styles/util";
+@import "../../../styles/colors";
+.card {
+  padding: size(20) size(20) size(20);
+  :global {
+    .title {
+      font-size: size(23) !important;
+      color: var(--column-text) !important;
+      margin-bottom: 0;
+      &_sub {
+        margin-bottom: size(10);
+        color: var(--column-text) !important;
+      }
+    }
+  }
+  + div {
+    height: auto !important;
+  }
+}

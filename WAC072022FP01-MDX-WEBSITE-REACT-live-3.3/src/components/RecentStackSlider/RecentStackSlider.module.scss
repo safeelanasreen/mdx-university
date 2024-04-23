@@ -1,0 +1,104 @@
+@import "../../styles/util";
+.recent_stack_widget {
+  &_slider {
+    :global(.swiper-pagination) {
+      display: inline-flex;
+      z-index: 1;
+      padding-right: var(--bs-gutter-x, 0.75rem);
+      padding-left: var(--bs-gutter-x, 0.75rem);
+      position: relative;
+      bottom: 0;
+      @include min(992) {
+        padding-left: 0;
+        padding-right: 0;
+        position: absolute;
+        bottom: size(25);
+        right: size(25);
+      }
+      span {
+        cursor: pointer;
+        display: block;
+        width: size(10);
+        height: size(8);
+        opacity: 0.32;
+        margin-right: size(5);
+        border-radius: 0 !important;
+        transition: width ease-in-out 0.2s;
+        background-color: $black-color;
+        margin-top: size(30);
+        @include min(992) {
+          margin-top: 0;
+          background-color: $white-color;
+        }
+        @include min(1200) {
+          height: size(8);
+        }
+        &:global(.swiper-pagination-bullet-active) {
+          width: size(25);
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+.stack_slider_item {
+  position: relative;
+  &_bg {
+    width: 100%;
+    padding-bottom: calc((540 / 820) * 100%);
+    position: relative;
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 50%;
+      left: 0;
+      bottom: 0;
+      background: rgb(0, 0, 0);
+      background: linear-gradient(
+        360deg,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      position: absolute;
+      z-index: 1;
+    }
+  }
+  &_title {
+    position: relative;
+    z-index: 1;
+    margin-top: size(20);
+    @include min(992) {
+      margin-top: size(30);
+      position: absolute;
+    }
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 17px;
+    font-weight: 500;
+    color: $black-color;
+    padding-right: var(--bs-gutter-x, 0.75rem);
+    padding-left: var(--bs-gutter-x, 0.75rem);
+    @include min(992) {
+      color: $white-color;
+      padding: size(25);
+      font-size: size(24);
+      padding-right: size(120);
+    }
+    h3 {
+      margin: 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      font-size: 17px;
+      font-weight: 500;
+      color: $black-color;
+      @include min(992) {
+        color: $white-color;
+        font-size: size(24);
+      }
+    }
+  }
+}

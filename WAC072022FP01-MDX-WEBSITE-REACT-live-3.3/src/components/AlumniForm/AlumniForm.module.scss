@@ -1,0 +1,56 @@
+@import "../../styles/util";
+@import "../../styles/colors";
+
+.alumni_form {
+    max-width: 751px;
+    width: 100%;
+    margin-left: auto;
+    padding-right: 60px;
+    @include max(1599.98) {
+        max-width: 602px;
+        width: 100%;
+        margin-left: auto;
+        padding-right: 15px;
+    }
+    @include max(991.98) {
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+    @include max(575.98) {
+        margin-bottom: 26px;
+    }
+    &_header {
+        max-width: 755px;
+        position: relative;
+        padding-left: 20px;
+        padding-top: 10px;
+        @include max(767.98) {
+            margin-bottom: 39px;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: $red-color;
+            width: 4px;
+            height: 100%;
+        }
+    }
+    :global {
+        .form-floating {
+            &:last-of-type {
+                margin-bottom: 40px !important;
+            }
+        }
+    }
+    h2,
+    p {
+        color: $white-color;
+        text-transform: uppercase;
+    }
+    p {
+        font-size: size(20);
+        font-weight: 1.2;
+    }
+}

@@ -1,0 +1,29 @@
+@import "../../styles/util";
+.tab_blog{
+    &_ttl{
+      font-size: size(54);
+      font-weight: 400;
+      margin-bottom: size(26);
+      @include min(1400){
+        margin-bottom: size(36);
+
+      }
+    }
+    &_content{
+      column-gap: 30px;
+      @include min(1400){
+        column-gap: 56px;
+
+      }
+    }
+    &_left_wrap{
+max-width: 400px;
+width: 100%;
+
+    }
+    .hamburger_btn{
+        font-size: 16px;
+    
+      }
+
+  }

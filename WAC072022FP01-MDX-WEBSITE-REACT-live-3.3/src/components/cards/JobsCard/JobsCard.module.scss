@@ -1,0 +1,79 @@
+@import "../../../styles/util";
+.job_card {
+  position: relative;
+  padding: size(25);
+  background-color: $white-color;
+  cursor: pointer;
+  &_title {
+    font-size: size(20);
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: size(10);
+    display: flex;
+    flex-wrap: wrap;
+    span {
+      display: flex;
+      max-width: calc(100% - 20px);
+      flex-basis: calc(100% - 20px);
+      width: 100%;
+    }
+    svg {
+      margin-left: auto;
+      display: block;
+    }
+  }
+  &_postby {
+    font-size: size(15);
+    color: $black-color;
+    margin-bottom: size(10);
+
+    display: flex;
+    align-items: center;
+    span {
+      display: flex;
+      width: 100%;
+    }
+    &_icon {
+      flex-basis: 25px;
+      max-width: 25px;
+      padding-right: 5px;
+    }
+    &_date {
+      flex-basis: calc(100% - 25px);
+      max-width: calc(100% - 25px);
+    }
+  }
+  &_description {
+    font-size: size(14);
+    line-height: 1.5;
+    p {
+      font-size: size(14);
+      line-height: 1.5;
+      color: $black-color;
+      margin: 0;
+
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+  @include min(1200) {
+    &:hover {
+      background-color: $black-color;
+      * {
+        color: $white-color;
+      }
+    }
+  }
+}
+:global(.INDblackwhite) {
+  .job_card {
+    &:hover {
+      background-color: $mud-black-color !important;
+      * {
+        background-color: $mud-black-color !important;
+      }
+    }
+  }
+}

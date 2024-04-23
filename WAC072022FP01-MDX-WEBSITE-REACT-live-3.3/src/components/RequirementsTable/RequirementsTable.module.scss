@@ -1,0 +1,91 @@
+@import '../../styles/util';
+
+.mdx_admin_area {
+    padding: 40px 0 0;
+    background: #fff;
+    margin-top: 40px;
+    @include min(992) {
+        padding: size(80) 0 0;
+        margin-top: size(80);
+    }
+    table {
+        tr {
+            &:first-of-type {
+                td {
+                    background-color: $black-color;
+                    color: $white-color;
+                }
+            }
+        }
+    }
+}
+
+
+.entry_requirements {
+    background-color: $light-color;
+    position: relative;
+    padding: 40px 0;
+
+    @include min(992) {
+        padding: size(80) 0;
+    }
+
+    h2 {
+        max-width: 850px;
+
+        @include min(1200) {
+            max-width: 930px;
+        }
+    }
+
+    &_swiper {
+        padding-top: size(40);
+        overflow: visible;
+
+        @include max(991.98) {
+            padding-bottom: size(40);
+        }
+
+        :global(.swiper-slide) {
+            display: flex;
+            height: auto;
+        }
+    }
+
+    .entry_scrollbar {
+        @include min(992) {
+            display: none;
+        }
+    }
+
+    .entry_nav {
+        width: 124px;
+        max-width: 100%;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        display: none;
+
+        @include min(992) {
+            display: inline-flex;
+        }
+
+        :global(.swiper-button-disabled) {
+            cursor: pointer;
+            opacity: .5;
+        }
+
+        &>* {
+            color: $black-color;
+            cursor: pointer;
+            transition: all cubic-bezier(0.075, 0.82, 0.165, 1) .3s;
+
+            &:hover {
+                color: $primary-color;
+            }
+
+            svg {
+                max-width: 21px;
+            }
+        }
+    }
+}

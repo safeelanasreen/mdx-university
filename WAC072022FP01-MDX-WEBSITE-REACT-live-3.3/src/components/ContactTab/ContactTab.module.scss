@@ -1,0 +1,73 @@
+@import "../../styles/util";
+.tab_contact_list{
+    margin-top: size(30);
+    @include min(1400){
+      margin-top: size(59);
+
+    }
+  }
+  .tab_contact{
+    &_top{
+      max-width: 80%;
+      @include min(1600){
+        max-width: 66%;
+
+      }
+    }
+    &_ttl{
+        font-size: size(75);
+        margin-bottom: size(15);
+        font-weight: 400;
+        @include min(1400){
+          font-size: size(85);
+          margin-bottom: size(34);
+  
+  
+        }
+      }
+      &_text{
+        p{
+          font-size: 16px;
+          line-height: 1.5;
+          max-width: 88%;
+          margin-bottom: size(30);
+          @include min(1400){
+            font-size: 18px;
+            margin-bottom: size(42);
+  
+  
+          }
+        }
+      }
+      .hamburger_btn{
+        font-size: 16px;
+    
+      }
+      
+
+      .wrap{
+
+        column-gap: 30px;
+        @include min(1400){
+            column-gap: 56px;
+          
+        }
+        .contact_item_left{
+          max-width: 540px;
+      }
+      .contact_item_right{
+        max-width: 150px;
+        @include min(1400){
+            max-width: 214px;
+      
+        }
+      }
+      &_ul{
+        padding: 0;
+        margin: 0;
+        width: 100%;
+       
+      
+      }
+        }
+  }

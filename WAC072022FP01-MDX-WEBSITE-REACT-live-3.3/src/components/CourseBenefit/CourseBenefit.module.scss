@@ -1,0 +1,69 @@
+@import '../../styles/util';
+
+.mdx_course_benefits {
+    background-color: $light-color;
+    padding: 40px 0;
+
+    @include min(992) {
+        padding: size(60) 0;
+    }
+
+    h2 {
+        @include min(992) {
+            margin-bottom: size(76);
+        }
+    }
+}
+
+.row {
+    @include min(992) {
+        --bs-gutter-x: 40px;
+    }
+}
+
+.benefit_item {
+    padding: 20px 20px 20px 0;
+
+    @include min(1200) {
+        padding: size(40) size(40) size(40) 0;
+
+    }
+
+    h5,
+    p {
+        position: relative;
+        padding-left: 16px;
+    }
+
+    h5 {
+        font-size: 25px;
+        line-height: 1;
+
+        @include min(992) {
+            font-size: size(30);
+            margin-bottom: 20px;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: #f00;
+        }
+    }
+
+    p {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 0;
+
+        @include min(992) {
+            font-size: size(20);
+            line-height: size(30);
+        }
+    }
+}

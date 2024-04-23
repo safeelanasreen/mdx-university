@@ -1,0 +1,71 @@
+@import "../../../styles/util";
+@import "../../../styles/colors";
+.event_item {
+    opacity: 0;
+    padding: size(23) 0 size(23);
+    border-top: 2px solid #6d6686;
+    background-color: var(--background);
+    cursor: pointer;
+    svg {
+        color: $white-color;
+        transform: rotate(0deg);
+        transition: transform linear .2s;
+    }
+    &:hover {
+        @include min(1200) {
+            svg {
+                color: $primary-color;
+                transform: rotate(45deg);
+            }
+        }
+    }
+    &:last-child {
+        @include max(767.98) {
+            padding-bottom: 0;
+        }
+    }
+    @include min(992) {
+        padding: size(18) 0 size(23);
+    }
+
+    &_date {
+        font-weight: 500;
+        font-size: 14px;
+        color: $white-color;
+        opacity: 0.6;
+        line-height: 1;
+        margin-bottom: 11px;
+    }
+
+    &_title {
+        @include lineClamp(1);
+        font-weight: 500;
+        font-size: 20px;
+        color: $white-color;
+
+        @include min(992) {
+            font-size: size(20);
+
+        }
+
+    }
+    &_description {
+        color: $white-color;
+        margin-bottom: 0;
+        p {
+            margin-bottom: size(7);
+            &:last-child {
+                margin-bottom: 0;
+            }
+            // @include lineClamp(2);
+            font-size: 16px;
+            
+            @include min(992) {
+                
+                font-size: size(16);
+                line-height: calc(25/16);
+            }
+        }
+
+    }
+}

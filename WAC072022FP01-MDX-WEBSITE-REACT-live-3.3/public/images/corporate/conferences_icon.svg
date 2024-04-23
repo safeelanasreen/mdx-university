@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="98" height="98" viewBox="0 0 98 98">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_36572" data-name="Rectangle 36572" width="98" height="98" transform="translate(271 842)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="conferences_icon" transform="translate(-271 -842)" clip-path="url(#clip-path)">
+    <g id="Layer_1-2" transform="translate(284.109 857.092)">
+      <g id="Group_125965" data-name="Group 125965" transform="translate(1.25 1.25)">
+        <path id="Path_105173" data-name="Path 105173" d="M24.853,6.32H1.25v47.9H61.439V34.282" transform="translate(-1.25 0.609)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2.5"/>
+        <g id="Group_125963" data-name="Group 125963" transform="translate(17.726 55.009)">
+          <line id="Line_6837" data-name="Line 6837" y1="12.3" transform="translate(12.368)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2.5"/>
+          <line id="Line_6838" data-name="Line 6838" x1="24.737" transform="translate(0 12.3)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2.5"/>
+        </g>
+        <path id="Path_105174" data-name="Path 105174" d="M30.14,36.715H18.4V1.25H61.71V36.715H38.244" transform="translate(5.039 -1.25)" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="2.5"/>
+        <g id="Group_125964" data-name="Group 125964" transform="translate(34.727 16.223)">
+          <circle id="Ellipse_78302" data-name="Ellipse 78302" cx="1.667" cy="1.667" r="1.667" fill="#6f6f6f"/>
+          <circle id="Ellipse_78303" data-name="Ellipse 78303" cx="1.667" cy="1.667" r="1.667" transform="translate(9.43)" fill="#6f6f6f"/>
+          <circle id="Ellipse_78304" data-name="Ellipse 78304" cx="1.667" cy="1.667" r="1.667" transform="translate(18.874)" fill="#6f6f6f"/>
+        </g>
+        <path id="Path_105175" data-name="Path 105175" d="M27,25.95l-.055,8.719,9.225-7.38" transform="translate(8.174 7.807)" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="2.5"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,209 @@
+@import "../../styles/util";
+.section {
+  --pt: 50px;
+  --pb: 50px;
+  padding: var(--pt) 0 var(--pb);
+  @include min(992) {
+    --pt: #{size(70)};
+    --pb: #{size(70)};
+  }
+  @include min(992) {
+    --pt: #{size(80)};
+    --pb: #{size(80)};
+  }
+
+  background-color: #F5F5F5;
+
+  &_head {
+    padding-bottom: size(65);
+  }
+  &_body {
+    .row {
+      --bs-gutter-y: 22px;
+      --bs-gutter-x: 19px;
+    }
+  }
+  &_footer {
+    padding-top: size(50);
+    text-align: center;
+    @include min(1200) {
+      padding-top: size(65);
+    }
+    button {
+      font-size: 14px;
+      min-width: size(140);
+      line-height: 1.2;
+      @include min(1200) {
+        font-size: 16px;
+        min-width: size(160);
+        line-height: 1.5;
+      }
+    }
+  }
+}
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: size(30) 0 size(30);
+  align-items: center;
+  @include min(768) {
+    align-items: flex-start;
+  }
+  @include min(1200) {
+    margin: size(40) 0 size(45);
+  }
+  &_categories {
+    display: flex;
+    overflow: hidden;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    padding: 7px 0;
+    @include max(575.98) {
+      width: calc(100% + size(10));
+      margin-right: size(-10);
+    }
+    @include min(576) {
+      flex-basis: calc(100% - 190px);
+      max-width: calc(100% - 190px);
+    }
+    @include min(768) {
+      flex-wrap: wrap;
+    }
+    @include min(1200) {
+      flex-basis: calc(100% - 220px);
+      max-width: calc(100% - 220px);
+    }
+    & > * {
+      margin-right: size(10);
+      margin-top: 5px;
+      margin-bottom: 5px;
+      @include min(1200) {
+        margin-right: size(15);
+      }
+    }
+  }
+  &_btn {
+    border: 1px solid $black-color;
+    color: $black-color;
+    background-color: $white-color;
+    line-height: 1.1;
+    font-weight: 500;
+    position: relative;
+    white-space: nowrap;
+    opacity: 0.4;
+    transition: all ease-in-out 0.15s;
+    padding: size(15) size(18);
+    @include min(1200) {
+      padding: size(15) size(21);
+    }
+    @include min(1200) {
+      &:hover {
+        opacity: 1;
+      }
+    }
+    @include min(1600) {
+      min-width: 201px;
+      font-size: size(22);
+    }
+    &.active {
+      background-color: $black-color;
+      color: $white-color;
+      pointer-events: none;
+      opacity: 1;
+      &::before {
+        display: none;
+      }
+    }
+  }
+  &_sort {
+    display: flex;
+    justify-content: flex-end;
+    padding: 7px 0;
+    width: 100%;
+    flex-basis: 100%;
+    max-width: 100%;
+    @include min(576) {
+      flex-basis: 190px;
+      max-width: 190px;
+    }
+    @include min(768) {
+      padding: 11px 0;
+    }
+    @include min(1200) {
+      flex-basis: 220px;
+      max-width: 220px;
+    }
+  }
+}
+
+.figure {
+  --bs-aspect-ratio: 30%;
+  margin-bottom: 0;
+  height: 100%;
+  &_stack {
+    --bs-gutter-x: 12px;
+    --bs-gutter-y: var(--bs-gutter-x);
+    @include min(1200) {
+      --bs-gutter-x: 20px;
+    }
+    > * {
+      &:nth-child(3n + 1), &:nth-child(3n + 3), &:nth-child(3n + 5), &:nth-child(3n + 6) {
+        
+        .figure {
+          --bs-aspect-ratio: 89.9%;
+        }
+      }
+      &:nth-child(3n + 2) , &:nth-child(3n + 4) {
+        .figure {
+          --bs-aspect-ratio: 53.2%;
+        }
+      }
+      /* Define the grid areas based on the specified column sizes */
+      &:nth-child(3n + 1) {
+        flex-basis: 37.5%;
+        @include min(992) {
+          flex-basis: 25%;
+        }
+      }
+
+      &:nth-child(3n + 2) {
+        flex-basis: 62.5%;
+        @include min(992) {
+          flex-basis: 50%;
+        }
+      }
+
+      &:nth-child(3n + 3) {
+        flex-basis: 37.5%;
+        @include min(992) {
+          flex-basis: 25%;
+        }
+      }
+
+      /* Repeat the pattern for the second row */
+      &:nth-child(3n + 4) {
+        flex-basis: 62.5%;
+        @include min(992) {
+          flex-basis: 50%;
+        }
+      }
+
+      &:nth-child(3n + 5) {
+        flex-basis: 50%;
+        @include min(992) {
+          flex-basis: 25%;
+        }
+      }
+
+      &:nth-child(3n + 6) {
+        flex-basis: 50%;
+        @include min(992) {
+          flex-basis: 25%;
+        }
+      }
+    }
+  }
+}

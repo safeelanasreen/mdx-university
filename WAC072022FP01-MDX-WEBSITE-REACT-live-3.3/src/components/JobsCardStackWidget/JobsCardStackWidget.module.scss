@@ -1,0 +1,22 @@
+@import "../../styles/util";
+.jobs_cards_stack {
+  padding: 45px 0;
+  @include min(1200) {
+    padding: size(80) 0;
+  }
+  :global{
+    .container, .container-fluid {
+      background-color: transparent !important;
+      .title {
+        background-color: transparent !important;
+        color: $black-color !important;
+      }
+      &>.row {
+        background-color: transparent !important;
+        &>* {
+          background-color: transparent !important;
+        }
+      }
+    }
+  }
+}

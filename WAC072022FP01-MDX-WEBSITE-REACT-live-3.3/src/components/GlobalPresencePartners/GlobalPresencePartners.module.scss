@@ -1,0 +1,34 @@
+@import '../../styles/util';
+.global {
+    /* background-color: $black-color !important;
+    * {
+        background-color: transparent !important;
+    } */
+    &_wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        &>* {
+            flex-basis: 100%;
+            max-width: 100%;
+            width: 100%;
+        }
+        .global {
+            &_presence {
+                background-color: $blue-alt;
+                
+                @include min(1200) {
+                    // min-height: 90vh;
+                    flex-basis: 40%;
+                    max-width: 40%;
+                }
+            }
+            &_partners {
+                background-color: $black-color;
+                @include min(1200) {
+                    flex-basis: 60%;
+                    max-width: 60%;
+                }
+            }
+        }
+    }
+}

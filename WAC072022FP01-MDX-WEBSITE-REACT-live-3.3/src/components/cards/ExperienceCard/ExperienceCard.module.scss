@@ -1,0 +1,138 @@
+@import "../../../styles/util";
+@import "../../../styles/colors";
+
+.grid_item {
+    position: relative;
+    height: 100%;
+    background: #515151;
+    box-shadow: inset 4px -6px 27px -23px #000;
+    cursor: pointer;
+
+    @include max(991.98) {
+        padding-top: 100%;
+    }
+
+    @include min(992) {
+        min-height: 280px;
+    }
+
+    @include min(1600) {
+        min-height: 384px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: red;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+        transform: scaleX(0);
+        transition: 0.5s all ease-in-out;
+        transform-origin: left;
+    }
+
+    &:hover {
+        @include min(992) {
+            &::before {
+                transform: scaleX(1);
+            }
+
+            .letter {
+                span {
+                    transform: initial;
+                }
+            }
+        }
+    }
+
+    &_img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    .letter {
+        font-family: $secondary-font;
+        font-size: 98px;
+        -webkit-text-stroke: 1px rgb(255, 255, 255);
+        -webkit-text-fill-color: rgba(255, 255, 255, 0);
+        font-weight: 700;
+        overflow: hidden;
+        line-height: 1;
+        position: relative;
+        z-index: 100;
+text-transform: uppercase;
+
+        span {
+            transform: translateY(95%);
+            transition: 0.5s all ease;
+            transition-delay: 0.2s;
+            display: inline-block;
+        }
+
+    }
+
+    &_info {
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        width: 100%;
+        padding: 28px 16px;
+        z-index: 1;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        background-color: transparent !important;
+
+        * {
+            background-color: transparent !important;
+            color: $white-color;
+        }
+
+        @include min(992) {
+            padding: size(40);
+        }
+
+        h3 {
+            color: $white-color;
+            margin-bottom: 0;
+            text-transform: uppercase;
+            line-height: 1;
+
+            @include min(992) {
+                font-size: size(40);
+            }
+            @include min(1200) {
+                font-size: 2.1vw;
+            }
+        }
+
+        p {
+            color: $white-color;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1;
+            text-transform: uppercase;
+            color: $white-color;
+
+        }
+    }
+}
+
+:global(html:not(#INDdummy) body:not(#INDdummy).INDwhiteblack>:not(#INDWrap)) {
+    .grid_item {
+        &_info {
+            h3 {
+                color: $white-color !important;
+            }
+        }
+    }
+}

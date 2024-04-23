@@ -1,0 +1,10 @@
+@import '../../styles/util';
+.spacer {
+    padding-bottom: 40px;
+    @include min(768) {
+        padding-bottom: size(80);
+    }
+    @include min(1200) {
+        padding-bottom: size(100);
+    }
+}

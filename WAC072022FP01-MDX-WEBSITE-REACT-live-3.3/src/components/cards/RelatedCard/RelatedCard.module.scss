@@ -1,0 +1,158 @@
+@import "../../../styles/util";
+@import "../../../styles/colors";
+
+@include randomColor('.grid_item', 'span.cover');
+
+.grid_item {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    &.cursor {
+        cursor: pointer;
+    }
+
+    span.cover {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: red;
+        opacity: 0.78;
+        width: 100%;
+        height: 102%;
+        z-index: 1;
+        pointer-events: none;
+        transform: scaleX(0);
+        transition: 0.5s all ease-in-out;
+        transform-origin: left;
+    }
+
+    &:hover {
+        span.cover {
+            @include min(992) {
+                transform: scaleX(1);
+                transform-origin: left;
+            }
+        }
+
+    }
+
+    &_img {
+        position: relative;
+        padding-top: 100%;
+        @include min(992) {
+            mix-blend-mode: luminosity;
+        }
+        @include min(768) {
+            padding-top: 100%;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background-image: linear-gradient(0deg, rgb(0 0 0 / 70%), transparent);
+        }
+
+        @include min(992) {
+            padding-top: 96%;
+        }
+    }
+
+
+
+    &_info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 11;
+        padding: 24px 16px;
+
+        background-color: transparent !important;
+        * {
+            background-color: transparent !important;
+        }
+
+        @include min(768) {
+            padding: 2rem 1.8rem;
+        }
+
+        @include min(992) {
+            padding: 2.2rem 1.8rem;
+        }
+
+        h3 {
+            color: $white-color;
+            margin-bottom: 0;
+            text-transform: uppercase;
+            font-size: 20px;
+
+            @include min(768) {
+                font-size: size(25);
+            }
+
+            @include min(992) {
+                font-size: size(25);
+            }
+
+
+        }
+
+        >div {
+            >div {
+                align-items: flex-end;
+            }
+        }
+
+        :global {
+            .btn {
+                flex: 0 0 38px;
+                width: 38px;
+                margin-bottom: 5px;
+                visibility: hidden;
+                @include min(768) {
+                    visibility: visible;
+                }
+                @include min(992) {
+                    flex: 0 0 44px;
+                    width: 44px;
+                }
+            }
+        }
+    }
+}
+
+:global(html:not(#INDdummy) body:not(#INDdummy).INDwhiteblack>:not(#INDWrap)) {
+    .grid_item {
+        &_info {
+            h3,
+            :global(.btn) {
+                color: $white-color !important;
+                svg {
+                    color: $white-color !important;
+                    fill: $white-color !important;
+                }
+            }
+        }
+    }
+}
+
+:global(html:not(#INDdummy) body:not(#INDdummy).INDwhiteblack>:not(#INDWrap) *:not(img):not(video)),:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)),
+:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)) {
+    @include randomColor('.grid_item', 'span.cover');
+  }
+  
+  /* High Contrast */
+  :global(html:not(#INDdummy) body:not(#INDdummy).INDwhiteblack>:not(#INDWrap)) {
+    @include randomColor('.grid_item', 'span.cover');
+  }
+  :global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)),
+:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)) {
+    .grid_item_info {
+        background-color: transparent !important;
+    }
+}

@@ -1,0 +1,7 @@
+@import '../../styles/util';
+.faculty_stack_widget {
+    padding: 40px 0;
+    @include min(992) {
+        padding: size(80) 0;
+    }
+}

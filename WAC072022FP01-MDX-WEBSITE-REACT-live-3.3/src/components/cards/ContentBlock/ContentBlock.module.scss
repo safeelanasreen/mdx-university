@@ -1,0 +1,9 @@
+@import "../../../styles/util";
+@import "../../../styles/colors";
+.card {
+    padding: size(20);
+    // height: calc(100% - var(--bs-gutter-y));
+    background-color:  var(--column-bg);
+    height: 100%;
+    color: var(--column-text);
+}

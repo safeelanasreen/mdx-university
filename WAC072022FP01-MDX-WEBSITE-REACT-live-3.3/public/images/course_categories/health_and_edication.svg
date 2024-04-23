@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="90" height="90" viewBox="0 0 90 90">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_36615" data-name="Rectangle 36615" width="90" height="90" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="Rectangle_37081" data-name="Rectangle 37081" width="87.822" height="81.103" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="health_and_edication" clip-path="url(#clip-path)">
+    <g id="Group_127334" data-name="Group 127334" transform="translate(1 1.592)">
+      <path id="Path_108093" data-name="Path 108093" d="M43.063,0,0,13.183,1.107,16.8,43.038,3.96,86.669,17.936l1.153-3.6Z" transform="translate(0)" fill="#fff"/>
+      <g id="Group_127333" data-name="Group 127333" transform="translate(0 0)">
+        <g id="Group_127332" data-name="Group 127332" clip-path="url(#clip-path-2)">
+          <path id="Path_108094" data-name="Path 108094" d="M45.378,32.747V66.474H41.6V32.823c-15.467-12.693-38.29-12.91-38.29-12.91L1.634,21.59V62.64l1.731,1.67c25.073-.385,38.886,11.632,38.886,11.632l.4-.2,1.65-.016.427.209C60.6,63.554,83.611,64.307,83.611,64.307l1.731-1.67V21.588l-1.684-1.67c-21.162.5-33.774,9.09-38.281,12.829" transform="translate(0.424 5.161)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

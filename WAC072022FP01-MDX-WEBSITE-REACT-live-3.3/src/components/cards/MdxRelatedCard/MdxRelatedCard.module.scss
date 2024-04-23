@@ -1,0 +1,153 @@
+@import "../../../styles/util";
+.card {
+  padding: size(33) size(25);
+  min-height: size(310);
+  --z-index: 2;
+  background-color: $secondary-color;
+
+  container-type: inline-size;
+  container-name: relatedCard;
+  
+  --card-title-font-size: 24px;
+  @include min(768) {
+    --card-title-font-size: #{size(27)};
+  }
+  @include min(1200) {
+    --card-title-font-size: #{size(30)};
+  }
+  @include min(1600) {
+    --card-title-font-size: #{size(30)};
+  }
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    transform: initial;
+    will-change: transform;
+
+    transition: transform linear 0.2s;
+
+    transform-origin: left;
+    background: rgb(41, 33, 82);
+
+    background: linear-gradient(
+      90deg,
+      rgba(41, 33, 82, 1) 31%,
+      rgba(41, 33, 82, 0) 100%,
+      rgba(41, 33, 82, 0) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+  &_figure {
+    left: 0;
+    top: 0;
+    z-index: 0;
+  }
+  &_body {
+    z-index: 2;
+    pointer-events: none;
+    max-width: 100%;
+    // word-break: break-all;
+  }
+  &_title {
+    // font-family: $secondary-font;
+    line-height: calc(38 / 35);
+    transform: initial;
+    will-change: transform;
+    transition: transform linear 0.2s;
+    font-size: var(--card-title-font-size);
+    &_wrap {
+      max-width: 346px;
+    }
+  }
+  &_arrow {
+    svg {
+      transform: initial;
+      transition: transform linear 0.2s;
+      max-width: size(40);
+      @include min(1600) {
+        max-width: 40px;
+      }
+    }
+  }
+  &:hover {
+    @include min(1200) {
+      &::before {
+        transform: scaleX(1.1);
+      }
+      .card {
+        &_title {
+          transform: translate(-4px, -5px) scale(0.98);
+        }
+        &_arrow {
+          svg {
+            transform: scale(0.8) translateX(-4px);
+          }
+        }
+      }
+    }
+  }
+}
+@container relatedCard (max-width: 310px) {
+  .card_title {
+    --card-title-font-size: 20px;
+  }
+}
+/* High Contrast */
+:global(
+    html:not(#INDdummy) body:not(#INDdummy).INDwhiteblack > :not(#INDWrap)
+  ) {
+  .card {
+    &::before {
+      filter: brightness(0);
+    }
+    background-color: transparent !important;
+    :global {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      *:not(img):not(video):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+        background-color: transparent !important;
+      }
+    }
+  }
+}
+:global(
+    html:not(#INDdummy)
+      body:not(#INDdummy).INDblackwhite
+      > :not(#INDWrap)
+      *:not(img):not(video)
+  ),
+:global(
+    html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors > :not(#INDWrap)
+  ),
+:global(
+    html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors > :not(#INDWrap)
+  ) {
+  .card {
+    &::before {
+      filter: brightness(0);
+    }
+    background-color: transparent !important;
+    :global {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      *:not(img):not(video):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+        background-color: transparent !important;
+      }
+    }
+  }
+}

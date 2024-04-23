@@ -1,0 +1,220 @@
+@import "../../styles/util";
+
+.upcoming_events_slider {
+  // background-color: $light-color;
+  padding: 40px 0;
+  @include min(992) {
+    padding: size(70) 0;
+  }
+  @include min(1200) {
+    padding: size(80) 0;
+  }
+}
+
+.events_listing_slider {
+  :global(.swiper-wrapper) {
+    max-height: 600px;
+  }
+  :global(.tab-event-item-wrap) {
+    max-width: 680px;
+  }
+}
+
+.upcoming_events_container {
+  @include min(1600) {
+    max-width: 1530px;
+  }
+  .event_day_selector_wrap {
+    padding-top: 10px;
+  }
+  :global(.filter-align-left) {
+    > div {
+      justify-content: flex-start !important;
+    }
+  }
+}
+
+.event_listing_slider_wrapcol {
+  position: relative;
+}
+
+.swiper_next,
+.swiper_prev {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  margin: auto;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  cursor: pointer;
+  &:global(.swiper-button-disabled) {
+    opacity: 0.5;
+  }
+}
+
+.event_filter_list {
+  padding-left: 0px;
+  list-style: none;
+
+  padding: 7px;
+  display: inline-block;
+  button {
+    border: 1px solid #dcdcdc;
+    background-color: white;
+    border-radius: 0px;
+    color: #9a9a9a;
+    font-weight: 500;
+    font-size: size(17);
+    min-width: 154px;
+    width: auto;
+    &:global(.active) {
+      background-color: $black-color;
+      border-color: $black-color;
+      color: white;
+    }
+  }
+}
+
+.upcoming_events_wrap_mob {
+  .upcoming_events_item {
+    border-bottom: 1px solid #dcdcdc;
+    &:nth-last-of-type(1) {
+      border-bottom: none;
+    }
+  }
+}
+.event_day_selector_wrap {
+  width: 100%;
+
+  :global(.swiper-slide) {
+    width: auto;
+  }
+  :global(.swiper-scrollbar) {
+    overflow: visible;
+    &::before {
+      height: 4px !important;
+      background-color: rgba(0, 0, 0, 0.1) !important;
+    }
+  }
+  :global(.swiper-scrollbar-drag) {
+    &::before {
+      height: 4px;
+      background-color: rgba(0, 0, 0, 0.6) !important;
+    }
+  }
+  @include max(991.9) {
+    flex-direction: column;
+  }
+}
+
+.event_day_selector_wrap {
+  display: flex;
+
+  width: 100%;
+  .select_dropdown_wrap {
+    padding: 0 7px;
+    &:nth-child(1) {
+      padding-left: 0px;
+    }
+    &:nth-last-child(1) {
+      padding-right: 0px;
+    }
+    > div {
+      background-color: $light-color;
+
+      width: 150px;
+      > button {
+        padding-left: 15px;
+        border: none !important;
+        min-width: 1px;
+      }
+    }
+    :global(.btn) {
+      @include min(1200) {
+        font-size: 17px;
+      }
+      @include min-max(768, 1199.9) {
+        font-size: 17px;
+      }
+      @include max(767.9) {
+        font-size: 16px;
+      }
+    }
+  }
+  select {
+    background-color: transparent;
+    border: none;
+    font-size: 17px;
+    font-weight: 500;
+    min-width: 150px;
+    padding: 16px 0px 16px 20px;
+    border-right: 20px solid transparent;
+    &:focus {
+      // outline: none;
+      box-shadow: none;
+    }
+  }
+  @include min(992) {
+    justify-content: flex-end;
+  }
+  @include max(991.9) {
+    padding-top: 20px;
+  }
+}
+.event_date_listing_wrap {
+  // padding-top: 20px;
+  :global(.event-date-item-wrap) {
+    margin-bottom: 0px !important;
+  }
+  @include min(992) {
+    // padding-top: size(50);
+    :global(.event-date-item-wrap) {
+      margin-bottom: 20px !important;
+    }
+  }
+  @include min(1200) {
+    // padding-top: size(60);
+  }
+  @include max(576.98) {
+    & > * {
+      &:first-child {
+        :global(.event-date-item-wrap) {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+.pagination_wrap {
+  padding-top: 40px;
+  @include min(992) {
+    padding-top: size(70);
+  }
+  @include min(1200) {
+    padding-top: size(80);
+  }
+}
+
+@include max(991.9) {
+  .select_dropdown_wrap {
+    padding: 0 7px;
+    &:nth-child(1) {
+      padding-left: 0px;
+    }
+    &:nth-last-child(1) {
+      padding-right: 0px;
+    }
+    > :global(.btn) {
+      background-color: $light-color;
+      padding-left: 15px;
+      width: 150px;
+    }
+  }
+  .load_more_btn {
+    font-size: 17px;
+    font-weight: 500;
+  }
+}

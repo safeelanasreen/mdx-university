@@ -1,0 +1,25 @@
+@import '../../styles/util';
+.newsfeed {
+    padding: 40px 0;
+    background-color: var(--background-color);
+    @include min(992) {
+        padding: size(50) 0;
+    }
+    @include min(1200) {
+        padding: size(75) 0;
+    }
+    @include min(1400) {
+        padding: size(90) 0;
+    }
+    :global{
+        .row {
+            --bs-gutter-y: var(--bs-gutter-x);
+        }
+        .title, .title_sub {
+            color: var(--text-color);
+        }
+    }
+    &_swiper {
+        max-height: calc((var(--slide-height)*3) + (24*3));
+    }
+}

@@ -1,0 +1,180 @@
+@import "../../../../styles/util";
+@import "../../../../styles/colors";
+
+
+.tool_wrap {
+  z-index: 1020;
+  position: fixed;
+  bottom: 65px;
+  left: 0;
+  width: 100%;
+  transform: translateY(100%);
+  transition: 0.5s all ease;
+  &_open {
+    transform: translateY(0%);
+  }
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    width: 30px;top: 0;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    transition: 0.5s all ease;
+  }
+  &::after {
+    right: 0;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.616));
+  }
+  &::before {
+    opacity: 0;
+
+    left: 0;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.603), rgb(0 0 0 / 0%));
+  }
+
+  &.scroll {
+    &_end {
+      &::after {
+        opacity: 0 !important;
+       }
+       &::before {
+        opacity: 1 !important;
+       }
+    }
+    &_both {
+      &::before {
+        opacity: 1 !important;
+      }
+    }
+    &_start {
+      &::before {
+       opacity: 0 !important;
+      }
+    }
+  }
+}
+
+.toolbar_mobile {
+&::-webkit-scrollbar {
+  display: none;
+}
+
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  display: flex;
+  width: 100%;
+  
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  background-image: linear-gradient(90deg, var(--primary), var(--pink));
+  
+
+  
+  @include min(1200) {
+    display: none;
+  }
+
+  .tool {
+    &_link {
+      display: flex;
+      align-items: center;
+      flex: 1 0;
+      padding: 10px 10px;
+      font-size: 14px;
+      font-weight: 500;
+      white-space: nowrap;
+      text-decoration: none;
+      // min-width: 116px;
+      color: $white-color;
+      &:nth-of-type(1) {
+        background-color: $primary-color;
+      }
+      &:nth-of-type(2) {
+        background-color: $yellow-color;
+      }
+      &:nth-of-type(3) {
+        background-color: $orange-color;
+      }
+      &:nth-child(4) {
+        background-color: #19a56e;
+      }
+      &:nth-child(5) {
+        background-color: var(--pink);
+      }
+    }
+    &_icon {
+      display: flex;
+      flex: 0 0 auto;
+      margin-right: 7px;
+    }
+    &_label {
+      flex-basis: calc(100% - 13px);margin-right: 13px;
+    }
+  }
+}
+
+.bottom_menu {
+  z-index: 1020;
+  background-color: $secondary-color;
+  padding: 8px 0;
+
+  @include min(1200) {
+    display: none;
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+
+    li {
+      flex: 0 0 auto;
+      padding: 4px 25px;
+      opacity: 0.6;
+      text-align: center;
+      line-height: 1;
+      &.active {
+        opacity: 1;
+      }
+      button {
+        border: none;
+        background-color: transparent;
+        padding-top: 0;
+        padding-bottom: 0;
+        height: 100%;
+      }
+      a,
+      button {
+        font-size: 12px;
+        text-align: center;
+        color: $white-color;
+        text-decoration: none;
+        white-space: nowrap;
+        position: relative;
+       
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 24px;
+          margin-bottom: 2px;
+          margin-left: auto;
+          margin-right: auto;
+          svg {
+            max-height: 22px;
+          }
+        }
+      }
+    }
+  }
+}
+:global(html:not(#INDdummy) body:not(#INDdummy).INDwhiteblack>:not(#INDWrap) *:not(img):not(video)) {
+  .tool_link {
+    img {
+      filter: brightness(0);
+    }
+  }
+}

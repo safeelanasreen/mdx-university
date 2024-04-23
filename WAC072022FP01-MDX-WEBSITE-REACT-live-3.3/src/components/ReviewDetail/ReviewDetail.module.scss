@@ -1,0 +1,167 @@
+@import '../../styles/util';
+.review_detail {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: visible;
+    padding: 40px 0;
+    @include min(992) {
+        padding: size(80) 0;
+    }
+    &_auth, &_cnt {
+        width: 100%;
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+    &_auth {
+        position: relative;
+        @include min(1200) {
+            flex-basis: 30%;
+            max-width: 30%;
+        }
+        &_fig {
+            position: sticky;
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            top: size(120);
+            @include min(1200) {
+                width: 485px;
+            }
+            mix-blend-mode: luminosity;
+            &::before {
+                content: '';
+                display: block;
+                width: 100%;
+                padding-bottom: calc((445/375)*100%);
+                @include min(768) {
+                    padding-bottom: calc((600/1200)*100%);
+                }
+                @include min(1200) {
+                    padding-bottom: calc((575/485)*100%);
+                }
+            }
+            @include max(1199.98) {
+                &::after {
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+
+                    background: rgb(0,0,0);
+                    background: linear-gradient(360deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+                }
+            }
+        }
+        .author {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            color: $white-color;
+            padding: 20px 0;
+            h1 {
+                font-size: 28px;
+                font-family: $secondary-font;
+            }
+            .designation {
+                font-size: 17px;
+                span {
+                    display: block;
+                }
+            }
+            @include min(768) {
+                padding: size(40) 0;
+            }
+        }
+    }
+    &_cnt {
+        top: size(120);
+        position: sticky;
+        padding-top: 40px;
+        @include min(992) {
+            padding-top: size(80);
+        }
+        @include min(1200) {
+            padding-left: size(60);
+            flex-basis: 70%;
+            max-width: 70%;
+        }
+        h1,h2,h3,h4,h5,h6 {
+            // font-family: $secondary-font;
+            font-weight: 600;
+        }
+        h1 {
+            font-family: $secondary-font;
+
+            margin-bottom: size(20);
+            line-height: 1.2;
+            @include min(992) {
+                margin-bottom: size(30);
+            }
+        }
+        .designation {
+            font-size: size(20);
+            font-weight: bold;
+            margin-bottom: size(20);
+            @include min(992) {
+                margin-bottom: size(30);
+            }
+            span {
+                display: block;
+            }
+        }
+        &_paragraph {
+            position: relative;  
+            padding-bottom: size(30);      
+            @include min(768) {
+                padding-top: size(30);
+                &::before, &::after {
+                    content: '';
+                    display: block;
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='39.645' height='29.587' viewBox='0 0 39.645 29.587'%3E%3Cpath id='Path_108191' data-name='Path 108191' d='M10.952 15.829a8.841 8.841 0 0 0-1.285.128 7.08 7.08 0 0 1 .5-1.344 8.326 8.326 0 0 1 .927-1.668 9.847 9.847 0 0 1 1.188-1.457A13.436 13.436 0 0 1 13.651 10.3a8.4 8.4 0 0 1 1.411-.915 7.5 7.5 0 0 1 1.285-.692l1.065-.439.937-.389-.959-3.83-1.18.285c-.377.095-.838.206-1.362.338a10.721 10.721 0 0 0-1.743.617 12.274 12.274 0 0 0-2.032.921A18.56 18.56 0 0 0 8.918 7.558 15.368 15.368 0 0 0 6.843 9.426a13.855 13.855 0 0 0-1.8 2.3 16.053 16.053 0 0 0-1.387 2.567 21.893 21.893 0 0 0-.925 2.64 23.857 23.857 0 0 0-.759 4.816A24.618 24.618 0 0 0 2.03 25.2c.03.4.085.795.125 1.065L2.2 26.6l.051-.012a8.894 8.894 0 1 0 8.7-10.755Zm21.74 0a8.841 8.841 0 0 0-1.285.128 7.081 7.081 0 0 1 .5-1.344 8.326 8.326 0 0 1 .927-1.668 9.847 9.847 0 0 1 1.188-1.457A13.436 13.436 0 0 1 35.391 10.3 8.4 8.4 0 0 1 36.8 9.38a7.5 7.5 0 0 1 1.285-.692l1.065-.439.937-.389-.959-3.83-1.18.285c-.377.095-.838.206-1.362.338a10.721 10.721 0 0 0-1.743.617 12.365 12.365 0 0 0-2.032.923A18.561 18.561 0 0 0 30.658 7.56a15.485 15.485 0 0 0-2.075 1.866 13.855 13.855 0 0 0-1.8 2.3A16.052 16.052 0 0 0 25.4 14.289a21.892 21.892 0 0 0-.925 2.64 23.857 23.857 0 0 0-.759 4.816A24.619 24.619 0 0 0 23.77 25.2c.03.4.085.795.125 1.065l.049.332L24 26.584a8.894 8.894 0 1 0 8.7-10.755Z' transform='translate(-1.941 -4.03)' opacity='0.1'/%3E%3C/svg%3E");
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    position: absolute;
+                    pointer-events: none;
+                    width: size(20);
+                    height: size(20);
+                    @include min(768) {
+                        width: size(25);
+                        height: size(25);
+                    }
+                    @include min(992) {
+                        width: size(30);
+                        height: size(30);
+                    }
+                    @include min(1200) {
+                        width: size(40);
+                        height: size(40);
+                    }
+                }
+                &::before {
+                    left: size(-7);
+                    top: 0;
+                    @include min(1200) {
+                        left: size(-60);
+                    }
+                }
+                &::after {
+                    bottom: 0;
+                    right: size(-7);
+                    transform: rotateY(180deg);
+                    @include min(768) {
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+}

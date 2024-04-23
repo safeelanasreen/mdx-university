@@ -1,0 +1,41 @@
+@import "../../styles/util";
+
+.video_wrap {
+  @include min(1200) {
+    width: calc(100% - 2.7777777778rem);
+    background-color: $black-color;
+  }
+
+    .video {
+        @include aspectRatio(1510, 659);
+        @include max(767.98) {
+          padding-bottom: 65%;
+        }
+        video, iframe {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.content_wrap {
+  max-width: 665px;
+  @include min(992) {
+    padding-left: size(50);
+    max-width: 665px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 24px;
+
+    @include min(992) {
+      font-size: size(16);
+      line-height: size(24);
+    }
+  }
+}

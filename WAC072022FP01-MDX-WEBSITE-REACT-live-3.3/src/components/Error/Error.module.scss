@@ -1,0 +1,48 @@
+@import '../../styles/util';
+.error_page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: calc(100vh - 155px);
+    @include min(992) {
+        min-height: calc(100vh - 85px);
+    }
+    &_fig {
+        position: relative;
+        width: 488px;
+        max-width: 65%;
+        margin: 0 0 size(40);
+        display: inline-block;
+        line-height: 0;
+        @include min(992) {
+            margin: 0 0 size(63);
+        }
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            padding-bottom: calc((216.28/488.72)*100%);
+        }
+        img {
+            border-radius: 10px;
+        }
+    }
+    h1 {
+        font-size: 20px;
+        font-family: $primary-font;
+        margin-bottom: size(7);
+        font-weight: bold;
+        @include min(992) {
+            font-size: size(30);
+        }
+    }
+    p {
+        font-size: 16px;
+        margin-bottom: size(40);
+        @include min(992) {
+            font-size: size(20);
+        }
+    }
+}

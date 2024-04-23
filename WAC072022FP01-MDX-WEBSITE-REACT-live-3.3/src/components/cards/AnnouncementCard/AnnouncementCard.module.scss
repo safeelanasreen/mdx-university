@@ -1,0 +1,97 @@
+@import '../../../styles/util';
+.announcement_card {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $white-color;
+    &+.announcement_card {
+        margin-top: size(45);
+    }
+    &>* {
+        width: 100%;
+    }
+    &_imgcol {
+        flex-basis: 100%;
+        max-width: 100%;
+        @include min(768) {
+            flex-basis: 43%;
+            max-width: 43%;
+        }
+    }
+    &_textcol {
+        flex-basis: 100%;
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 15px 15px 25px;
+        @include min(768) {
+            padding: size(35);
+        }
+        @include min(768) {
+            flex-basis: 57%;
+            max-width: 57%;
+        }
+        @include min(992) {
+            padding: size(50);
+        }
+    }
+    &_img {
+        position: relative;
+        margin: 0;
+        padding-bottom: calc((366/531)*100%);
+        @include min(768) {
+            height: 100%;
+        }
+    }
+    &_cnt {
+        &_subhaed {
+            font-size: 14px;
+            font-weight: bold;
+            color: $black-color;
+            margin-bottom: size(16);
+        }
+        h3 {
+            color: $black-color;
+            font-size: 17px;
+            margin-bottom: size(25);
+            
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+            @include min(768) {
+                font-size: size(22);
+            }
+            @include min(992) {
+                font-size: size(24);
+                margin-bottom: size(30);
+            }
+        }
+        .content {
+            color: #6A6A6A;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: size(25);
+            @include min(992) {
+                margin-bottom: size(30);
+            }
+            
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+
+            p {
+                font-weight: 500;
+                color: #6A6A6A;
+                font-size: 16px;
+                margin-bottom: 0;
+                &+p , &+li {
+                    margin-top: size(15);
+                }
+            }
+            &_readmore {
+                position: relative;
+            }
+        }
+    }
+}

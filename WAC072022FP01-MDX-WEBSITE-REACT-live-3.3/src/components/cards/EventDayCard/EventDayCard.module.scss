@@ -1,0 +1,287 @@
+@import "../../../styles/util";
+@import "../../../styles/colors";
+
+@mixin imgwrap($w, $h) {
+  $val: calc(10000 / $w * $h);
+  $val1: floor($val);
+  $val2: calc($val1 / 100);
+  position: relative;
+  > * {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    left: 0;
+  }
+  &:before {
+    content: "";
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-bottom: ($val2 * 1%);
+    pointer-events: none;
+  }
+}
+
+.event_item {
+  padding-top: 0px;
+  display: flex;
+  &_info {
+    &_arrow_icon {
+      display: flex;
+      align-items: flex-end;
+      svg {
+        width: 0.8em !important;
+        height: 0.8em !important;
+      }
+    }
+    @include min(992) {
+      max-width: calc(100% - 178px);
+      padding-left: 45px;
+    }
+
+    // padding: size(18) 0 size(23);
+  }
+
+  // &_image{
+  //     width: 100%;
+  //     position: relative;
+  //     @include imgwrap(586,294);
+  // }
+
+  &_date {
+    font-weight: 500;
+    font-size: 16px;
+    // opacity: 0.6;
+    line-height: 24px;
+    margin-top: 21px;
+    margin-bottom: 11px;
+  }
+  &_place {
+    margin-top: auto;
+    font-weight: 500;
+    font-size: 16px;
+    // opacity: 0.6;
+    line-height: 24px;
+    margin-top: auto;
+    margin-bottom: 0px;
+    position: relative;
+    padding-left: 1.2em;
+    svg {
+      margin-top: -2px;
+      position: absolute;
+      left: 0;
+      height: 1em !important;
+      width: 1em !important;
+      top: 0.3em;
+    }
+  }
+
+  &_title {
+    @include lineClamp(3);
+    font-weight: 500;
+    font-size: 20px;
+
+    @include min(992) {
+      @include lineClamp(2);
+      font-size: size(26);
+    }
+    @include max(575.9) {
+      font-size: 17px;
+    }
+  }
+
+  &_description {
+    font-weight: 500;
+    // @include lineClamp(2);
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 20px;
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &:hover {
+    .event_item_info {
+      &_arrow_icon {
+        svg {
+          @include min(1200) {
+            transform: rotate(45deg);
+          color: $red-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.tab_content_wrap {
+  display: flex;
+  margin: 30px 0;
+  cursor: pointer;
+  .event_item {
+    // max-width: 586px;
+    width: 100%;
+    margin-left: auto;
+  }
+}
+
+.event_item_info {
+  display: flex;
+  &_dis {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  svg {
+    width: 100%;
+    max-width: 36px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+}
+.event_item_info_icon {
+  padding-left: 10px;
+  @include min(992) {
+    padding-bottom: size(7.5);
+  }
+}
+
+.event_date_card {
+  display: flex;
+  background-color: transparent;
+  width: 178px;
+  left: 0;
+  bottom: 0;
+  max-height: 200px;
+  margin-top: auto;
+  color: $black-color;
+  text-align: center;
+  font-weight: 700;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 0;
+  border: 2px solid $black-color;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0) 0%,
+    rgba(255, 0, 0, 0) 40%,
+    rgba(255, 0, 0, 1) 60%,
+    rgba(255, 0, 0, 1) 100%
+  );
+  background-size: 300%;
+  background-position: center left 0%;
+  transition: background-position 0.3s ease-in-out, color 0.3s ease-in-out;
+
+  &>* {
+    background-color: transparent !important;
+  }
+  .event_card_date {
+    font-size: size(60);
+    line-height: 100%;
+  }
+  .event_card_month {
+    font-size: size(22);
+    font-weight: size(25);
+  }
+}
+
+.event_item {
+  &:hover {
+    .event_date_card {
+      background-position: center left 99%;
+      color: white;
+      border-color: $primary-color;
+    }
+  }
+}
+
+.event_item_info_tags {
+  width: 100%;
+  margin: 12px 0;
+  .event_item_info_tag {
+    background-color: $card-grey;
+    font-size: 16px;
+    font-weight: 700;
+    display: inline-block;
+    padding: 5px 14px;
+    text-transform: uppercase;
+  }
+}
+@include max(991.9) {
+  .event_item {
+    display: flex;
+    flex-direction: column;
+    &_info {
+      padding-left: 0px;
+      padding-top: 20px;
+    }
+  }
+  .event_date_card_mob {
+    display: flex;
+  }
+  .event_card_month_wrap {
+    padding-left: 16px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .event_date_card {
+    padding: 17px;
+    width: 92px;
+    .event_card_date {
+      font-size: 30px;
+      line-height: 34px;
+    }
+    .event_card_month {
+      font-size: 17px;
+      line-height: 19px;
+    }
+  }
+  .event_day_link {
+    color: $primary-color;
+  }
+  .event_item {
+    &_info {
+      flex-direction: column;
+
+      &_arrow_icon {
+        svg {
+          margin-left: 8px;
+          top: -6px;
+          position: relative;
+        }
+      }
+    }
+  }
+  .event_item_info_icon {
+    justify-content: flex-start !important;
+    padding-left: 0;
+    padding-top: 20px;
+    font-weight: 500;
+    span {
+      text-decoration: underline;
+    }
+  }
+}
+:global(html:not(#INDdummy) body:not(#INDdummy).INDwhiteblack>:not(#INDWrap) *:not(img):not(video)) {
+  .event_item {
+    &:hover {
+      .event_date_card {
+        &>* {
+          color: $white-color;
+        }
+      }
+    }
+  }
+}
+:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)),
+:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)) {
+  .event_date_card {
+    * {
+      background-color: transparent !important;
+    }
+  }
+}

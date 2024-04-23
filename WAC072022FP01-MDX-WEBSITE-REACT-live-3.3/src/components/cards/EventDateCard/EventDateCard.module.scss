@@ -1,0 +1,250 @@
+@import "../../../styles/util";
+@import "../../../styles/colors";
+
+@mixin imgwrap($w, $h) {
+  $val: calc(10000 / $w * $h);
+  $val1: floor($val);
+  $val2: calc($val1 / 100);
+  position: relative;
+
+  > * {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    left: 0;
+  }
+
+  &:before {
+    content: "";
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-bottom: ($val2 * 1%);
+    pointer-events: none;
+    background-color: $light-color;
+  }
+}
+
+.event_item {
+  padding-top: 0px;
+  cursor: pointer;
+
+  @include min(992) {
+    // padding: size(18) 0 size(23);
+  }
+
+  &_image {
+    width: 100%;
+    position: relative;
+    @include imgwrap(586, 294);
+
+    img {
+      transition: 0.4s all ease;
+      transform: scale(1);
+    }
+  }
+
+  &_place,
+  &_date {
+    font-weight: 500;
+    font-size: size(16);
+    opacity: 0.6;
+    line-height: 1;
+    margin-top: 21px;
+    margin-bottom: 11px;
+
+    svg {margin-top:0px;
+      @include min(768) {
+        margin-top: -2px;
+      }
+    }
+  }
+  &_place {
+    display: flex;
+    flex-wrap: wrap;
+    svg {
+      flex-basis: 16px;
+      max-width: 16px;
+    }
+    span {
+      flex-basis: calc(100% - 16px);
+      max-width: calc(100% - 16px);
+      padding-left: 5px;
+      display: block;
+    }
+  }
+
+  &_title {
+    @include lineClamp(1);
+    font-weight: 500;
+    font-size: 20px;
+
+    @include min(992) {
+      font-size: size(20);
+    }
+  }
+
+  &_description {
+    @include lineClamp(2);
+    font-size: size(16);
+    line-height: size(24);
+    margin-bottom: 0;
+    font-weight: 500;
+    p {
+      text-align: left !important;
+    }
+
+    @include min(768) {
+      font-size: size(17);
+      line-height: size(26);
+    }
+
+    @include min(992) {
+      font-size: size(22);
+      line-height: size(30);
+    }
+  }
+
+  &:hover {
+    .event_item_image {
+      img {
+        transform: scale(1.03);
+      }
+    }
+
+    .event_item_info {
+      &_arrow_icon {
+        svg {
+          transform: rotate(45deg);
+          color: $red-color;
+        }
+      }
+    }
+  }
+}
+
+.tab_content_wrap {
+  display: flex;
+  margin: 30px 0;
+
+  .event_item {
+    // max-width: 586px;
+    width: 100%;
+    margin-left: auto;
+  }
+}
+
+.event_item_info {
+  display: flex;
+  padding-top: 15px;
+    &_dis {
+        width: 100%;
+        flex-basis: calc(100% - 25px);
+        max-width: calc(100% - 25px);
+    }
+
+  svg {
+    width: 100%;
+    max-width: 36px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+}
+
+.event_item_info_icon {
+    padding-left: 10px;
+    flex-basis: 25px;
+    max-width: 25px;
+}
+
+.event_date_card {
+  display: flex;
+  background-color: $primary-color;
+
+  left: 0;
+  bottom: 0;
+
+  margin-top: auto;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  flex-direction: column;
+  justify-content: center;
+
+  @include min(1200) {
+    max-height: 118px;
+    width: 100px;
+
+    .event_card_date {
+      font-size: size(60);
+      line-height: 100%;
+    }
+
+    .event_card_month {
+      font-size: size(16);
+      font-weight: size(19);
+    }
+  }
+
+  @include min-max(576, 1199.9) {
+    max-height: 100px;
+    width: 85px;
+
+    .event_card_date {
+      font-size: 45px;
+      line-height: 100%;
+    }
+
+    .event_card_month {
+      font-size: 15px;
+      font-weight: 17px;
+    }
+  }
+
+  @include max(575.9) {
+    max-height: 84px;
+    width: 70px;
+
+    .event_card_date {
+      font-size: 34px;
+      line-height: 100%;
+    }
+
+    .event_card_month {
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+}
+
+.event_item_info_tags {
+  width: 100%;
+  margin: 12px 0;
+
+  .event_item_info_tag {
+    background-color: $card-grey;
+    font-size: 15px;
+    font-weight: 700;
+    display: inline-block;
+    padding: 5px 14px;
+    text-transform: uppercase;
+
+    @include min(1200) {
+      font-size: 16px;
+    }
+
+    @include max(575.9) {
+      font-size: 14px;
+    }
+  }
+}
+
+@include max(991.9) {
+  .event_item_info_dis {
+    p {
+      font-size: 16px;
+    }
+  }
+}

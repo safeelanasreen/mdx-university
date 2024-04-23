@@ -1,0 +1,33 @@
+@import "../../styles/util";
+.section {
+    --section-padding-y: #{size(60)};
+    --section-padding-x: 0;
+    padding: var(--section-padding-y) var(--section-padding-x);
+    background-color: var(--background-color);
+    @include min(1200) {
+      --section-padding-y: #{size(95)};
+    }
+}
+.benefits {
+  &_title {
+    font-size: size(21.3);
+    // font-family: $secondary-font;
+    margin-top: size(10);
+
+    color: #808080;
+    @include min(992) {
+        max-width: 245px;
+    }
+  }
+  &_row {
+    --bs-gutter-y: #{size(30)};
+  }
+  &_stack {
+    .row {
+      --bs-gutter-y: #{size(27)};
+      @include min(992) {
+        --bs-gutter-y: #{size(54)};
+      }
+    }
+  }
+}

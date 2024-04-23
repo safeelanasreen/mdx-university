@@ -1,0 +1,222 @@
+@import "../../styles/util";
+
+.students_receive_skills {
+  padding: 40px 0;
+  @include min(992) {
+    padding: size(76) 0;
+  }
+  .entry_requirements_swiper {
+    container-type: inline-size;
+    container-name: swiperWarpper;
+    --swiper-item-width: 100%;
+    --swiper-item-gap: 0px;
+    --nav-button-size: 70px;
+    @include min(768) {
+      --swiper-item-width: 50%;
+      --swiper-item-gap: 15px;
+    }
+    @include min(992) {
+      --swiper-item-width: 33.33%;
+      --swiper-item-gap: 15px;
+    }
+    @include min(1200) {
+      --swiper-item-width: 25%;
+      --swiper-item-gap: 15px;
+    }
+    @include min(1600) {
+      --swiper-item-width: 25%;
+      --swiper-item-gap: 15px;
+    }
+    .slide_item {
+      height: auto;
+      max-width: calc(var(--swiper-item-width) - var(--swiper-item-gap));
+      > div {
+        transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        will-change: color, background-color;
+        background-color: $card-grey !important;
+        color: $black-color;
+        &:hover {
+          @include min(1200) {
+            background-color: #1e2053 !important;
+            color: white !important;
+            * {
+              color: white !important;
+            }
+            figure {
+              -webkit-filter: brightness(11);
+              filter: brightness(100);
+            }
+          }
+        }
+      }
+    }
+    // :global(.swiper-slide.swiper-slide-active){
+    //     >div{
+    //         background-color: #1E2053!important;
+    //         color: white;
+    //     }
+
+    // }
+
+    @include min(1200) {
+      margin-top: size(76);
+    }
+    @include min(992) {
+      margin-top: 60px;
+    }
+    @include min(768) {
+      margin-top: 50px;
+    }
+    @include min(576) {
+      margin-top: 30px;
+    }
+  }
+}
+
+.font_bold {
+  font-weight: 700;
+  color: $black-color;
+}
+.entry_nav {
+  position: absolute;
+  width: 100%;
+  pointer-events: none;
+  top: 0;
+  z-index: 100;
+  bottom: 0;
+  margin: auto;
+  height: var(--nav-button-size);
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent !important;
+  &_prev,
+  &_next {
+    pointer-events: all;
+    cursor: pointer;
+    background-color: $white-color;
+    width: var(--nav-button-size);
+    height: var(--nav-button-size);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.14);
+    margin: 3px;
+    svg {
+      max-width: 43%;
+      max-height: 43%;
+    }
+  }
+  :global(.swiper-button-disabled) {
+    opacity: 0;
+    pointer-events: none;
+  }
+  @include max(768) {
+    display: none;
+  }
+}
+.slider_scrollbar {
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 3px;
+  margin-top: 30px;
+  @include min(767.9) {
+    display: none;
+  }
+}
+
+@include max(575.9) {
+  .students_skils_title {
+    font-size: 28px;
+  }
+}
+@container swiperWarpper (min-width: 700px) {
+  .entry_nav {
+    --nav-button-size: 40px;
+  }
+  .slide_item {
+    --swiper-item-width: 50%;
+    --swiper-item-gap: 15px;
+  }
+}
+@container swiperWarpper (min-width: 960px) {
+  .entry_nav {
+    --nav-button-size: 50px;
+  }
+  .slide_item {
+    --swiper-item-width: 50%;
+    --swiper-item-gap: 15px;
+  }
+}
+@container swiperWarpper (min-width: 1000px) {
+  .entry_nav {
+    --nav-button-size: 55px;
+  }
+  .slide_item {
+    --swiper-item-width: 33.3333%;
+    --swiper-item-gap: 15px;
+  }
+}
+@container swiperWarpper (min-width: 1366px) {
+  .entry_nav {
+    --nav-button-size: 70px;
+  }
+  .slide_item {
+    --swiper-item-width: 25%;
+    --swiper-item-gap: 15px;
+  }
+}
+
+@container swiperWarpper (max-width: 699.98px) {
+  .slide_item {
+    --swiper-item-width: 50%;
+    --swiper-item-gap: 15px;
+  }
+}
+@container swiperWarpper (max-width: 599.98px) {
+  .slide_item {
+    --swiper-item-width: 100%;
+    --swiper-item-gap: 15px;
+  }
+}
+:global(html:not(#INDdummy) body:not(#INDdummy).INDblackwhite),
+:global(html:not(#INDdummy) body:not(#INDdummy).INDblackwhite > :not(#INDWrap)),
+:global(
+    html:not(#INDdummy)
+      body:not(#INDdummy).INDblackwhite
+      > :not(#INDWrap)
+      *:not(img):not(video)
+  ) {
+  .students_receive_skills {
+    .entry_requirements_swiper {
+      .slide_item {
+        & > div {
+          background-color: $mud-black-color !important;
+          &:hover {
+            background-color: #1e2053 !important;
+          }
+        }
+      }
+    }
+  }
+}
+:global(
+    html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors > :not(#INDWrap)
+  ),
+:global(
+    html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors > :not(#INDWrap)
+  ) {
+  .entry_nav {
+    background-color: transparent !important;
+  }
+  .students_receive_skills {
+    .entry_requirements_swiper {
+      .slide_item {
+        & > div {
+          * {
+            background-color: transparent !important;
+          }
+        }
+      }
+    }
+  }
+}

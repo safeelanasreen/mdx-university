@@ -1,0 +1,118 @@
+@import "../../../styles/util";
+@import "../../../styles/colors";
+
+@mixin imgwrap($w, $h) {
+  $val: calc(10000 / $w * $h);
+  $val1: floor($val);
+  $val2: calc($val1 / 100);
+  position: relative;
+  > * {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    left: 0;
+  }
+  &:before {
+    content: "";
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-bottom: ($val2 * 1%);
+    pointer-events: none;
+  }
+}
+
+.event_item {
+  padding-top: 0px;
+
+  @include min(992) {
+    // padding: size(18) 0 size(23);
+  }
+
+  &_image {
+    width: 100%;
+    position: relative;
+    @include imgwrap(586, 294);
+    &:before {
+      background-color: $grey-color;
+    }
+  }
+
+  &_date {
+    font-weight: 400;
+    font-size: size(16);
+    opacity: 0.6;
+    line-height: 1;
+    margin-top: 11px;
+    margin-bottom: 11px;
+  }
+
+  &_title {
+    @include lineClamp(1);
+    font-weight: 500;
+    font-size: 20px;
+
+    @include min(992) {
+      font-size: size(20);
+    }
+  }
+
+  &_description {
+    // @include lineClamp(3);
+    font-size: size(16);
+    margin-bottom: 0;
+
+    @include min(992) {
+      font-size: size(17);
+      line-height: size(27);
+    }
+  }
+  &:hover {
+    .event_item_info {
+      svg {
+        transform: rotate(45deg);
+        color: $red-color;
+      }
+    }
+  }
+}
+
+.tab_content_wrap {
+  display: flex;
+  cursor: pointer;
+  .event_item {
+    max-width: 586px;
+    width: 100%;
+    margin-left: auto;
+  }
+}
+
+.event_item_info {
+  display: flex;
+  margin-top: 40px;
+  &_dis {
+    width: 100%;
+    p {
+      a {
+        display: inline-block;
+      }
+    }
+  }
+  svg {
+    width: 100%;
+    max-width: 36px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+  h2 {
+    font-size: size(25);
+    font-weight: bold;
+  }
+}
+.event_item {
+  &_info_icon {
+    padding-left: 10px;
+  }
+}

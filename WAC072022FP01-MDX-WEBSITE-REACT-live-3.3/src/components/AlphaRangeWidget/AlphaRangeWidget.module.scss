@@ -1,0 +1,27 @@
+@import "../../styles/util";
+.section {
+    padding-top: 80px;
+    overflow: visible;
+    &_head {
+        position: sticky;
+        top: calc(var(--mdx-header-height) - 1px);
+        background-color: $white-color;
+        z-index: 1;
+        --head-padding-x: 0;
+        --head-padding-y: 15px;
+        padding: var(--head-padding-y) var(--head-padding-x);
+        transition: padding cubic-bezier(0.075, 0.82, 0.165, 1) .2s;
+        @include min(992) {
+            --head-padding-y: 15px;
+        }
+        @include min(1200) {
+            --head-padding-y: 15px;
+        }
+        &_fixed {
+            box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.04);
+        }
+    }
+    &_body {
+        overflow: hidden;
+    }
+}

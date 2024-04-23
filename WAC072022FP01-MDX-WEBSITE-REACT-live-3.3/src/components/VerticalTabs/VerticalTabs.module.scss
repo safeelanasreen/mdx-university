@@ -1,0 +1,60 @@
+@import '../../styles/util';
+
+.pr_30{
+    padding-right: size(30);
+}
+.vertical_nav{
+    position: sticky;
+    top: 220px;
+    @include min(1600) {
+        top: 250px;
+    }
+    :global(.nav-item .nav-link){
+        position: relative;
+        border-bottom: 1px solid #D9D9D9;
+        border-radius: 0;
+        padding: 40px 0;
+        font-size: size(22);
+        color: $black-color;
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        cursor: pointer;
+        >svg{
+            margin-left: auto;
+        }
+        
+        &:before{
+            content: "";
+            width: 0%;
+            background-color: $red-color;
+            height: 1px;
+            display: block;
+            position: absolute;
+            bottom: -1px;
+            transition: width 0.3s ease-in-out;
+        }
+
+    }
+    :global(.nav-item .nav-link.active){
+        color: $red-color;
+        background-color: transparent;
+        &:before{
+            width: 100%;
+        }
+    }
+    // :global(.nav-item:nth-last-child(1) .nav-link){
+    //     border-bottom: 1px solid transparent;
+    // }
+    // :global(.nav-item:nth-last-child(1) .nav-link.active){
+    //     border-bottom: 1px solid #D9D9D9;
+    //     transition: border 0.1s ease-in;
+    // }
+}
+.nav_link {
+    &_text {
+        max-width: calc(100% - 68px);
+        padding-right: 5px;
+    }
+}

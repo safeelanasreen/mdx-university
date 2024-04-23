@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="90" height="90" viewBox="0 0 90 90">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_36574" data-name="Rectangle 36574" width="90" height="90" transform="translate(157 2002)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="Rectangle_36439" data-name="Rectangle 36439" width="83" height="90" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="work-space" transform="translate(-157 -2002)" clip-path="url(#clip-path)">
+    <g id="Mask_Group_25822" data-name="Mask Group 25822" transform="translate(161 2002)" clip-path="url(#clip-path-2)">
+      <g id="Group_125840" data-name="Group 125840" transform="translate(2.895 3.088)">
+        <path id="Line_6442" data-name="Line 6442" d="M2.646,66.848H-1.5V0H2.646Z" transform="translate(1.5 17.212)" fill="#fff"/>
+        <path id="Path_84848" data-name="Path 84848" d="M-554.585-655.631h-4.146V-683.41h-25.936v-4.423h30.082Z" transform="translate(586.74 739.692)" fill="#fff"/>
+        <path id="Line_6443" data-name="Line 6443" d="M41.388,2.923H0V-1.5H41.388Z" transform="translate(37.016 42.804)" fill="#fff"/>
+        <path id="Line_6444" data-name="Line 6444" d="M2.646,40.857H-1.5V0H2.646Z" transform="translate(72.142 43.204)" fill="#fff"/>
+        <path id="Line_6445" data-name="Line 6445" d="M2.646,40.857H-1.5V0H2.646Z" transform="translate(43.761 43.204)" fill="#fff"/>
+        <path id="Line_6446" data-name="Line 6446" d="M2.646,33.409H-1.5V0H2.646Z" transform="translate(47.107 0)" fill="#fff"/>
+        <path id="Path_84849" data-name="Path 84849" d="M-450.459-756.042c0-.106-.264-10.69-6.291-16.554-3.026-2.945-7.083-4.243-12.059-3.86l-.3-4.412c6.166-.475,11.271,1.215,15.174,5.024,7.345,7.17,7.614,19.216,7.621,19.725Z" transform="translate(517.878 797.45)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

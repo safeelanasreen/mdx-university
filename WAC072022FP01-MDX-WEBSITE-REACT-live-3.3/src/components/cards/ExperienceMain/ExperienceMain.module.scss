@@ -1,0 +1,80 @@
+@import '../../../styles/util';
+.experience_grid {
+    &_main {
+      position: relative;
+      padding: 60px 16px 40px;
+      display: flex;
+      flex-direction: column;
+      min-height: 392px;
+      grid-area: main;
+      width: 100%;
+      height: 100%;
+      @include min(992) {
+        padding: size(60) size(51);
+        min-height: 1px;
+      }
+      * {
+        background-color: transparent !important;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        height: 100%;
+        background: linear-gradient(rgba(17, 33, 56, 0.01) 0%, #000 100%);
+      }
+    }
+  
+    &_item {
+      * {
+        background-color: transparent !important;
+      }
+    }
+  
+    &_content {
+      z-index: 2;
+      position: relative;
+  
+      @include min(1200) {
+        padding-bottom: size(26);
+      }
+      &_navlinks {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 1;
+        margin-bottom: 0;
+        padding-top: size(15);
+        margin-top: auto;
+        // @include max(767.98) {
+        //   justify-content: space-between;
+        // }
+        li {
+          margin-right: size(49);
+          font-size: size(20);
+          font-weight: bold;
+          text-transform: uppercase;
+          @include max(767.98) {
+            margin-right: 30px;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+          a {
+            text-decoration: none;
+            color: $white-color;
+            &:hover {
+              @include min(1200) {
+                color: $primary-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }

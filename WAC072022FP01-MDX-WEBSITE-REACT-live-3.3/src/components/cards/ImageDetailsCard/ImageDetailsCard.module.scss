@@ -1,0 +1,63 @@
+@import "../../../styles/util";
+@import "../../../styles/colors";
+
+.faculty_item {
+    cursor: pointer;
+    @include min(1200) {
+        filter: grayscale(1);
+        &:hover {
+            filter: grayscale(0);
+        }
+    }
+    .arrow {
+        transform: rotate(0deg);
+        transition: transform ease-in .3s;
+        color: $primary-color;
+    }
+    @include min(1200) {
+        &:hover {
+            .arrow{transform: rotate(45deg);color: $primary-color;}
+        }
+    }
+    &_img {
+        .img_wrap {
+            position: relative;
+            background-color: $grey-color;
+            padding-top: calc((324/439)*100%);
+
+            @include min(992) {
+
+                padding-top: calc((324/439)*100%);
+
+            }
+        }
+    }
+
+    &_info {
+        padding: 20px 14px 20px 0px;
+
+        h5 {
+            font-weight: bold;
+            line-height: 1;
+            max-width: calc(100% - 20px);
+            font-size: 17px;
+            margin-bottom: 15px;
+            text-transform: capitalize;
+            @include min(992) {
+                font-size: size(22);
+
+            }
+
+        }
+
+        p {
+            margin-bottom: 0;
+            font-size: 14px;
+            @include min(992) {
+                font-size: 16px;
+                line-height: 23px;
+
+            }
+        }
+    }
+}

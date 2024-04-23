@@ -1,0 +1,76 @@
+@import "../../styles/util";
+
+.mdx_course_intro {
+  &_title {
+    font-size: size(30);
+    font-weight: 800;
+    // font-family: $secondary-font;
+    color: white;
+    margin-top: auto;
+    text-transform: uppercase;
+    font-family: $primary-font;
+    @include min-max(1200, 1299.9) {
+      font-size: size(22);
+    }
+    @include max(575.9) {
+      font-size: 25px;
+    }
+    @include max(379.9) {
+      font-size: 22px;
+    }
+  }
+
+  &_contact_form {
+    &_wrap {
+      position: relative;
+      // padding-left: 15px;
+      // padding-right: 15px;
+      width: 100%;
+      &.bg_red{
+        background-color: #e30a0a;
+        padding: 45px;
+        @include min(1200) {
+          border-radius: 30px;
+        }
+        @include max(575.9) {
+          padding: 40px 15px;
+        }
+      }
+
+      
+      
+
+      button {
+        color: #000000;
+        border-radius: 30px;
+        border: none;
+        padding: 13px 34px;
+        font-size: size(20);
+        font-weight: 500;
+        margin-top: 26px;
+      }
+
+      button {
+        transition: background-color 0.3s ease-in-out;
+        will-change: background-color;
+        color: white;
+        // &:hover {
+        //   background-color: rgba(255, 255, 255, 0.75);
+        // }
+      }
+    }
+  }
+}
+
+.mdx_course_intro_main_row{
+  @include min(992){
+    >div{
+      &:nth-child(odd){
+        padding-right: 42px;
+      }
+      &:nth-child(even){
+        padding-left: 42px;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="90" height="90" viewBox="0 0 90 90">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_36613" data-name="Rectangle 36613" width="90" height="90" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="Rectangle_37079" data-name="Rectangle 37079" width="87.974" height="78.185" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="psychology" clip-path="url(#clip-path)">
+    <g id="Group_127329" data-name="Group 127329" transform="translate(1 5.001)">
+      <g id="Group_127328" data-name="Group 127328" transform="translate(0 1)" clip-path="url(#clip-path-2)">
+        <path id="Path_108090" data-name="Path 108090" d="M74.734,5.969A13.22,13.22,0,0,0,62.915,25.15l-6.281,3.829A18.322,18.322,0,0,0,33,23.75l-4.367-7.073a9.335,9.335,0,1,0-3.106,1.483l4.639,7.512a18.306,18.306,0,0,0-4.9,22l-4.869,2.968a11.509,11.509,0,1,0,1.693,2.976l4.923-3a18.3,18.3,0,0,0,22.265,6l4.048,6.555A8.775,8.775,0,1,0,56.2,61.325l-3.939-6.38a18.3,18.3,0,0,0,6.129-23.033l6.446-3.928A13.234,13.234,0,1,0,74.734,5.969M11.428,66.119a8.409,8.409,0,1,1,8.409-8.409,8.409,8.409,0,0,1-8.409,8.409m5.6-56.882a6.15,6.15,0,1,1,6.149,6.149,6.149,6.149,0,0,1-6.149-6.149" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

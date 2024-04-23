@@ -1,0 +1,40 @@
+@import "../../styles/util";
+
+.item {
+    &_cover {
+        .img_wrap {
+            padding-top: calc((217/375)*100%);
+            position: relative;
+            background-color: $grey-color;
+
+            @include min(992) {
+                padding-top: calc((330/1471)*100%);
+            }
+        }
+    }
+
+    &_content {
+        background-color: $secondary-color;
+        color: $white-color;
+
+        padding: 40px 15px;
+        @include min(992) {
+            padding: size(60);
+        }
+
+       
+    }
+}
+
+.mdx_teaching_sec {
+    padding: 40px 0;
+
+    @include min(992) {
+        padding: size(80) 0;
+    }
+    .container {
+        @include max(767.98) {
+            padding-left: 0;padding-right: 0;
+        }
+    }
+ }

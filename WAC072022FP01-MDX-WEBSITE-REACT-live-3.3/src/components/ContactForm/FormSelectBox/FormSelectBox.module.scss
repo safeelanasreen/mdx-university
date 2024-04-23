@@ -1,0 +1,58 @@
+@import '../../../styles/util';
+
+.form_select{
+    
+    --input-color: white;
+    select{
+        font-size: size(16);
+        color: var(--input-color);
+        border-radius: 0px;
+        padding-left: 0px!important;
+        padding-right: 0px!important;
+        background-color: transparent;
+        background-size: 12px;
+        background-position: right 3px center;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='10.75' height='6.892' viewBox='0 0 10.75 6.892'%3e%3cg id='Group_125218' data-name='Group 125218' transform='translate(10.164 0.473) rotate(90)'%3e%3cpath id='Path_43174' data-name='Path 43174' d='M0,0,5.947,4.76,0,9.582' transform='translate(0 0)' fill='none' stroke='%23fff' stroke-linejoin='bevel' stroke-width='1.5'/%3e%3c/g%3e%3c/svg%3e ");
+        &:focus{
+            box-shadow: none;
+        }
+        option{
+            color: #1C1C1C;
+            padding-left: 0px!important;
+        }      
+        &:focus{
+            color: var(--input-color);
+        }
+        &,
+        &:hover,
+        &:focus{
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid var(--input-color);
+        }
+        &:-webkit-autofill,
+        &:-internal-autofill-selected {
+            background-color: transparent!important;
+            transition: background-color  10s ease-in 10000s, color  10s ease-in 10000s;
+        }
+    }
+
+
+
+    label{
+        padding-left: 0px!important;
+        color: var(--input-color);
+    }
+    :global(.form-control:focus ~ label),
+    :global(.form-control:not(:placeholder-shown) ~ label),
+    :global(.form-select ~ label),
+    :global(.form-control:-webkit-autofill ~ label){
+        font-size: size(14);
+        transform: scale(1) translateY(-0.9rem) translateX(0rem);
+        opacity: 0.4;
+    }
+
+    
+}
+
+

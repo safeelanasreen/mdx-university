@@ -1,0 +1,200 @@
+@import '../../../styles/util';
+
+:global(.swiper-slide) {
+    @include min(992) {
+        &:global(.swiper-slide-visible) {
+            &:global(.swiper-slide-active) {
+                .review_card {
+                    background-color: $white-color;
+                }
+            }
+        }
+    }
+}
+
+.review_card {
+    width: 820px;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: $white-color;
+    height: 100%;
+    @include min(992) {
+        background-color: #D1D1D0;
+    }
+    cursor: pointer;
+    &+.review_card {
+        margin-top: 20px;
+    }
+    @include min(768) {
+        padding: 30px;
+    }
+    @include min(992) {
+        padding: 40px;
+    }
+    &_img, &_details {
+        flex-basis: 100%;
+        max-width: 100%;
+        width: 100%;
+    }
+    &_img {
+        position: relative;
+        padding-right: size(25);
+        mix-blend-mode: luminosity;
+        @include min(768) {
+            flex-basis: 40%;
+            max-width: 40%;
+        }
+        @include min(992) {
+            flex-basis: 50%;
+            max-width: 50%;
+        }
+        @include max(767.98) {
+            padding-right: 0;
+            flex-basis: 85px;
+            max-width: 85px;
+        }
+        figure {
+            width: 100%;
+            max-width: 290px;
+            position: relative;
+            margin: 0 0 10px !important;
+            &::before {
+                content: '';
+                width: 100%;
+                display: block;
+                padding-bottom: calc((340/290)*100%);
+            }
+        }
+    }
+    &_details {
+        position: relative;
+        @include min(768) {
+            flex-basis: 60%;
+            max-width: 60%;
+        }
+        @include min(992) {
+            flex-basis: 50%;
+            max-width: 50%;
+        }
+        @include max(767.98) {
+            flex-basis: 100%;
+            max-width: 100%;
+            margin-bottom: 40px;
+        }
+        &_cnt, &_cnt p {
+            font-size: 14px;
+            color: $black-color;
+            @include min(768) {
+                font-size: size(16);
+            }
+        }
+        &_cnt {
+            // max-height: 200px;
+            overflow: visible;
+            line-height: 1.7;
+            padding: size(20) size(50);
+            position: relative;
+            @include max(767.98) {
+                padding: size(7) size(40) size(0);
+                padding-right: size(7);
+            }
+            &>div {
+                /* display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;  
+                overflow: hidden;
+                @include min(768) {
+                    -webkit-line-clamp: 5;
+                } */
+            }
+            &::before, &::after {
+                content: '';
+                display: block;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='39.645' height='29.587' viewBox='0 0 39.645 29.587'%3E%3Cpath id='Path_108191' data-name='Path 108191' d='M10.952 15.829a8.841 8.841 0 0 0-1.285.128 7.08 7.08 0 0 1 .5-1.344 8.326 8.326 0 0 1 .927-1.668 9.847 9.847 0 0 1 1.188-1.457A13.436 13.436 0 0 1 13.651 10.3a8.4 8.4 0 0 1 1.411-.915 7.5 7.5 0 0 1 1.285-.692l1.065-.439.937-.389-.959-3.83-1.18.285c-.377.095-.838.206-1.362.338a10.721 10.721 0 0 0-1.743.617 12.274 12.274 0 0 0-2.032.921A18.56 18.56 0 0 0 8.918 7.558 15.368 15.368 0 0 0 6.843 9.426a13.855 13.855 0 0 0-1.8 2.3 16.053 16.053 0 0 0-1.387 2.567 21.893 21.893 0 0 0-.925 2.64 23.857 23.857 0 0 0-.759 4.816A24.618 24.618 0 0 0 2.03 25.2c.03.4.085.795.125 1.065L2.2 26.6l.051-.012a8.894 8.894 0 1 0 8.7-10.755Zm21.74 0a8.841 8.841 0 0 0-1.285.128 7.081 7.081 0 0 1 .5-1.344 8.326 8.326 0 0 1 .927-1.668 9.847 9.847 0 0 1 1.188-1.457A13.436 13.436 0 0 1 35.391 10.3 8.4 8.4 0 0 1 36.8 9.38a7.5 7.5 0 0 1 1.285-.692l1.065-.439.937-.389-.959-3.83-1.18.285c-.377.095-.838.206-1.362.338a10.721 10.721 0 0 0-1.743.617 12.365 12.365 0 0 0-2.032.923A18.561 18.561 0 0 0 30.658 7.56a15.485 15.485 0 0 0-2.075 1.866 13.855 13.855 0 0 0-1.8 2.3A16.052 16.052 0 0 0 25.4 14.289a21.892 21.892 0 0 0-.925 2.64 23.857 23.857 0 0 0-.759 4.816A24.619 24.619 0 0 0 23.77 25.2c.03.4.085.795.125 1.065l.049.332L24 26.584a8.894 8.894 0 1 0 8.7-10.755Z' transform='translate(-1.941 -4.03)' opacity='0.1'/%3E%3C/svg%3E");
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                position: absolute;
+                pointer-events: none;
+                width: size(20);
+                height: size(20);
+                @include min(768) {
+                    width: size(25);
+                    height: size(25);
+                }
+                @include min(992) {
+                    width: size(30);
+                    height: size(30);
+                }
+                @include min(1200) {
+                    width: size(40);
+                    height: size(40);
+                }
+            }
+            &::before {
+                left: 0;
+                top: 0;
+                @include min(768) {
+                    left: 0;
+                }
+            }
+            &::after {
+                bottom: -20px;
+                right: 0;
+                transform: rotateY(180deg);
+                @include min(768) {
+                    right: 0;
+                }
+            }
+        }
+        &_name_desig {
+            margin-top: size(10);
+            line-height: 1.2;
+            @include max(767.98) {
+                margin-top: 0;
+                padding-right: size(7);
+                flex-basis: 100%;
+                max-width: 100%;
+                width: 100%;
+            }
+            @include min(768) {
+                margin-top: size(20);
+                line-height: 1.5;
+                padding: 0 size(50);
+            }
+            .name {
+                font-size: 16px;
+                font-weight: bold;
+                color: $primary-color;
+                @include min(576) {
+                    font-size: size(16);
+                }
+                @include min(768) {
+                    font-size: size(22);
+                }
+            }
+            .designation {
+                font-weight: bold;
+                color: $black-color;
+                font-size: 16px;
+                @include min(576) {
+                    font-size: size(16);
+                }
+                @include min(768) {
+                    font-size: size(22);
+                }
+            }
+        }
+    }
+    &:hover {
+        .review_card {
+            &_img {
+                mix-blend-mode: normal;
+            }
+        }
+    }
+}

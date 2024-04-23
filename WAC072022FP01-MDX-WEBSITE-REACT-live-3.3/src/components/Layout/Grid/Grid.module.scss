@@ -1,0 +1,51 @@
+@import '../../../styles/util';
+.grid {
+    padding: 40px 0;
+    background-color: var(--background-color);
+    @include min(992) {
+        padding: size(50) 0;
+    }
+    @include min(1200) {
+        padding: size(75) 0;
+    }
+    @include min(1400) {
+        padding: size(90) 0;
+    }
+    :global{
+        .row {
+            --bs-gutter-y: var(--bs-gutter-x);
+        }
+        .title, .title_sub {
+            color: var(--text-color);
+        }
+    }
+    &_column {
+        height: 100%;
+        margin-top: calc(-1 * var(--bs-gutter-y));
+        &>* {
+            margin-top: var(--bs-gutter-y);
+        }
+        &>:global(.news_cards) {
+                padding: 0;
+        }
+        :global(.event_item) {
+            position: relative;
+            margin-left: 0;
+            max-width: 100%;
+            &::before {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 2px;
+                position: absolute;
+                top: -2px;
+                background-color: var(--text-color);
+            }
+            &:hover {
+                svg {
+                    color: var(--text-color);
+                }
+            }
+        }
+    }
+}

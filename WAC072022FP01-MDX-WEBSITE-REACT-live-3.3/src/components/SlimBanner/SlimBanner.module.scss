@@ -1,0 +1,181 @@
+@import "../../styles/util";
+.mdx_slim_banner {
+  position: relative;
+  min-height: 323px;
+  padding: size(30) 0 size(30);
+  display: flex;
+  align-items: flex-end;
+  @include min(768) {
+    padding: size(50) 0 size(50);
+  }
+  @include min(1200) {
+    // align-items: center;
+    // min-height: 423px;
+    min-height: 500px;
+    padding: size(117) 0 size(61) 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.06) 0%,
+      rgba(0, 0, 0, 0.76) 100%
+    );
+    opacity: 0.86;
+    z-index: 1;
+  }
+  &_cover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &_content {
+    position: relative;
+    z-index: 3;
+    text-transform: uppercase;
+    color: $white-color;
+    max-width: 1170px;
+    background-color: transparent !important;
+    * {
+      background-color: transparent !important;
+    }
+
+    :global(.h6) {
+      font-family: $secondary-font;
+    }
+
+    h1 {
+      font-family: $secondary-font;
+      font-weight: 700;
+      @include min(992) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+:global(html:not(#INDdummy) body:not(#INDdummy).INDwhiteblack>:not(#INDWrap)) {
+  .mdx_slim_banner{
+    &_content {
+      * {
+        color: $white-color !important;
+      }
+    }
+  }
+}
+:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)),
+:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)) {
+  .mdx_slim_banner {
+    &_content {
+      background-color: transparent !important;
+      * {
+        background-color: transparent !important;
+      }
+    }
+  }
+}
+.scroll_wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: size(40) 0;
+  
+  background-color: transparent !important;
+
+  * {
+    background-color: transparent !important;
+    .mouse {
+      &_roll {
+        background-color: $white-color !important;
+      }
+      &_rollshadow {
+        background-color: #aaa !important;
+      }
+    }
+  }
+
+  @include min(992) {
+    padding: size(40) 0;
+  }
+
+  p {
+    color: $white-color;
+    font-weight: 400;
+    font-size: 15px;
+    text-transform: none;
+  }
+}
+.mouse {
+  width: 21px;
+  height: 35px;
+  border-radius: 15px;
+  border: 1px solid rgb(255, 255, 255);
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  margin-left: 10px;
+
+  &_roll {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    width: 4px;
+    margin-left: -2px;
+    height: 4px;
+    border-radius: 4px;
+    background: rgb(255, 255, 255);
+    -webkit-animation: mouseScroll 0.8s cubic-bezier(0.7, 0, 0.3, 1) infinite
+      alternate;
+    animation: mouseScroll 0.8s cubic-bezier(0.7, 0, 0.3, 1) infinite alternate;
+    z-index: 2;
+  }
+
+  &_rollshadow {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    width: 4px;
+    margin-left: -2px;
+    height: 4px;
+    background: #aaa;
+    border-radius: 4px;
+    -webkit-animation: mouseScroll 0.8s cubic-bezier(0.7, 0, 0.3, 1) infinite
+      alternate;
+    animation: mouseScroll 0.8s cubic-bezier(0.7, 0, 0.3, 1) infinite alternate;
+    animation-delay: 0s;
+    -webkit-animation-delay: 80ms;
+    animation-delay: 80ms;
+    z-index: 1;
+  }
+}
+
+@-webkit-keyframes mouseScroll {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    -webkit-transform: translateY(14px);
+    transform: translateY(14px);
+  }
+}
+
+@keyframes mouseScroll {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  
+  100% {
+    -webkit-transform: translateY(14px);
+    transform: translateY(14px);
+  }
+}

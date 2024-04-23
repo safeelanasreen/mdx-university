@@ -1,0 +1,19 @@
+@import "../../styles/util";
+@import "../../styles/colors";
+
+.alumni_map {
+    background: $black-color;
+    padding: 80px 0;
+    @include max(767.98) {
+        padding: 40px 0;
+    }
+    &_image {
+        margin-bottom: 45px;
+        text-align: center;
+    }
+    &_contents {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+    }
+}

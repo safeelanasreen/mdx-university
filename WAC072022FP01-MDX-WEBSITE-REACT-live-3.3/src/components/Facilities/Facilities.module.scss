@@ -1,0 +1,115 @@
+@import "../../styles/util";
+@import "../../styles/colors";
+
+.grid_wrap {
+  padding-bottom: 30px;
+}
+
+.mdx_facilities_sec {
+  background-color: $black-color;
+  padding: 40px 0;
+
+  @include min(992) {
+    padding: size(80) 0 5.4rem;
+  }
+
+  .content_wrap {
+    @include min(1200) {
+      // max-width: 740px;
+      margin-left: auto;
+      padding-right: 75px;
+    }
+
+    p {
+      font-size: 17px;
+      letter-spacing: 0.02em;
+      line-height: 1.5;
+      margin-bottom: 40px;
+
+      @include min(992) {
+        font-size: size(17);
+        line-height: size(23);
+        margin-bottom: size(40);
+      }
+    }
+  }
+}
+
+.random_color {
+  @include randomColor(".course_grid_item", ">div>span");
+}
+
+.swiper_slider {
+  @include randomColor(".course_grid_item", ">span");
+}
+
+.fac_wrap_sec {
+  background-color: #000;
+
+  :global {
+    .swiper .swiper-scrollbar {
+      &::before {
+        background: rgba(255, 255, 255, 0.44) !important;
+      }
+    }
+
+    .swiper .swiper-scrollbar-drag {
+      &::before {
+        background: $white-color !important;
+      }
+    }
+  }
+}
+.course_grid_item {
+  :global(.letter) {
+    @include min-max(1200, 1599.98) {
+      font-size: size(110);
+    }
+  }
+  :global(.headings) {
+    @include min-max(1200, 1599.98) {
+      font-size: size(17);
+    }
+  }
+  :global(.btn) {
+    svg {
+      @include min-max(1200, 1599.98) {
+        max-width: 15px;
+        max-height: 15px;
+      }
+    }
+  }
+}
+
+:global(html:not(#INDdummy)
+    body:not(#INDdummy).INDblackwhite
+    > :not(#INDWrap)
+    *:not(img):not(video)) {
+  .random_color {
+    @include randomColor(".course_grid_item", ">div>span");
+  }
+
+  .swiper_slider {
+    @include randomColor(".course_grid_item", ">span");
+  }
+}
+/* High Contrast */
+:global(html:not(#INDdummy)
+    body:not(#INDdummy).INDwhiteblack
+    > :not(#INDWrap)) {
+  .random_color {
+    @include randomColor(".course_grid_item", ">div>span");
+  }
+
+  .swiper_slider {
+    @include randomColor(".course_grid_item", ">span");
+  }
+}
+:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)),
+:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)) {
+  .course_grid {
+    &_item {
+      background-color: transparent !important;
+    }
+  }
+}

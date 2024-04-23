@@ -1,0 +1,11 @@
+@import '../../styles/util';
+
+.row {
+    
+    --bs-gutter-y: 25px;
+
+    @include min(992) {
+        --bs-gutter-x: 33px;
+        --bs-gutter-y: 55px;
+    }
+}

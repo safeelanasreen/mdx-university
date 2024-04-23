@@ -1,0 +1,42 @@
+@import '../../../styles/util';
+.countcard {
+    padding: 10px 10px 10px 0;
+
+    @include min(1200) {
+        padding: size(10) size(10) size(10) 0;
+
+    }
+
+    h5,
+    > p, > div {
+        position: relative;
+        padding-left: 16px;
+    }
+
+    h5 {
+        // font-family: $secondary-font;
+        font-size: 22px;
+        line-height: 1;
+
+        @include min(992) {
+            font-size: size(27);
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: #f00;
+        }
+    }
+
+    > p, > div {
+        font-weight: 500;
+        line-height: 24px;
+        margin-bottom: 0;
+        font-size: size(16);
+    }
+}

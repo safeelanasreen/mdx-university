@@ -1,0 +1,19 @@
+@import "../../styles/util";
+.section {
+  overflow: initial;
+    --section-padding-y: #{size(60)};
+    --section-padding-x: 0;
+    padding: var(--section-padding-y) var(--section-padding-x);
+    background-color: var(--background-color);
+    @include min(1200) {
+      --section-padding-y: #{size(95)};
+    }
+    &_figure {
+        max-width:100% ;
+        --bs-aspect-ratio: calc((496.72/664)*100%);
+        @include min(992) {
+          max-width: 95%;
+          width: 664px;
+        }
+    }
+}

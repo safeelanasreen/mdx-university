@@ -1,0 +1,42 @@
+@import "../../../styles/util";
+.card {
+    --logo-width: 267;
+    --logo-height: 98;
+    --card-padding-y: #{size(25)};
+    --card-padding-x: #{size(25)};
+    --card-border-color: rgba(51,51,51,0.5);
+    --card-border-width: 1px;
+    --card-border-type: solid;
+    padding: var(--card-padding-y) var(--card-padding-x);
+    border-radius: size(10);
+    border: var(--card-border-width) var(--card-border-type) var(--card-border-color);
+    @include min(1200) {
+        --card-padding-y: #{size(32)};
+        --card-padding-x: #{size(32)};
+    }
+    &_fig {
+        max-width: calc(1px * var(--logo-width));
+        --bs-aspect-ratio: calc((var(--logo-height)/var(--logo-width)) * 100%);
+        margin-bottom: size(26);
+        background-color: transparent !important;
+    }
+    &_title {
+        font-size: size(16);
+        // font-family: $secondary-font;
+        margin-bottom: size(31);
+    }
+    &_body {
+        > * {
+            font-size: size(17);
+            line-height: 1.5;
+        }
+    }
+    &_footer {
+        a {
+            text-decoration: none;
+            @include min(1200) {
+                font-size: 16px;
+            }
+        }
+    }
+}

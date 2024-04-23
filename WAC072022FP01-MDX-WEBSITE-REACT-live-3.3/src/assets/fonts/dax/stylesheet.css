@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'Dax';
+    src: url('DaxLight.woff2') format('woff2'),
+        url('DaxLight.woff') format('woff'),
+        url('DaxLight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dax';
+    src: url('DaxBold.woff2') format('woff2'),
+        url('DaxBold.woff') format('woff'),
+        url('DaxBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dax';
+    src: url('DaxMedium.woff2') format('woff2'),
+        url('DaxMedium.woff') format('woff'),
+        url('DaxMedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dax';
+    src: url('Dax.woff2') format('woff2'),
+        url('Dax.woff') format('woff'),
+        url('Dax.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

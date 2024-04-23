@@ -1,0 +1,135 @@
+@import "../../../styles/util";
+.card {
+  background-color: #292152;
+  --icon-space: #{size(28)};
+  --gradient-pos: #{size(-40)};
+  --z-index: 1;
+  --transform: initial;
+  --card-paddin-x: #{size(21)};
+  --card-paddin-y: #{size(21)};
+  &_figure {
+    --bs-aspect-ratio: calc((299.9 / 283.24) * 100%);
+    img {
+      transform: scale(1.02);
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 72%;
+      pointer-events: none;
+
+      background: rgb(41, 33, 82);
+      background: linear-gradient(
+        0deg,
+        rgba(41, 33, 82, 1) 0%,
+        rgba(41, 33, 82, 1) 28%,
+        rgba(41, 33, 82, 0.8) 47%,
+        rgba(41, 33, 82, 0.27) 79%,
+        rgba(41, 33, 82, 0) 95%,
+        rgba(41, 33, 82, 0) 100%
+      );
+      bottom: var(--gradient-pos);
+      z-index: 1;
+      transition: all linear 0.3s;
+    }
+  }
+  &_body {
+    padding: var(--card-paddin-y) var(--card-paddin-x);
+    
+  }
+  &_content {
+    color: $white-color;
+    flex-basis: calc(100% - var(--icon-space));
+    max-width: calc(100% - var(--icon-space));
+    width: 100%;
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &_name {
+    font-size: size(18);
+    font-weight: 700;
+  }
+  .arrow {
+    color: #ff342b;
+    flex-basis: var(--icon-space);
+    max-width: var(--icon-space);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    svg {
+      transform: var(--transform);
+      will-change: transform;
+      transition: transform linear 0.15s;
+      position: absolute;
+      bottom: var(--card-paddin-y);
+      right: var(--card-paddin-x);
+    }
+  }
+  &:hover {
+    @include min(1200) {
+      --transform: translate(3px, -5px) scale(.9);
+      --gradient-pos: #{size(-55)};
+      img {
+        filter: grayscale(1);
+      }
+    }
+  }
+}
+
+/* High Contrast */
+:global(
+    html:not(#INDdummy) body:not(#INDdummy).INDwhiteblack > :not(#INDWrap)
+  ) {
+  .card {
+    background-color: transparent !important;
+    :global {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      *:not(img):not(video):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+        background-color: transparent !important;
+      }
+    }
+  }
+}
+:global(
+    html:not(#INDdummy)
+      body:not(#INDdummy).INDblackwhite
+      > :not(#INDWrap)
+      *:not(img):not(video)
+  ),
+:global(
+    html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors > :not(#INDWrap)
+  ),
+:global(
+    html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors > :not(#INDWrap)
+  ) {
+  .card {
+    background-color: transparent !important;
+    :global {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      *:not(img):not(video):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+        background-color: transparent !important;
+      }
+    }
+    &_figure {
+      &::after {
+        filter: brightness(0);
+      }
+    }
+  }
+}

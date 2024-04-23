@@ -1,0 +1,16 @@
+@import "../../styles/util";
+.section {
+  --section-padding-y: #{size(60)};
+  --section-padding-x: 0;
+  padding: var(--section-padding-y) var(--section-padding-x);
+  background-color: var(--background-color);
+}
+
+.mdx_cardstack {
+    &_swiper {
+        padding-bottom: size(30);
+        &_item {
+          height: auto;
+        }
+    }
+}

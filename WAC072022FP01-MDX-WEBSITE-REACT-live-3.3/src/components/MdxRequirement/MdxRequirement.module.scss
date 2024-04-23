@@ -1,0 +1,15 @@
+@import "../../styles/util";
+.section {
+    background-color: var(--background-color);
+    --section-padding-y: #{size(60)};
+    --section-padding-x: 0;
+    padding: var(--section-padding-y) var(--section-padding-x);
+    &_title {
+        @include min(992) {
+            padding-bottom: size(30);
+        }
+        @include min(1200) {
+            padding-bottom: size(40);
+        }
+    }
+}

@@ -1,0 +1,18 @@
+@import "../../styles/util";
+@import "../../styles/colors";
+
+.insight_link_sec{
+    
+    @include min(992){
+        padding: 80px 0;
+    }
+    @include min-max(768,991.9){
+        padding: 65px 0;
+    }
+    @include min-max(768,991.9){
+        padding: 50px 0; 
+    }
+    @include max(575.9){
+        padding: 35px 0;
+    }
+}

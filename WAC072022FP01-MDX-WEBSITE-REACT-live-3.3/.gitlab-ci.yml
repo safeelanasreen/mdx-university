@@ -1,0 +1,82 @@
+stages:
+  - deploy
+variables:
+  LIVE_BUILD_PATH: "/home/mdxuser/web/source"
+  STAGE_BUILD_PATH: "/home/mdxdev/mdxdemo/source"
+  DEMO_BUILD_PATH: "/home/magdev/mdx-demo/source"
+  SSH_CLONE_URL: "git@gitlab.webandcrafts.com:webandcrafts-lead/WAC072022FP01-MDX-WEBSITE-REACT.git"
+qa-deploy:
+  stage: deploy
+  tags:
+    - reactjs
+  before_script:
+    - mkdir -p ~/.ssh
+    - echo "$SSH_QA_KEY" > ~/.ssh/mdx
+    - ssh-keyscan $SSH_QA_SERVER >> ~/.ssh/known_hosts
+    - chmod 600 ~/.ssh/mdx
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+  script:
+    - apt-get update
+    - apt-get install sshpass -y
+    - ssh -i ~/.ssh/mdx -o "StrictHostKeyChecking no" $SSH_QA_USER@$SSH_QA_SERVER "
+      if [ ! -d $STAGE_BUILD_PATH ]; then
+      git clone $SSH_CLONE_URL $STAGE_BUILD_PATH -b $CI_COMMIT_BRANCH;
+      cd $STAGE_BUILD_PATH;
+      else
+      cd $STAGE_BUILD_PATH;
+      git checkout $CI_COMMIT_BRANCH;
+      git pull;
+      fi && npm install -f && yarn run build && pm2 restart mdx-demo-website"
+  environment:
+    name: QA Enviroment
+  only:
+    - /^staging\/([^\s]+)/
+demo-deploy:
+  stage: deploy
+  tags:
+    - reactjs
+  before_script:
+    - mkdir -p ~/.ssh
+    - echo "$QA_SERVER_PRIVATE_KEY" > ~/.ssh/mdx
+    - ssh-keyscan $QA_SERVER_IP >> ~/.ssh/known_hosts
+    - chmod 600 ~/.ssh/mdx
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+  script:
+    - ssh -i ~/.ssh/mdx -o "StrictHostKeyChecking no" $QA_SERVER_USER@$QA_SERVER_IP "
+      if [ ! -d $DEMO_BUILD_PATH ]; then
+      git clone $SSH_CLONE_URL $DEMO_BUILD_PATH -b $CI_COMMIT_BRANCH;
+      cd $DEMO_BUILD_PATH;
+      else
+      cd $DEMO_BUILD_PATH;
+      git checkout $CI_COMMIT_BRANCH;
+      git pull;
+      fi && npm install --legacy-peer-deps && npm run build"
+  environment:
+    name: Demo Enviroment
+  only:
+    - /^demo\/([^\s]+)/
+live-deploy:
+  stage: deploy
+  tags:
+    - reactjs
+  before_script:
+    - mkdir -p ~/.ssh
+    - echo "$LIVE_SERVER_PRIVATE_KEY" > ~/.ssh/mdx
+    - ssh-keyscan $LIVE_SERVER_IP >> ~/.ssh/known_hosts
+    - chmod 600 ~/.ssh/mdx
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+  script:
+    - ssh -i ~/.ssh/mdx -o "StrictHostKeyChecking no" $LIVE_SERVER_USER@$LIVE_SERVER_IP "
+      if [ ! -d $LIVE_BUILD_PATH ]; then
+      git clone $SSH_CLONE_URL $LIVE_BUILD_PATH -b $CI_COMMIT_BRANCH;
+      cd $LIVE_BUILD_PATH;
+      else
+      cd $LIVE_BUILD_PATH;
+      git checkout $CI_COMMIT_BRANCH;
+      git pull;
+      fi && npm install --legacy-peer-deps && npm run build && pm2 restart mdx-website"
+  environment:
+    name: Live Enviroment
+  only:
+    - /^live\/([^\s]+)/
+

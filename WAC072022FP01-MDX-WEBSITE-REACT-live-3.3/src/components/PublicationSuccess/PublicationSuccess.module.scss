@@ -1,0 +1,321 @@
+@import "../../styles/util";
+.section {
+    padding: 30px 0;
+    @include min(992) {
+        padding: size(85) 0 size(95) 0;
+    }
+    .filter_top {
+        &_ttlwrap {
+            width: 25%;
+            @include min(1600) {
+                width: 40%;
+            }
+        }
+        &_ttl {
+            font-size: 16px;
+            font-weight: 400;
+            @include min(992) {
+                font-size: 20px;
+            }
+        }
+        &_filter {
+            column-gap: 13px;
+            height: 47px;
+            :global {
+                .form-check {
+                    input[type="radio"] {
+                        + label {
+                            &:before {
+                                width: 16px;
+                                height: 16px;
+                                background-color: $primary-color;
+                                border: 1px solid $primary-color;
+                            }
+                            &::after {
+                                width: 10px;
+                                height: 5px;
+                                left: 3px;
+                                top: 9px;
+                                border: 1px solid $white-color;
+                                border-width: 0 0 2px 2px;
+                                transform: scale(0) rotate(-45deg);
+                                background-color: transparent;
+                                border-radius: 0;
+                            }
+                        }
+                        &:checked {
+                            + label {
+                                &::after {
+                                    transform: scale(1) rotate(-45deg);
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &_search {
+            position: relative;
+            @include min(768) {
+                width: 55%;
+            }
+            @include min(1200) {
+                width: fit-content;
+            }
+
+            input {
+                color: var(--black);
+                font-size: 16px;
+                padding: 12px 55px 12px 17px;
+                border: 1px solid var(--black);
+                outline: none !important;
+                height: 48px;
+                width: 100%;
+                border-radius: 0;
+                @include min(992) {
+                    font-size: size(21);
+                }
+                &::placeholder {
+                    color: #AFAFAF;
+                }
+            }
+            .icon_search {
+                position: absolute;
+                right: 17px;
+                top: 9px;
+                width: 40px;
+                height: 30px;
+                background-color: transparent;
+                border: none;
+            }
+        }
+        :global {
+            .dropdown {
+                min-width: 206px;
+            }
+            .btn-filter {
+                font-weight: 400 !important;
+                font-size: 20px;
+                text-align: left;
+                position: relative;
+                width: 100%;
+
+                &::after {
+                    position: absolute;
+                    content: "";
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='10' viewBox='0 0 15 10' fill='none'%3E%3Cpath d='M14.4148 1L7.75079 9.3258L0.999994 1' stroke='black' stroke-width='1.5' stroke-linejoin='bevel'/%3E%3C/svg%3E");
+                    background-repeat: no-repeat;
+                    right: 10px;
+                    width: 18px;
+                    height: 15px;
+                    top: 20px;
+                    border: 0;
+                }
+                &:hover {
+                    border: 1px solid var(--black);
+                }
+            }
+            .dropdown-menu {
+                --bs-dropdown-link-active-bg: transparent;
+                --bs-dropdown-link-active-color: #000;
+                --bs-dropdown-color: #848484;
+                --bs-dropdown-link-color: #848484;
+                --bs-dropdown-item-padding-y: 6px;
+                --bs-dropdown-padding-y: 1rem;
+
+                &.show {
+                    width: 100%;
+                    border-radius: 0;
+                }
+            }
+        }
+        .filter_btn {
+            font-size: 16px;
+            button {
+                border: none;
+                background-color: transparent;
+                color: var(--black);
+                span {
+                    margin: 0 10px;
+                }
+            }
+        }
+    }
+    .filter_left {
+        &_ttl {
+            padding-bottom: 20px;
+            border-bottom: 1px solid #2f255221;
+        }
+        &_content {
+            padding-top: size(53);
+            max-width: 90%;
+            :global {
+                .form-check {
+                    margin-bottom: size(29);
+                    padding-left: size(40);
+                    label {
+                        font-size: 18px;
+                    }
+                    &:hover {
+                        @include min(1200) {
+                            color: var(--primary);
+                        }
+                    }
+                }
+                input[type="checkbox"] {
+                    & + label {
+                        &::before {
+                            border: 1px solid #171717;
+                            background-color: transparent;
+                            width: 25px;
+                            height: 25px;
+                        }
+                        &::after {
+                            width: 12px;
+                            height: 6px;
+                            left: 7px;
+                            top: 11px;
+                        }
+                    }
+                    &:checked {
+                        + label {
+                            &::before {
+                                background-color: $primary-color;
+                                border: 1px solid $primary-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &_footer {
+        padding-top: 30px;
+        @include min(992) {
+            padding-top: size(85);
+        }
+    }
+    .responsive_ttl {
+        padding: 20px 0 10px 0;
+        border-top: 1px solid #2f255221;
+        margin-top: 20px;
+    }
+    .no_result{
+font-size: 20px;
+font-weight: 600;
+margin: 40px 0;
+    }
+}
+
+.filter_modal {
+    --bs-modal-header-border-width: 0;
+    --bs-body-color: #000;
+    --bs-modal-color: #000;
+    --bs-modal-margin: 0;
+    --bs-modal-border-radius: 0;
+
+    :global {
+        .form-check {
+            margin-bottom: 25px;
+            padding-left: 35px;
+            input {
+                + label {
+                    &::before {
+                        width: 25px;
+                        height: 25px;
+                        border-radius: 0;
+                        background-color: transparent;
+                        transition: all 0.2s ease-in-out;
+                        border: 1px solid #000;
+                    }
+                    &::after {
+                        width: 13px;
+                        height: 7px;
+                        left: 5px;
+                        top: 6px;
+                        border: 1px solid $white-color;
+                        border-width: 0 0 2px 2px;
+                        transform: scale(0) rotate(-45deg);
+                        background-color: var(--primary);
+                        border-radius: 0;
+                    }
+                }
+                &:checked {
+                    + label {
+                        &::after {
+                            transform: scale(1) rotate(-45deg);
+                            opacity: 1;
+                        }
+                        &::before {
+                            background-color: var(--primary);
+                            border: 1px solid var(--primary);
+                        }
+                    }
+                }
+            }
+            input[type="checkbox"] {
+                + label {
+                    &::after {
+                        top: 9px;
+                    }
+                }
+            }
+        }
+        .modal-footer {
+            padding: 17px 14px;
+            @include min(576) {
+                padding: 20px 25px;
+            }
+        }
+        .modal-header {
+            padding: 32px 14px 0 14px;
+            @include min(576) {
+                padding: 32px 25px 0 25px;
+            }
+        }
+        .modal-body {
+            padding: 0px 14px;
+            @include min(576) {
+                padding: 0 25px;
+            }
+        }
+        .modal-content {
+            --bs-modal-border-width: 0;
+        }
+        .modal-dialog {
+            @include min(576) {
+                margin: 0;
+                --bs-modal-width: 100%;
+            }
+        }
+        .modal-title {
+            font-size: 16px;
+            font-weight: 400;
+        }
+    }
+    &_ttl {
+        margin-bottom: 25px;
+        font-size: 20px;
+        font-weight: 400;
+        margin-top: 40px;
+    }
+    .clrbtn {
+        border: none;
+        background-color: transparent;
+        font-weight: 500;
+        color: var(--black);
+    }
+    .applybtn {
+        padding: 9px 22px;
+        min-width: 125px;
+        margin: 0;
+    }
+    .closebtn {
+        padding: 0;
+        text-align: end;
+        text-decoration: underline;
+        font-weight: 400 !important;
+        border: none;
+    }
+}

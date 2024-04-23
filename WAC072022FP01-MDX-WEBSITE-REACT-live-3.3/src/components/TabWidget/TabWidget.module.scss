@@ -1,0 +1,210 @@
+@import "../../styles/util";
+
+.events_tabs {
+  padding-bottom: size(80);
+  overflow: visible !important;
+  .sticky_tab {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+
+    top: 73px;
+    background-color: $white-color;
+    z-index: 9;
+    @include min(1200) {
+      top: 84px;
+    }
+    @include min(1400) {
+      top: 95px;
+    }
+    @include min(1600) {
+      top: 114px;
+    }
+  }
+}
+
+.tab_container {
+  padding-top: size(20);
+  @include min(768) {
+    padding-top: size(40);
+  }
+  @include min(1200) {
+    padding-top: size(75);
+    @include max(1199.9) {
+      padding-top: size(65);
+    }
+    @include max(991.9) {
+      padding-top: size(20);
+    }
+    @include max(767.9) {
+      padding-top: size(15);
+    }
+    @include max(557.9) {
+      padding-top: size(10);
+    }
+  }
+  :global(.tab-content) {
+    position: sticky;
+    top: 220px;
+    @include min(1600) {
+      top: 250px;
+    }
+    :global(.fade.tab-pane) {
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      img {
+        transform: scale(1.02);
+        transition: transform 0.8s ease-in-out;
+      }
+      &:global(.show) {
+        opacity: 1;
+        img {
+          transform: scale(1.001);
+        }
+      }
+    }
+  }
+}
+
+.tabs_wrap {
+  border-bottom: none;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: auto;
+  --tab-bg-color: transparent;
+  --tab-bg-active-color: transparent;
+  --tab-text-color: var(--black);
+  --tab-text-active-color: var(--black);
+  --tab-border-color: var(--primary);
+  :global(.nav-item) {
+    width: 100%;
+    border: none;
+    min-width: 33.333%;
+
+    a {
+      background-color: var(--tab-bg-color);
+
+      font-weight: 400 !important;
+      cursor: pointer;
+      width: 100%;
+      line-height: 100%;
+
+      min-height: 114px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      border-radius: 0 !important;
+      color: var(--tab-text-color);
+
+      // font-family: $secondary-font;
+      text-transform: uppercase;
+      font-size: size(17);
+
+      position: relative;
+
+      background-size: 50vw !important;
+      background-repeat: no-repeat !important;
+      position: relative;
+
+      // outline: none !important;
+
+      border-top: 4px solid $card-grey !important;
+      border-bottom: 4px solid $card-grey !important;
+      &:hover {
+        color: $black-color;
+      }
+    }
+    &:nth-of-type(1) {
+      :global(a.nav-link:before) {
+        display: none;
+      }
+    }
+    :global(.nav-link.active) {
+      border-radius: 0;
+      &:before {
+        display: none;
+      }
+      &:hover {
+      }
+    }
+  }
+  :global(.nav-link) {
+    @include min(992) {
+      margin-bottom: size(10);
+      &::before {
+        content: "";
+        display: block !important;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+
+        border-top: 7px solid var(--tab-border-color);
+        position: absolute;
+        bottom: size(-11);
+        opacity: 0;
+        transition: opacity 0.15s ease-in-out;
+      }
+    }
+  }
+  :global(.nav-link.active) {
+    color: var(--tab-text-active-color);
+    border-radius: 0;
+    border-bottom-color: var(--tab-border-color) !important;
+    background-color: var(--tab-bg-active-color);
+    @include min(992) {
+      &::before {
+        display: block !important;
+        opacity: 1;
+      }
+    }
+    &:hover {
+      color: var(--tab-text-active-color);
+    }
+  }
+}
+.tab_btn_wraper {
+  margin-top: size(33);
+}
+
+@keyframes shadowani {
+  0% {
+    background-position: -50vw;
+  }
+  100% {
+    background-position: 0vw;
+  }
+}
+
+@keyframes shadowaniback {
+  0% {
+    background-position: 0vw;
+  }
+  100% {
+    background-position: 50vw;
+  }
+}
+
+.accordion_mob {
+  :global(.accordion-button) {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  :global(.accordion-button) {
+    color: $red-color;
+    text-transform: uppercase;
+  }
+  :global(.accordion-button.collapsed) {
+    color: $black-color;
+  }
+  :global(.accordion-collapse.collapse.show) {
+    box-shadow: inset 0 -1px 0 0px $red-color;
+    border-radius: 0px;
+  }
+}
+.button_wrap {
+  margin-top: size(40);
+  text-align: center;
+}

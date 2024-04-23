@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'Dax';
+    src: url('dax/Dax.woff2') format('woff2'),
+        url('dax/Dax.woff') format('woff'),
+        url('dax/Dax.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dax';
+    src: url('dax/DaxMedium.woff2') format('woff2'),
+        url('dax/DaxMedium.woff') format('woff'),
+        url('dax/DaxMedium.otf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dax';
+    src: url('dax/DaxLight.woff2') format('woff2'),
+        url('dax/DaxLight.woff') format('woff'),
+        url('dax/DaxLight.otf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dax';
+    src: url('dax/DaxBold.woff2') format('woff2'),
+        url('dax/DaxBold.woff') format('woff'),
+        url('dax/DaxBold.otf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+/* 
+@font-face {
+    font-family: 'Dax';
+    src: url('dax/DaxExtraBold.woff2') format('woff2'),
+        url('dax/DaxExtraBold.woff') format('woff'),
+        url('dax/DaxExtraBold.otf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+} */
+
+@font-face {
+    font-family: 'Monument Extended';
+    src: url('monument/MonumentExtended-Ultrabold.woff2') format('woff2'),
+        url('monument/MonumentExtended-Ultrabold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Monument Extended';
+    src: url('monument/MonumentExtended-Ultrabold.woff2') format('woff2'),
+        url('monument/MonumentExtended-Ultrabold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Monument Extended';
+    src: url('monument/MonumentExtended-Regular.woff2') format('woff2'),
+        url('monument/MonumentExtended-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+

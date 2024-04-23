@@ -1,0 +1,127 @@
+@import "../../styles/util";
+.table_tab_widget {
+    padding: 40px 0;
+    @include min(992) {
+        padding: size(80) 0;
+    }
+    &_acc {
+      border: 1px solid $stroke-grey-color;
+      border-width: 1px 1px 0;
+      :global(.accordion-item) {
+        border-bottom: 1px solid $stroke-grey-color;
+      }
+      &_head {
+        position: relative;
+        button {
+          padding: 30px 15px;
+          background-color: $light-grey-color;
+          font-size: 20px;
+          // font-family: $secondary-font;
+          font-weight: bolder;
+          text-transform: uppercase;
+          font-family: $primary-font;
+          &::after {
+            width: 18px;
+            height: 18px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='18' height='10' viewBox='0 0 18 10'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Crect id='Rectangle_36272' data-name='Rectangle 36272' width='18' height='10' fill='%23fff' stroke='%23000' stroke-width='1'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Mask_Group_25752' data-name='Mask Group 25752' clip-path='url(%23clip-path)'%3E%3Cpath id='Path_104970' data-name='Path 104970' d='M10.879 10.045h-2V1H0V-1H10.879Z' transform='translate(15.589 1.103) rotate(135)'/%3E%3C/g%3E%3C/svg%3E");
+          }
+          &:not(:global(.collapsed)) {
+            background-color: $primary-color;
+            color: $white-color;
+            &::after {
+              background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='18' height='10' viewBox='0 0 18 10'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Crect id='Rectangle_36272' data-name='Rectangle 36272' width='18' height='10' fill='%23fff' stroke='%23fff' stroke-width='1'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Mask_Group_25752' data-name='Mask Group 25752' transform='translate(18 10) rotate(180)' clip-path='url(%23clip-path)'%3E%3Cpath id='Path_104970' data-name='Path 104970' d='M0 10.045H9.879V0' transform='translate(8.38 16) rotate(-135)' fill='none' stroke='%23fff' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E");
+            }
+          }
+        }
+      }
+      &_body {}
+    }
+}
+
+.more_info {
+  color: $black-color;
+  font-size: 16px;
+  margin-top: size(30);
+  @include min(992) {
+    margin-top: size(40);
+    font-size: size(22);
+  }
+  a {
+    color: $primary-color;
+    text-decoration: none;
+  }
+}
+.tab {
+  &_wrap {
+    position: relative;
+    border: none !important;
+    li {
+    &:last-of-type {
+        button {
+            &::before {
+                display: none;
+            }
+        }
+    }
+      button {
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 58px;
+            max-height: 50%;
+            background-color: $stroke-color;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        &:global(.nav-link) {
+          background-color: rgba(0, 0, 0, 0.07);
+          border-radius: 0px;
+          border: none;
+          color: $black-color;
+          font-weight: 800;
+          text-transform: uppercase;
+          padding: size(33);
+          &:global(.active) {
+            background-color: $primary-color;
+            color: $white-color;
+            &::before {
+                visibility: hidden;
+            }
+          }
+        }
+      }
+    }
+  }
+  &_item {
+    position: relative;
+    
+  }
+}
+:global(.INDblackwhite) {
+  .tab_wrap {
+    li button {
+      background-color: $mud-black-color !important;
+      :global(.nav-link.active) {
+        background-color: $mud-black-color !important;
+      }
+    }
+  }
+  .table_tab_widget {
+    &_acc {
+      border-color: $mud-black-color !important;
+      &_head {
+        button {
+          &:after {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='18' height='10' viewBox='0 0 18 10'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Crect id='Rectangle_36272' data-name='Rectangle 36272' width='18' height='10' fill='%23fff' stroke='%23fff' stroke-width='1'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Mask_Group_25752' data-name='Mask Group 25752' transform='translate(18 10) rotate(180)' clip-path='url(%23clip-path)'%3E%3Cpath id='Path_104970' data-name='Path 104970' d='M0 10.045H9.879V0' transform='translate(8.38 16) rotate(-135)' fill='none' stroke='%23fff' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E");
+          }
+        }
+      }
+      :global(.accordion-item) {
+        border-color: $mud-black-color !important;
+      }
+    }
+  }
+}

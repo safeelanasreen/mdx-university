@@ -1,0 +1,81 @@
+@import "../../../styles/util";
+.blogcard{
+    display: block;
+    color: $white-color;
+    text-decoration: none;
+    figure{
+        --bs-aspect-ratio:62.5%;
+        overflow: hidden;
+        margin-bottom: size(17);
+        img{
+          transition: transform 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+
+        }
+
+       
+      }
+      .arrow{
+        svg{
+          transition: transform 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  
+        }
+      }
+      
+      &_text{
+        &_ttl,p{
+            
+           
+            line-height: 1.5;
+           
+          }
+          p{
+            margin-bottom: 12px;
+            font-weight: 400;
+            font-size: 15px;
+             @include min(1400){
+              font-size: 18px;
+              margin-bottom: 16px;
+
+
+            }
+
+
+          }
+          &_ttl{
+            margin-bottom: 12px;
+            font-weight: 500;
+            font-size: 16px;
+            @include min(1400){
+              font-size: 18px;
+
+            }
+
+          }
+      }
+      .calendar_wrap{
+        column-gap: 12px;
+        p{
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 1.5;
+        }
+      }
+      &:hover{
+        @include min(1200){
+          color: $white-color;
+          figure{
+            img{
+              transform: scale(1.1);
+
+            }
+
+          }
+        }
+        .arrow{
+          svg{
+            transform: rotate(45deg);
+          }
+        }
+        
+      }
+}

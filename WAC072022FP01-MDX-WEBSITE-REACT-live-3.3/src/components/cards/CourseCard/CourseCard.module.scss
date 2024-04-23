@@ -1,0 +1,309 @@
+@import "../../../styles/util";
+@import "../../../styles/colors";
+
+.grid_item {
+  background-color: red;
+  position: relative;
+  height: 100%;
+  min-height: 346px;
+  &.cursor {
+    cursor: pointer;
+  }
+
+  @include min(992) {
+    min-height: 29vh;
+  }
+
+  &_icon {
+    width: size(50);
+  }
+
+  &_i {
+    padding-top: 100%;
+    position: relative;
+  }
+
+  &_square {
+    padding-top: 100%;
+
+    .grid_item_inner {
+      position: absolute;
+    }
+
+    .grid_item_info {
+      h3 {
+        font-size: 20px;
+        line-height: 1;
+        text-transform: uppercase;
+        word-break: break-word;
+        @include min(992) {
+          font-size: size(21);
+        }
+        @include min(1600) {
+          font-size: size(24);
+        }
+      }
+    }
+
+    .grid_item_icon {
+      width: size(45);
+
+      @include min(992) {
+        width: size(70);
+      }
+    }
+  }
+
+  &_inner {
+    position: relative;
+    left: 0;
+    top: 0;
+    padding: 25px;
+    flex: 1 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+
+    background-color: transparent !important;
+    
+    * {
+      background-color: transparent !important;
+      color: $white-color !important;
+      h3 {
+        color: $white-color !important;
+      }
+    }
+
+    @include min(1200) {
+      padding: size(30) size(30) size(30);
+    }
+
+    @include min(1600) {
+      padding: size(40) size(42) size(42);
+    }
+    & > * {
+      // pointer-events: none;
+    }
+  }
+
+  &_icon {
+    margin-bottom: 35px;
+    line-height: 0;
+
+    @include min(992) {
+      margin-bottom: 7px;
+    }
+
+    img {
+      height: 50px;
+      width: 50px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  &_info {
+    color: $white-color;
+    overflow: hidden;
+    transition: transform ease-in-out 0.2s;
+
+    @include min(1200) {
+      transform: translateY(20px);
+    }
+
+    h3 {
+      @include min(992) {
+        font-size: size(24);
+        margin-bottom: size(19);
+      }
+    }
+
+    p {
+      @include lineClamp(2);
+      color: $white-color;
+      font-size: size(16);
+      line-height: size(18);
+      transition: transform ease-in-out 0.2s;
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &_shortcnt {
+    overflow: hidden;
+    transition: height cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
+    &_div {
+      overflow: hidden;
+      transition: height cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
+    }
+    div {
+      @include lineClamp(2);
+    }
+    .know_more {
+      display: inline-flex;
+      align-items: center;
+      font-weight: 500;
+      color: $white-color;
+      transition: transform ease-in-out 0.2s;
+
+      @include min(1200) {
+        transform: translateY(size(28));
+      }
+
+      label {
+        text-decoration: underline;
+        padding-right: size(10);
+      }
+      svg {
+        @include max(1199.98) {
+          max-width: 15px;
+          max-height: 15px;
+        }
+      }
+    }
+  }
+
+  &_shortcnt,
+  &_info {
+      @include max(1199.98) {
+        transform: translateY(0px);
+      }
+  }
+  &_listing {
+    position: relative;
+    overflow: hidden;
+
+    .grid_item {
+      &_shortcnt {
+        @include min(1200) {
+          height: 0;
+        }
+        &_div {
+          @include min(1200) {
+            height: 0;
+          }
+        }
+
+        transition: height cubic-bezier(0.165, 0.84, 0.44, 1) 0.5s;
+        @include max(1199.98) {
+          height: auto;
+          overflow: hidden;
+        }
+        .know_more {
+          margin-top: 15px;
+        }
+      }
+      &_shortcnt,
+      &_info {
+        position: relative;
+
+        @include min(1200) {
+          // transform: translateY(80px);
+          transition: transform cubic-bezier(0.165, 0.84, 0.44, 1) 0.5s,
+            height cubic-bezier(0.165, 0.84, 0.44, 1) 0.5s;
+        }
+        @include min(1600) {
+          // transform: translateY(115px);
+        }
+      }
+
+      &_info {
+        & > h3 {
+          max-width: calc(100% - 35px);
+        }
+      }
+
+      &_arwicon {
+        position: absolute;
+        color: $white-color;
+        bottom: size(25);
+        right: size(20);
+
+        @include min(1600) {
+          bottom: size(42);
+          right: size(42);
+        }
+
+        svg {
+          transition: transform cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s,
+            scale cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;
+        }
+      }
+    }
+
+    @include min(1200) {
+      &:hover {
+        .grid_item {
+          &_shortcnt {
+            overflow: hidden; 
+            height: 92px;
+            &:has(.grid_item_shortcnt_div:empty) {
+              height: 41px;
+            }
+            &_div {
+              height: 51px;
+            }
+          }
+          &_shortcnt,
+          &_info {
+            transform: translateY(0px);
+          }
+  
+          &_arwicon {
+            svg {
+              transform: translate(100%, -100%) scale(0);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include min(1200) {
+    &:hover {
+      .grid_item {
+        &_info {
+          transform: translateY(0px);
+  
+          p {
+            // margin-bottom: size(28);
+          }
+        }
+  
+        &_shortcnt {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          .know_more {
+            transform: translateY(0rem);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* High Contrast */
+:global(html:not(#INDdummy) body:not(#INDdummy).INDwhiteblack>:not(#INDWrap)) {
+  .grid_item {
+    &_info {
+      h3 {
+        color: $white-color !important;
+      }
+    }
+  }
+}
+:global(html:not(#INDdummy) body:not(#INDdummy).INDblackwhite>:not(#INDWrap) *:not(img):not(video)),:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)),
+:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)) {
+  .grid_item {
+    &_inner {
+      img {
+        background-color: transparent !important;
+      }
+    }
+  }
+}

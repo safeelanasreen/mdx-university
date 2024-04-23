@@ -1,0 +1,115 @@
+@import '../../../styles/util';
+
+.form_textarea{
+    textarea{
+        font-size: size(16);
+        color: white;
+        resize: none;
+        &:focus{
+            color: white;
+        }
+        border-radius: 0px;
+        padding-left: 0px!important;
+        padding-right: 0px!important;
+        background-color: transparent;
+        // transition: background-color 3s ease-in-out;
+        // transition-delay: background-color 15s!important;
+        &,
+        &:hover,
+        &:focus{
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid white;
+        }
+        &:-webkit-autofill,
+        &:-internal-autofill-selected {
+            background-color: transparent!important;
+            transition: background-color  10s ease-in 10000s, color  10s ease-in 10000s;
+        }
+    }
+
+
+
+    label{
+        padding-left: 0px!important;
+        color: white;
+    }
+    :global(.form-control:focus ~ label),
+    :global(.form-control:not(:placeholder-shown) ~ label),
+    :global(.form-select ~ label),
+    :global(.form-control:-webkit-autofill ~ label){
+        font-size: size(14);
+        transform: scale(1) translateY(-0.9rem) translateX(0rem);
+        opacity: 0.4;
+    }
+}
+
+
+.form_input_phone{
+    position: relative;
+    color: white;
+    :global(.form-control){
+        width: 100%!important;
+        background-color: transparent!important;
+        border-radius: 0px!important;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        height: calc(3.5rem + 2px)!important;
+    }
+    :global(.form-control:focus){
+        color: white;
+    }
+    :global(.flag-dropdown ){
+        border: none;
+        background-color: transparent!important;
+    }
+    :global(.flag-dropdown.open),
+    :global(.selected-flag:focus),
+    :global(.selected-flag),
+    :global(.selected-flag:hover),
+    :global(.react-tel-input .flag-dropdown)
+    {
+        background-color: transparent!important;
+        border: none!important;
+    }
+    :global(.flag-dropdown){
+        color: #000;
+        border-radius: 0px!important;
+        background-color: transparent!important;
+    }
+    label{
+        position: absolute;
+        padding: 1rem 0.75rem;
+        pointer-events: none;
+        bottom: 0;
+        left: 90px;
+        transition: all 0.1s ease-in-out;
+    }
+    input{
+        width: 100%;
+        border-radius: 0;
+        border: none!important;
+        border-bottom: 1px solid white!important;
+        color: white;
+        &::placeholder{
+            color: transparent;
+        }
+    }
+    
+    // :global(.react-tel-input:hover) ~ label{
+    //     font-size: 0.7777777778rem;
+    //     transform: scale(1) translateY(-1.3rem) translateX(0rem);
+    //     opacity: 0.4;
+    //     left: -12px;
+    // }
+    .form_hide_label{
+        font-size: 0.7777777778rem;
+        transform: scale(1) translateY(-1.3rem) translateX(0rem);
+        opacity: 0.4;
+        left: -12px;
+    }
+}
+.mdx_course_intro_footer_list{
+    background-color: #2F2552;
+    padding: 30px 0;
+}

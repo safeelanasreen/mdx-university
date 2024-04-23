@@ -1,0 +1,82 @@
+@import "../../styles/util";
+.sports_table {
+  table {
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.05);
+    * {
+      border-color: rgba(0, 0, 0, 0.17);
+    }
+    tr {
+      > * {
+        &:first-of-type {
+          border-left-width: 0px;
+        }
+        &:last-of-type {
+          border-right-width: 0px;
+        }
+      }
+      &:last-of-type {
+        border-bottom-width: 0px;
+        > * {
+          border-bottom-width: 0px;
+        }
+      }
+    }
+    thead {
+      border-width: 0px 0px;
+      tr {
+        border-width: 0px 0px;
+        th {
+          padding: size(38) 0 size(26);
+          background-color: $white-color;
+          font-size: 16px;
+          font-weight: bold;
+          // line-height: 1;
+          @include min(1200) {
+            font-size: size(22);
+          }
+        }
+      }
+    }
+    tbody {
+      border-top: none !important;
+      * {
+        color: $black-color;
+        font-size: 14px;
+        @include min(768) {
+          font-size: size(16);
+        }
+      }
+      tr {
+        td {
+          padding: size(34) 0 size(35);
+          --bs-table-accent-bg: var(--white);
+        }
+        &:nth-child(odd) {
+          td {
+            --bs-table-accent-bg: var(--light);
+          }
+        }
+      }
+    }
+  }
+}
+:global(.INDblackwhite) {
+  .sports_table {
+    table {
+      tbody {
+        tr {
+          td {
+            --bs-table-accent-bg: var(--black);
+          }
+          &:nth-child(odd) {
+            td {
+              --bs-table-accent-bg: var(--mud-black);
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,134 @@
+@import "../../styles/util";
+
+.mdx_banner_inner {
+  padding: 40px 0;
+  @include min(992) {
+    padding: 80px 0;
+  }
+
+  :global {
+    .container,
+    .row {
+      background-color: transparent !important;
+      & > * {
+        background-color: transparent !important;
+      }
+    }
+  }
+
+  .content_wrap {
+    padding: 25px 12px 0px;
+    a {
+      text-decoration: none;
+    }
+    ul {
+      @extend %ul;
+    }
+    ul {
+      margin-top: 20px;
+    }
+    @include min(992) {
+      padding: 25px 25px 25px;
+    }
+    @include min(1200) {
+      padding: 40px 80px 0px 40px;
+    }
+    p {
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
+    button {
+      margin-top: 30px;
+    }
+    .btn {
+      margin-top: 30px;
+      display: inline-flex;
+      align-items: center;
+      @include max(1199.98) {
+        line-height: 1.2;
+      }
+      span {
+        display: block;
+        width: 20px;
+        margin-right: size(10);
+      }
+    }
+  }
+  .img_wrap {
+    padding-top: calc((566 / 791) * 100%);
+    position: relative;
+    // background-color: $grey-color;
+    background: linear-gradient(to right, #c8c8c8, #a3a3a3, #c8c8c8);
+    & > img,
+    & > iframe,
+    & > video {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+    @include max(767.98) {
+      margin: 0 -0.75rem;
+    }
+  }
+}
+.author {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+    margin-bottom: size(20);
+    &_avatar {
+        position: relative;
+        width: 100%;
+        height: size(72);
+        flex-basis: size(72);
+        max-width: size(72);
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: $light-color;
+    }
+    &_details {
+        width: 100%;
+        flex-basis: calc(100% - size(72));
+        max-width: calc(100% - size(72));
+        position: relative;
+        padding-left: size(17);
+    }
+    &_name {
+        position: relative;
+        font-size: size(20);
+        font-weight: bold;
+        color: $black-color;
+        padding-bottom: size(7);
+        line-height: 1.2;
+    }
+    &_designation {
+        position: relative;
+        font-size: size(16);
+        color: $black-color;
+        line-height: 1.3;
+    }
+}
+
+:global(html:not(#INDdummy) body:not(#INDdummy).INDblackwhite),
+:global(html:not(#INDdummy) body:not(#INDdummy).INDblackwhite>:not(#INDWrap)),
+:global(html:not(#INDdummy) body:not(#INDdummy).INDblackwhite>:not(#INDWrap) *:not(img):not(video)) {
+    .mdx_banner_inner {
+        background-color: $black-color !important;
+    }
+}
+:global(html:not(#INDdummy) body[data-indwhiteblack]:not(#INDdummy)>:not(#INDWrap) *:not(img):not(video)) {
+  .mdx_banner_inner {
+    background-color: $black-color !important;
+    .content_wrap {
+      background-color: transparent !important;
+      * {
+        background-color: transparent !important;
+      }
+    }
+  }
+}

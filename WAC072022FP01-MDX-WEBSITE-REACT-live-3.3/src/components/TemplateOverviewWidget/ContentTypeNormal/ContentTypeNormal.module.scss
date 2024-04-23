@@ -1,0 +1,105 @@
+@import '../../../styles/util';
+
+
+    
+    
+    @include min(1200){
+        .template_overview_widget_body_wrap{
+            padding-top: 40px;
+        }
+        .img_wrap{
+            margin-top: 40px;
+            h3{
+                margin-bottom: 40px;
+            }
+        }
+    }
+    @include min-max(992,1199.9){
+        .template_overview_widget_body_wrap{
+            padding-top: 40px;
+        }
+        .img_wrap{
+            margin-top: 35px;
+        }
+    }
+    @include min-max(768,991.9){
+        .template_overview_widget_body_wrap{
+            padding-top: 35px;
+        }
+        .img_wrap{
+            margin-top: 35px;
+        }
+    }
+    @include min-max(576,767.9){
+        .template_overview_widget_body_wrap{
+            padding-top: 30px;
+        }
+        .img_wrap{
+            margin-top: 30px;
+        }
+    }
+    @include max(575.9){
+        .template_overview_widget_body_wrap{
+            padding-top: 30px;
+        }
+        .img_wrap{
+            margin-top: 30px;
+        }
+    }
+
+    
+
+    .w_lg_50{
+        @include min(992){
+            max-width: 50%;
+        }
+    }
+    .w_lg_75{
+        @include min(992){
+            max-width: 75%;
+        }
+    }
+
+    .img_wrap{
+        position: relative;
+        @include aspectRatio(1510, 600);
+    }
+
+
+.read_more_btn{
+    display: none;
+}
+
+
+@include max(575.9){
+    .template_overview_widget{
+        
+        &_header_show_less{
+            .template_overview_widget_content{
+                display: -webkit-box;
+                -webkit-line-clamp: 12;
+                -webkit-box-orient: vertical;  
+                overflow: hidden;
+                
+            }
+        }
+    }
+    .template_overview_widget_body_show_less{
+        display: -webkit-box;
+        -webkit-line-clamp: 12;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+    }
+
+    .read_more_btn{
+        display: block;
+        color: $red-color;
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 20px;
+        &:hover{
+            color: #BF000B!important;
+        }
+    }
+    
+}

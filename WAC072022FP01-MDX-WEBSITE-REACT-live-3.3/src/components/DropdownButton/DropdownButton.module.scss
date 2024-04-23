@@ -1,0 +1,35 @@
+@import '../../styles/util';
+.dropdown {
+    display: block;
+    width: 100%;
+    @include min(576) {
+        width: auto;
+        display: inline-block;
+    }
+    button {
+        width: 100%;
+        font-size: size(18);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include min(1600) {
+          font-size: size(22);
+        }
+    }
+    &_result {
+        width: 100%;
+        border-radius: 0;
+        padding: size(2) size(15);
+        &_item {
+            padding: size(18) 0;
+            + .dropdown_result_item {
+                border-top: 1px solid $black-color;
+            }
+            &:hover, &.active {
+                background-color: transparent;
+                color: $primary-color;
+            }
+            &:focus {}
+        }
+    }
+}

@@ -1,0 +1,96 @@
+@import "../../../styles/util";
+.sports_card {
+  position: relative;
+  cursor: pointer;
+  background-color: transparent !important;
+  * {
+    background-color: transparent !important;
+  }
+
+  &_fig {
+    margin: 0;
+    line-height: 0;
+    padding-bottom: calc((450/320)*100%);
+    // padding-bottom: calc((845 / 480) * 100%);
+    @include min(1200) {
+      padding-bottom: calc((700 / 480) * 100%);
+    }
+    img {
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+    }
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: $black-color;
+      opacity: 0.5;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      transition: transform ease-in-out 0.15s, opacity ease-in-out 0.2s;
+      transform: translateY(0)
+    }
+  }
+  &_detail {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    bottom: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: size(30);
+    -webkit-filter: drop-shadow(0px 3px 10px rgba(0,0,0,.7));
+    filter: drop-shadow(0px 3px 10px rgba(0,0,0,.7));
+    @include min(1600) {
+      padding: size(50);
+    }
+    &_cnt {
+      color: $white-color;
+      h3 {
+        font-size: size(26);
+        text-transform: uppercase;
+        // font-family: $secondary-font;
+      }
+      p {
+        min-height: 0px;
+        height: 0;
+        transition: min-height ease-in-out 0.3s;
+        transition-delay: 0.15s;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin-bottom: 0;
+        font-size: size(16);
+        line-height: 1.5;
+      }
+    }
+  }
+  &:hover {
+    @include min(1200) {
+      img {
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
+      }
+      .sports_card {
+        &_fig {
+          &::before {
+            transform: translateY(-30px);
+            opacity: 0;
+          }
+        }
+        &_detail {
+          &_cnt {
+            p {
+              min-height: 80px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

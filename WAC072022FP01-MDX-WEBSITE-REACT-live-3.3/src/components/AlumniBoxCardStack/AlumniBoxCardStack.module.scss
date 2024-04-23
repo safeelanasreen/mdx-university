@@ -1,0 +1,16 @@
+@import "../../styles/util";
+@import "../../styles/colors";
+
+.alumni_box_card_stack {
+    padding: 80px 0;
+    @include max(767.98) {
+        padding: 40px 0;
+    }
+    :global {
+        .swiper-scrollbar-horizontal {
+            @include min(768) {
+                display: none;
+            }
+        }
+    }
+}

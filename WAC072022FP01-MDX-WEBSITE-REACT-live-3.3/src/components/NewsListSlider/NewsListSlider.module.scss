@@ -1,0 +1,26 @@
+@import '../../styles/util';
+.news_list_slider {
+    padding: 40px 0;
+    background-color: $light-color;
+    @include min(992) {
+        padding: size(80) 0;
+    }
+    .title_sec {
+        display: flex;
+        justify-content: space-between;
+        @include min(768) {
+            margin-bottom: size(35);
+        }
+        h2 {
+            margin: 0;
+        }
+    }
+    :global{
+        .container  {
+            .container-fluid  {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+        }
+    }
+}

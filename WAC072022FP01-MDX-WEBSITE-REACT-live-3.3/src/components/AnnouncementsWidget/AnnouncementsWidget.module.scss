@@ -1,0 +1,14 @@
+@import '../../styles/util';
+.announcement {
+    background-color: #F8F8F8;
+    padding: 45px 0;
+    @include min(992) {
+        padding: size(80) 0;
+    }
+    .load_more {
+        margin-top: size(40);
+        @include min(1200) {
+            margin-top: size(70);
+        }
+    }
+}

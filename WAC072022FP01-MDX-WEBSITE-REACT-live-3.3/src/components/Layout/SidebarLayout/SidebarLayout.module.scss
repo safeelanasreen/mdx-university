@@ -1,0 +1,46 @@
+@import "../../../styles/util";
+@import "../../../styles/colors";
+
+.sidebar_layout_wrap {
+    @include min(1200) {
+        display: flex;
+    }
+}
+
+.sidebar_wrap {
+    flex: 0 0 auto;
+    position: sticky;
+    top: 64px;
+    z-index: 1000;
+
+    @include min(992) {
+        top: 74px;
+    }
+
+    @include min(1200) {
+        width: 19.4rem;
+        height: calc(100vh - 95px);
+        top: 95px;
+    }
+
+    @include min(1600) {
+        height: calc(100vh - 114px);
+        top: 114px;
+    }
+}
+
+.main {
+    flex: 0 0 auto;
+
+    @include min(1200) {
+        width: calc(100% - 19.4rem);
+    }
+
+    :global(.container) {
+        @include min(1200) {
+            padding-left: 2.7777777778rem;
+            padding-right: 2.7777777778rem;
+            max-width: 100%;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+@import "../../styles/util";
+@import "../../styles/colors";
+
+.alumni_banner {
+    min-height: 844px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 50px 0 0;
+    @include max(991.98) {
+        min-height: 643px;
+    }
+    @include min(992) {
+        padding: 50px 0;
+    }
+    &::after {
+        content: url('/images/alumni/banner-gradient.png');
+        position: absolute;
+        bottom: 0px;
+        height: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 0;
+        pointer-events: none;
+    }
+    > span {
+        z-index: 0;
+        pointer-events: none;
+    }
+    :global(.container ) {
+        z-index: 1;
+        background-color: transparent !important;
+        * {
+            background-color: transparent !important;
+        }
+    }
+}

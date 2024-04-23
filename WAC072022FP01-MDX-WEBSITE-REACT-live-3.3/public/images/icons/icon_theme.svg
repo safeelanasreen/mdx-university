@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38.905" height="38.905" viewBox="0 0 38.905 38.905">
+  <g id="icon_theme" transform="translate(-10.474 -10.474)">
+    <g id="Ellipse_78272" data-name="Ellipse 78272" transform="translate(49.379 10.474) rotate(90)" fill="none" stroke="#000" stroke-width="4">
+      <ellipse cx="19.452" cy="19.452" rx="19.452" ry="19.452" stroke="none"/>
+      <ellipse cx="19.452" cy="19.452" rx="17.452" ry="17.452" fill="none"/>
+    </g>
+    <path id="Path_94847" data-name="Path 94847" d="M0,0A19.452,19.452,0,0,1,19.452,19.452,19.452,19.452,0,0,1,0,38.9Z" transform="translate(49.378 29.927) rotate(90)"/>
+  </g>
+</svg>

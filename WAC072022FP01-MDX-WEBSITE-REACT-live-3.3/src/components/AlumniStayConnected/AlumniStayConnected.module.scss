@@ -1,0 +1,40 @@
+@import "../../styles/util";
+@import "../../styles/colors";
+
+.alumni_stay_connected {
+    background: linear-gradient(to right, $alumni-primary-color 50%, $alumni-secondary-color 50%);
+    @include max(1199.98) {
+        background: linear-gradient(to bottom, $alumni-primary-color 50%, $alumni-secondary-color 50%);
+    }
+    :global {
+        .row {
+            margin: 0 -110px;
+            @include max(1199.98) {
+                margin: 0 -15px;
+                flex-direction: column;
+            }
+            > div {
+                padding: 80px 110px;
+                &:first-child {
+                    background-color: $alumni-primary-color;
+                }
+                &:last-child {
+                    background-color: $alumni-secondary-color;
+                }
+                @include max(1199.98) {
+                    padding: 40px 15px;
+                }
+            }
+            .title {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+:global(html:not(#INDdummy) body[data-indwhiteblack]:not(#INDdummy)>:not(#INDWrap) *:not(img):not(video)),
+:global(html:not(#INDdummy) body[data-indblackwhite]:not(#INDdummy)>:not(#INDWrap) *:not(img):not(video)) {
+    .alumni_stay_connected {
+        background: none;
+    }
+}

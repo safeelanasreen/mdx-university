@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="98" height="98" viewBox="0 0 98 98">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_36572" data-name="Rectangle 36572" width="98" height="98" transform="translate(271 842)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="programme_icon" transform="translate(-271 -842)" clip-path="url(#clip-path)">
+    <g id="Layer_1-2" transform="translate(289.74 854.428)">
+      <g id="Group_125962" data-name="Group 125962" transform="translate(1.25 1.25)">
+        <g id="Group_125961" data-name="Group 125961" transform="translate(0 8.581)">
+          <path id="Path_105170" data-name="Path 105170" d="M56.737,23.314,28.994,7.3,1.25,23.314V55.341L28.994,71.355,56.737,55.341Z" transform="translate(-1.25 -7.3)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2.5"/>
+          <path id="Path_105171" data-name="Path 105171" d="M25.2,19.9c0,5.659-8.936,12.156-14.893,10.822,5.957,1.333,9.376,11.844,5.688,17.5,3.688-5.659,14.723-5.659,18.411,0-3.688-5.659-.269-16.17,5.688-17.5C34.139,32.056,25.2,25.574,25.2,19.9Z" transform="translate(2.541 -2.028)" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="2.5"/>
+        </g>
+        <path id="Path_105172" data-name="Path 105172" d="M46.125,20.256V1.25H7.02V20.256" transform="translate(1.164 -1.25)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2.5"/>
+      </g>
+    </g>
+  </g>
+</svg>

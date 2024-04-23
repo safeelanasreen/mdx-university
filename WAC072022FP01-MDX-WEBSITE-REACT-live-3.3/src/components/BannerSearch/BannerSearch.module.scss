@@ -1,0 +1,68 @@
+@import "../../styles/util";
+@import "../../styles/colors";
+
+.banner_search_container{
+  display: block;
+  width: 100%;
+  background-color: $blue-color;
+  padding: 48px 55px;
+  select,
+  input,
+  label{
+    font-size: 35px;
+    font-weight: 500;
+    // font-family: $secondary-font;
+    option{
+      font-size: 14px;
+    }
+  }
+  label{
+    transform: translateY(-13px);
+    text-transform: uppercase;
+  }
+  select{
+    padding-top: 10px!important;
+    text-transform: uppercase;
+  }
+  select,
+  input{
+    padding-top: 8px;
+  }
+  :global(.form-control:focus) ~ label,
+  :global(.form-control:not(:placeholder-shown)) ~ label{
+    transform: scale(1) translateY(-1.5rem) translateX(0rem);
+  }
+  label:empty{
+    display: none;
+  }
+  .banner_search_location_sel{
+    border-bottom: 1px solid white;
+    padding-left: 0px;
+    padding-right: 0px;
+    button{
+      padding: 0px;
+    }
+    :global(.dropdown-toggle){
+      color: white;
+      font-size: 35px;
+      font-weight: 500;
+      // font-family: $secondary-font;
+      svg{
+        height: 16px!important;
+        width: 16px!important;
+      }
+    }
+    
+  }
+  .banner_search_btn{
+    max-width: 234px;
+    padding-top: 11px;
+    padding-left: 25px;
+  }
+  :global(.dropdown-menu){
+    width: 100%;
+  }
+
+}
+
+

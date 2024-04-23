@@ -1,0 +1,48 @@
+@import "../../styles/util";
+.section {   
+    --section-padding-y: #{size(60)};
+    --section-padding-x: 0;
+    padding: var(--section-padding-y) var(--section-padding-x);
+    background-color: var(--background-color);
+}
+
+.swiper {
+    --nav-size: #{size(50)};
+    margin-left: 0;
+    @include min(1200) {
+        --nav-size: #{size(60)};
+        max-width: calc(100% - (var(--nav-size) + size(25) + 10px));
+    }
+    &_outer {
+        margin-top: 25px;
+        @include min(1200) {
+            margin-top: 45px;
+        }
+    }
+    &_navs{
+        display: flex;
+        gap: 10px;
+        margin-top: size(25);
+        @include min(1200) {
+            margin-top: 0;
+            margin-left: size(25);
+            flex-direction: column;
+        }
+        :global(.swiper-button-disabled) {
+            @include min(1200) {
+                display: none;
+            }
+        }
+        &_prev, &_next {
+            --nav-background: #{$primary-color};
+            color: $white-color;
+            --nav-size: #{size(50)};
+            @include min(1200) {
+                --nav-size: #{size(60)};}
+            svg {
+                max-width: calc(.4 * var(--nav-size));
+                max-height: calc(.4 * var(--nav-size));
+            }
+        }
+    }
+}

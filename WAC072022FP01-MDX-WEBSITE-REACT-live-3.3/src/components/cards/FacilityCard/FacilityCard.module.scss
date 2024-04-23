@@ -1,0 +1,166 @@
+@import "../../../styles/util";
+@import "../../../styles/colors";
+
+@include randomColor(".grid_item", "span.cover");
+
+.grid_item {
+  position: relative;
+  cursor: pointer;
+
+  .arrow {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+
+    @include min(992) {
+      right: size(40);
+      bottom: size(40);
+    }
+  }
+
+  span.cover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: red;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    transform: scaleX(0);
+    transition: 0.5s all ease-in-out;
+    transform-origin: left;
+  }
+
+  &:hover {
+    span.cover {
+      @include min(992) {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+
+    .letter {
+      span {
+        transform: initial;
+        opacity: 1;
+      }
+    }
+  }
+
+  &_img {
+    position: relative;
+    padding-top: 100%;
+    mix-blend-mode: luminosity;
+    background-color: #515151;
+
+    @include min(992) {
+      padding-top: 96%;
+    }
+  }
+
+  .letter {
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+    line-height: 1;
+    margin-bottom: 50px;
+    font-family: $secondary-font;
+    color: transparent;
+    overflow: hidden;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 11;
+
+    @include min(992) {
+      margin-bottom: size(30);
+    }
+
+    span {
+      transition: 0.5s all ease;
+      transition-delay: 0.2s;
+      display: inline-block;
+      @include min(1200) {
+        transform: translateY(50%);
+        opacity: 0;
+      }
+    }
+    font-size: 83px;
+    @include min(992) {
+      font-size: size(163);
+    }
+  }
+
+  &_info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    z-index: 11;
+    padding: 26px 16px;
+
+    background-color: transparent !important;
+
+    * {
+      background-color: transparent !important;
+      color: $white-color !important;
+      * {
+        color: $white-color !important;
+      }
+    }
+
+    @include min(992) {
+      padding: size(40);
+    }
+
+    h3 {
+      color: $white-color;
+      margin-bottom: 0;
+      text-transform: uppercase;
+
+      @include min(992) {
+        font-size: size(25);
+      }
+    }
+    .content_wrap {
+      color: $white-color;
+      svg {
+        max-width: 20px;
+        max-height: 20px;
+        @include min(1200) {
+          max-width: 18px;
+          max-height: 18px;
+        }
+        @include min(1600) {
+          max-width: 24px;
+          max-height: 24px;
+        }
+      }
+    }
+  }
+}
+
+:global(html:not(#INDdummy)
+    body:not(#INDdummy).INDwhiteblack
+    > :not(#INDWrap)) {
+  .grid_item {
+    &_info {
+      h3 {
+        color: $white-color !important;
+      }
+    }
+  }
+}
+:global(html:not(#INDdummy) body:not(#INDdummy).INDwhiteblack>:not(#INDWrap) *:not(img):not(video)),:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)),
+:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)) {
+    @include randomColorImportant('.grid_item', 'span.cover');
+  }
+  
+  /* High Contrast */
+  :global(html:not(#INDdummy) body:not(#INDdummy).INDwhiteblack>:not(#INDWrap)),:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)),
+  :global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)) {
+    @include randomColorImportant('.grid_item', 'span.cover');
+  }

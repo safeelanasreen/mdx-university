@@ -1,0 +1,88 @@
+@import "../../styles/util";
+.banner {
+  padding: size(100) 0 size(145);
+  &_fig {
+    left: 0;
+    top: 0;
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+
+      background: rgb(41, 33, 82);
+      background: linear-gradient(
+        90deg,
+        rgba(41, 33, 82, 1) 35%,
+        rgba(41, 33, 82, 0) 100%
+      );
+      z-index: 1;
+    }
+  }
+  &_body {
+    z-index: 1;
+  }
+  &_title {
+    font-size: size(30);
+    @include min(1200) {
+      font-size: size(37.1);
+    }
+    font-weight: 400;
+    &_sup {
+      font-size: size(22);
+      @include min(1200) {
+        font-size: size(26.5);
+      }
+    }
+  }
+  &_button {
+    font-family: $secondary-font;
+    line-height: calc(24 / 20);
+    font-size: 15px;
+    @include min(1200) {
+      font-size: size(22);
+    }
+  }
+  &_button_wrap{
+    column-gap: 20px;
+  }
+}
+
+/* High Contrast */
+:global(
+    html:not(#INDdummy) body:not(#INDdummy).INDwhiteblack > :not(#INDWrap)
+  ) {
+  .banner_body {
+    background-color: transparent !important;
+    * {
+        background-color: transparent !important;
+    }
+  }
+}
+:global(
+    html:not(#INDdummy)
+      body:not(#INDdummy).INDblackwhite
+      > :not(#INDWrap)
+      *:not(img):not(video)
+  ),
+:global(
+    html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors > :not(#INDWrap)
+  ),
+:global(
+    html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors > :not(#INDWrap)
+  ) {
+  .banner {
+    &_fig {
+      &::before {
+        filter: brightness(0);
+      }
+    }
+    &_body {
+      background-color: transparent !important;
+      * {
+          background-color: transparent !important;
+      }
+    }
+  }
+}

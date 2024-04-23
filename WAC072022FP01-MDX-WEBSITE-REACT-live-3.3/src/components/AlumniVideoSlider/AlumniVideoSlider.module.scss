@@ -1,0 +1,158 @@
+@import "../../styles/util";
+@import "../../styles/colors";
+
+.alumni_video_slider {
+    position: relative;
+    height: 842.8px;
+    @include max(1599.98) {
+        height: 740px;
+    }
+    @include max(991.98) {
+        height: 480px;
+    }
+    @include max(575.98) {
+        height: 270px;
+    }
+    &_video {
+        height: 100%;
+        position: relative;
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            &.playing {
+                &+.video_play_btn {
+                    &>* {
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                }
+            }
+        }
+        .video_play_btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: transparent;
+            background-color: transparent !important;
+            border: none;
+            width: 40%;
+            height: 100%;
+            // outline: none !important;
+            box-shadow: none !important;
+            width: 100%;height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &>* {
+                max-width: 54px;max-height: 54px;
+                top: 50% !important; left: 50% !important;
+                transform: translate(-50%,-50%);
+                position: absolute;
+                @include min(576) {
+                    max-width: 78px;
+                    max-height: 78px;
+                }
+                @include min(768) {
+                    max-width: 84px;
+                    max-height: 84px;
+                }
+                @include min(992) {
+                    max-width: size(128);
+                    max-height: size(128);
+                }
+            }
+            &:focus {
+                // outline: none !important;
+                box-shadow: none !important;
+            }
+        }
+    }
+    &_contents {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: transparent !important;
+        &>* {
+            background-color: transparent !important;
+        }
+    }
+    &_title {
+        max-width: 490px;
+        font-size: size(25);
+        font-weight: 500;
+        line-height: 1.24;
+        margin-bottom: 0;
+        @include max(575.98) {
+            max-width: 350px;
+            font-size: size(17);
+        }
+    }
+    .mdx_logo {
+        margin-bottom: 0;
+        @include max(767.98) {
+            display: none;
+        }
+    }
+    .swiper_nav_btn {
+        background: transparent;
+        border: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        color: $white-color;
+        &.swiper_nav_left {
+            transform: translateY(-50%) rotate(180deg);
+            transform-origin: center;
+            right: calc(100vw - 8%);
+            @include max(767.98) {
+                left: 0;
+                right: inherit;
+            }
+        }
+        &.swiper_nav_right {
+            left: calc(100vw - 8%);
+            @include max(767.98) {
+                left: inherit;
+                right: 0;
+            }
+        }
+    }
+    :global {
+        .container {
+            z-index: 2;
+            background-color: transparent !important;
+            @include min(576) {
+                position: relative;
+                margin-top: -149px;
+                padding-bottom: 80px;
+            }
+            @include max(991.98) {
+                padding-bottom: 40px;
+            }
+            @include max(767.98) {
+                margin-top: -100px;
+            }
+            @include max(575.98) {
+                position: absolute;
+                bottom: 0;
+                padding-bottom: 16px;
+            }
+        }
+        .swiper {
+            height: 100%;
+        }
+        .swiper-slide {
+            // opacity: 0;
+            // visibility: hidden;
+            transition: 0.3s ease all !important;
+        }
+        .swiper-slide-active {
+            // opacity: 1;
+            // visibility: visible;
+        }
+    }
+}

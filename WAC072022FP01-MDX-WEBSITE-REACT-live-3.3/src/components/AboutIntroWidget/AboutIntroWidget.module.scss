@@ -1,0 +1,71 @@
+@import '../../styles/util';
+.about_intro {
+    padding: 40px 0;
+    overflow: visible;
+    overflow-x: visible;
+    @include min(992) {
+      padding: size(80) 0;
+    }
+    :global {
+        .row {
+            --bs-gutter-y: 40px;
+        }
+    }
+    &_content {
+        position: sticky;
+        top: size(200);
+        @include min(992) {
+            max-width: 98%;
+        }
+        @include min(1200) {
+            top: size(150);
+        }
+        @include min(1400) {
+            max-width: 93%;
+        }
+    }
+    &_form {
+        background-color: $light-color !important;
+        padding: 20px;
+        position: relative;
+        * {
+          background-color: transparent !important;
+        }
+      
+        @include min(992) {
+          padding: 25px 30px;
+          padding-right: 25px;
+          border-radius: 16px;
+          min-height: 400px;
+          position: sticky;
+          top: size(140);
+        }
+      
+        h3 {
+          // color: $white-color;
+          margin-bottom: 20px;
+        }
+      
+        &_body {
+          overflow-y: auto;
+      
+          @include min(992) {
+            max-height: calc(100vh - 250px);
+            padding-right: 30px;
+            scrollbar-width: 2px;
+      
+            ::-webkit-scrollbar {
+              width: 2px;
+            }
+          }
+        }
+        &_outer {
+            position: sticky;
+            top: size(200);
+            @include min(1200) {
+                top: size(150);
+                padding-left: 30px;
+            }
+        }
+    }
+}

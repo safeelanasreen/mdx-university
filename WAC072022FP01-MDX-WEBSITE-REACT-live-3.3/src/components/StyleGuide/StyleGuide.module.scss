@@ -1,0 +1,43 @@
+@import '../../styles/util';
+.styleguide {
+    padding: size(40);
+    background-color: $light-color;
+}
+.box {
+    background-color: #ebebeb;
+    max-width: 1200px;
+    padding: size(40);
+    margin: size(40) auto;
+    &_space {
+        &_md {
+            margin: size(20) auto;
+        }
+    }
+    &_code {
+        padding: size(25);
+        background-color: $black-color;
+        color: rgba(9, 170, 9,1);
+        margin-top: size(15);
+        height: calc(100% - size(15));
+        
+        white-space: nowrap;
+        overflow: auto;
+    }
+    &_head {
+        font-size: size(40);
+        text-transform: uppercase;
+        font-weight: bold;
+        &_sm {
+            font-size: size(22);
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    }
+    &_label {
+        display: block;
+        margin-bottom: size(15);
+    }
+    &_detail {
+        padding-top: size(40);
+    }
+}

@@ -1,0 +1,50 @@
+@import '../../styles/util';
+.upcoming_events {
+    padding: 40px 0;
+    @include min(992) {
+      padding: size(80) 0;
+    }
+    :global {
+        .row {
+            --bs-gutter-y: 30px;
+            .row {
+                --bs-gutter-y: 25px;
+            }
+        }
+    }
+    &_video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        -o-object-fit: cover;
+        &_outer {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: #f1f1f1;
+            @include min(992) {
+                max-width: 90%;
+            }
+        }
+    }
+    &_figure {
+        position: relative;
+        @include aspectRatio(500,250);
+        @include min(992) {
+            @include aspectRatio(500,350);
+        }
+        height: 100%;
+        &_outer {
+            position: relative;
+            height: 100%;
+        }
+    }
+    &_list {
+        height: 100%;
+        &>* {
+            &>* {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,56 @@
+@import "../../../styles/util";
+@import "../../../styles/colors";
+
+.socialmedia_links {
+  &_wrap {
+    display: flex;
+    align-items: center;
+    width: auto;
+    // padding-right: 30px;
+    font-size: 16px;
+    @include max(767.98) {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100%;
+      gap: 20px;
+    }
+    > span {
+      margin-right: 15px;
+      @include max(767.98) {
+        width: 100%;
+      }
+    }
+  }
+  &_item {
+    display: flex;
+    color: currentColor;
+    @include min(768) {
+      margin-right: 15px;
+    }
+    svg {
+      max-width: 28px;
+      max-height: 28px;
+      @include min(768) {
+        max-width: 17px;
+        max-height: 17px;
+      }
+      @include min(1200) {
+        max-width: 14px;
+        max-height: 14px;
+      }
+    }
+    & > button {
+      display: flex;
+      align-items: center;
+      background-color: transparent;
+      border: none;
+      padding: 0px;
+      font: inherit;
+      color: inherit;
+      cursor: pointer;
+    }
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}

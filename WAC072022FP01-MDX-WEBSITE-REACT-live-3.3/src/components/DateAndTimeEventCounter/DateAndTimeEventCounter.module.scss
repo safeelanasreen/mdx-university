@@ -1,0 +1,245 @@
+@import "../../styles/util";
+.section {
+    padding: 45px 0;
+    background-color: #FFFFFF;
+    @include min(992) {
+        padding: size(80) 0;
+    }
+    @include min(1200) {
+        padding: size(90) 0;
+    }
+    &_head {
+        padding-bottom: size(60);
+        container-type: inline-size;
+        container-name: counterHead;
+    }
+    &_title {
+        font-weight: 700;
+    }
+    :global{
+        .row {
+            --bs-gutter-y: var(--bs-gutter-x)
+        }
+    }
+}
+.counter {
+    width: 820px;
+    max-width: 100%;
+    container-type: inline-size;
+    container-name: counterBar;
+    :global(.row) {
+        @include max(767.98) {
+            --bs-gutter-x: 10px;
+        }
+    }
+    &_box {
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        background-color: #f5f5f5;
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+        @include min(375) {
+            width: 80px;
+            height: 80px;
+        }
+        @include min(768) {
+            width: 140px;
+            height: 140px;
+        }
+        @include min(992) {
+            width: 160px;
+            height: 160px;
+        }
+        @include min(1200) {
+            width: 185px;
+            height: 185px;
+        }
+        span {
+            display: block;
+            font-weight: 700;
+            line-height: calc(25/22);
+            font-size: size(12);
+            @include min(375) {
+                font-size: size(14);
+            }
+            @include min(768) {
+                font-size: size(18);
+            }
+            @include min(992) {
+                font-size: size(22);
+            }
+        }
+    }
+    &_count {
+        // font-family: $secondary-font;
+        line-height: 1;
+        font-size: 16px;
+        margin-bottom: 0;
+        @include min(375) {
+            font-size: 20px;
+        }
+        @include min(768) {
+            margin-bottom: 6px;
+            line-height: calc(59/49);
+            font-size: 35px;
+            font-weight: 700;
+        }
+        @include min(1200) {
+            font-size: 49px;
+        }
+    }
+    &_round {
+        position: absolute;
+        position: absolute;
+        background-color: #EDEDED;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        width: calc(100% - 10px);
+        height: calc(100% - 10px);
+        top: 5px;
+        left: 5px;
+        @include min(768) {
+            width: calc(100% - 24px);
+            height: calc(100% - 24px);
+            top: 12px;
+            left: 12px;
+        }
+        >* {
+            position: relative;
+            z-index: 2;
+        }
+    }
+    &_progress {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        svg {
+            max-width: 100%;
+            max-height: 100%;
+            width: 100%;
+            height: 100%;
+            circle {
+                // transition: stroke-dashoffset .2s linear;
+            }
+            .stroke {
+                stroke-dashoffset: 50%;
+                stroke: $primary-color;
+            }
+        }
+    }
+}
+@container counterHead (max-width: 562.98px) {
+    .section {
+        &_title {
+            font-size: size(30);
+        }
+    }
+}
+@container counterHead (max-width: 450.98px) {
+    .section {
+        &_title {
+            font-size: calc(1.4rem);
+        }
+    }
+}
+@container counterBar (max-width: 819.98px) {
+    .counter {
+        &_box {
+            width: 145px;
+            height: 145px;
+        }
+        span {
+            font-size: 18px;
+        }
+        &_count {
+            font-size: 39px;
+        }
+        &_round {
+            width: calc(100% - 10px);
+            height: calc(100% - 10px);
+            top: 5px;
+            left: 5px;
+        }
+    }
+  }
+  @container counterBar (max-width: 743.98px) {
+    .counter {
+        :global(.row) {
+            --bs-gutter-x: 10px;
+        }
+        &_box {
+            width: 75px;
+            height: 75px;
+        }
+        span {
+            font-size: 12px;
+        }
+        &_count {
+            font-size: 19px;
+            margin-bottom: 2px;
+        }
+    }
+  }
+  @container counterBar (max-width: 350.98px) {
+    .counter {
+        :global(.row) {
+            --bs-gutter-x: 10px;
+        }
+        &_box {
+            width: 60px;
+            height: 60px;
+        }
+        span {
+            font-size: 9px;
+        }
+        &_count {
+            font-size: 15px;
+        }
+        &_round {
+            width: calc(100% - 5px);
+            height: calc(100% - 5px);
+            top: 2.5px;
+            left: 2.5px;
+        }
+    }
+  }
+  @container counterBar (max-width: 290.98px) {
+    .counter {
+        &_box {
+            width: 40px;
+            height: 40px;
+        }
+        span {
+            font-size: 7.5px;
+        }
+        &_count {
+            font-size: 12px;
+        }
+        &_round {
+            width: calc(100% - 3px);
+            height: calc(100% - 3px);
+            top: 1.5px;
+            left: 1.5px;
+        }
+    }
+  }
+
+:global(html:not(#INDdummy) body:not(#INDdummy).INDwhiteblack>:not(#INDWrap)),:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)),
+:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)) {
+    .counter {
+        &_progress {
+            background-color: transparent !important;
+        }
+        &_round {
+            background-color: #ededed !important;
+            * {
+                background-color: transparent !important;
+            }
+        }
+    }
+}

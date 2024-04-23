@@ -1,0 +1,112 @@
+@import "../../../styles/util";
+@import "../../../styles/colors";
+
+.image_box_card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        &:hover {
+            + .image_box_card_image {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+            ~ button {
+                :global(.btn-link-icon) {
+                    transform: rotate(45deg);
+                }
+            } 
+        }
+    }
+    &_image {
+        margin-bottom: 14px;
+        img {
+            transform: scale(1);
+            transition: 0.5s ease all;
+            will-change: transform;
+        }
+    }
+    &_title {
+        font-family: $primary-font;
+        font-size: size(22);
+        font-weight: 700;
+        margin-bottom: 9px;
+        color: $black-color;
+        @include max(767.98) {
+            font-size: size(17);
+            margin-bottom: 12px;
+        }
+    }
+    &_description {
+        font-family: $primary-font;
+        font-size: size(16);
+        font-weight: 400;
+        margin-bottom: 12px;
+        line-height: 2;
+        color: $black-color;
+        max-width: 370px;
+        ul {
+            padding-left: size(20);
+            li+li {
+                margin-top: 15px;
+            }
+        }
+        li, p {
+            font-size: size(16);
+            line-height: 2.1;
+            @include max(767.98) {
+                font-size: size(14);
+            }
+        }
+        h1,h2,h3,h4,h5,h6 {
+            font-size: size(23);
+            font-weight: 700;
+            @include max(767.98) {
+                font-size: size(20);
+            }
+        }
+        @include max(767.98) {
+            font-size: size(14);
+        }
+        &.read {
+            &_more {
+                position: relative;
+            }
+            &_less {
+                position: relative;
+                height: size(95);
+                overflow: hidden;
+            }
+        }
+    }
+    :global {
+        .btn {
+            color: $primary-color;
+            margin-top: auto;
+            .btn-link-icon {
+                transition: 0.3s ease transform;
+                will-change: transform;
+            }
+        }
+    }
+}
+:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)),
+:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)),
+:global(body[data-indblackwhite]:not(#INDdummy)>:not(#INDWrap) *:not(img):not(video)),
+:global(html:not(#INDdummy) body[data-indblackwhite]:not(#INDdummy)>:not(#INDWrap) *:not(img):not(video)),
+:global(html:not(#INDdummy) body[data-indwhiteblack]:not(#INDdummy)>:not(#INDWrap) *:not(img):not(video)) {
+    .image_box_card {
+        background-color: transparent !important;
+        a {
+            background-color: transparent !important;
+        }
+    }
+}

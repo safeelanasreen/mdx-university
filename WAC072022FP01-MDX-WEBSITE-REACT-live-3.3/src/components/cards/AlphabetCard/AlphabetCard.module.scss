@@ -1,0 +1,93 @@
+@import "../../../styles/util";
+.card {
+    --title-font-size: 60px;
+    --title-font-weight: 900;
+    --text-color: #000;
+    --text-hover-color: #E30613;
+    --col-width: 50%;
+    
+    --card-padding-x: 0;
+    --card-padding-y: 20px;
+
+    container-type: inline-size;
+    container-name: alphaCard;
+    padding: var(--card-padding-y) var(--card-padding-x);
+    @include min(992) {
+        --title-font-size: #{size(80)};
+        --card-padding-y: 25px;
+    }
+    @include min(1200) {
+         --title-font-size: #{size(102)};
+         --card-padding-y: 35px;
+    }
+    &_title {
+        font-size: var(--title-font-size);
+        // font-family: $secondary-font;
+        font-weight: var(--title-font-weight);
+        margin-bottom: size(8);
+        line-height: calc(123/102);
+    }
+    &_head {
+        flex-basis: 9.6%;
+    }
+    &_body {
+        @include min(768) {
+            width: 100%;
+            max-width: 86%;
+        }
+        .card_title {
+            visibility: hidden;
+            @include max(767.98) {
+                display: none;
+            }
+        }
+        ul {
+            li {
+                color: var(--text-color);
+                width: fit-content;
+                padding-left: 0 !important;
+                max-width: 94%;
+                > a {
+                    padding-left: 28px;
+                    @include lineClamp(1);
+                }
+                &::before {
+                    filter: brightness(0);
+                }
+                &:hover {
+                    color: var(--text-hover-color);
+                    &::before {
+                        filter: brightness(1);
+                    }
+                }
+                a {
+                    font-weight: 500;
+                    // display: block;
+                    color: var(--text-color);
+                    &:hover {
+                        color: var(--text-hover-color);
+                    }
+                }
+            }
+        }
+    }
+    &_row {
+        --bs-gutter-y: 15px;
+        > * {
+            max-width: var(--col-width);
+            flex-basis: var(--col-width);
+        }
+    }
+}
+@container alphaCard  (max-width: 540px) {
+    .card{
+        &_body {
+            --col-width: 100%;
+            ul {
+                li {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+  }

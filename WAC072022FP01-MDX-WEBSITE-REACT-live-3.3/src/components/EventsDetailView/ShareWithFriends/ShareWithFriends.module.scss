@@ -1,0 +1,32 @@
+@import "../../../styles/util";
+@import "../../../styles/colors";
+
+
+
+
+
+
+.socialmedia_links{
+  &_wrap{
+    display: flex;
+    align-items: center;
+    width: auto;
+    // padding-right: 30px;
+    font-size: size(16);
+  }
+  &_item{
+    display: flex;
+    margin-left: 15px;
+    color: currentColor;
+    &>button {
+      display: flex;
+      align-items: center;
+    }
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+}
+
+

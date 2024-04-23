@@ -1,0 +1,140 @@
+@import "../../../styles/util";
+.card {
+    column-gap: 20px;
+    padding: size(30) 0;
+    border-bottom: 1px solid #d9d9d9;
+    container-name: publicationCard;
+    container-type: inline-size;
+    @include min(992) {
+        column-gap: size(40);
+        padding: size(53) 0 size(60) 0;
+    }
+    &_imgwrap {
+        max-width: 100px;
+        width: 100px;
+        .figure {
+            width: 100px;
+            position: relative;
+            --bs-aspect-ratio: 100%;
+        }
+    }
+    &_title {
+        font-weight: 400;
+        line-height: normal;
+        font-size: size(22);
+        margin-bottom: 10px;
+    }
+    &_contentwrap {
+        .content_one {
+            color: #838383;
+            font-size: 16px;
+
+            padding-bottom: 0;
+            margin-bottom: size(23);
+            .contact_details {
+                font-size: 14px;
+                column-gap: 12px;
+                padding: 0;
+                border-bottom: none;
+
+                a {
+                    color: #838383;
+                    text-decoration: none;
+                    &:hover {
+                        @include min(1200) {
+                            color: var(--primary);
+                        }
+                    }
+                }
+            }
+            p {
+                margin-bottom: 0;
+                padding-bottom: 7px;
+                padding-top: 7px;
+                border-top: 1px solid #83838340;
+                border-bottom: 1px solid #83838340;
+                line-height: normal;
+                padding-top: 0;
+                border-top: none;
+                border-bottom: none;
+            }
+        }
+        .content_two {
+            color: #323232;
+
+            column-gap: 10px;
+            align-items: baseline;
+
+            .description {
+                margin-bottom: 0;
+
+                line-height: normal;
+
+                @include lineClamp(1);
+                max-width: 75%;
+                font-size: 16px;
+                word-break: break-word;
+            }
+            a {
+                color: #525252;
+
+                text-transform: capitalize;
+                font-size: 12px;
+
+                &:hover {
+                    @include min(1200) {
+                        color: var(--primary);
+                    }
+                }
+            }
+            .new {
+                color: var(--primary);
+                font-size: 12px;
+            }
+        }
+    }
+}
+@container publicationCard (max-width: 600px) {
+    .card {
+        &_title {
+            font-size: 18px;
+            margin-bottom: 7px;
+        }
+        &_contentwrap {
+            .content_one {
+                padding-bottom: 7px;
+                margin-bottom: 0;
+                .contact_details {
+                    padding: 7px 0;
+                    border-bottom: 1px solid #83838340;
+                }
+                p {
+                    padding-top: 7px;
+                    border-top: 1px solid #83838340;
+                    border-bottom: 1px solid #83838340;
+                }
+            }
+        }
+        .content_two {
+            column-gap: 5px;
+            align-items: flex-end;
+            .description {
+                @include lineClamp(2);
+                max-width: 75%;
+                font-size: 14px;
+            }
+            a {
+                font-size: 14px;
+            }
+        }
+    }
+}
+@container publicationCard (max-width: 500px) {
+    .card {
+        .content_two {
+            .description {
+                max-width: 55%;
+            }
+        }
+    }
+}

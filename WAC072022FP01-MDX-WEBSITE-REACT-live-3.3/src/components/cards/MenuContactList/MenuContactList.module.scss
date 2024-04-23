@@ -1,0 +1,65 @@
+@import "../../../styles/util";
+.contact_item{
+  
+    padding: 16px 0;
+    border-bottom: 1px solid #49379A;
+    list-style: none;
+    width: 100%;
+    max-width: 541px;
+    position: relative;
+    &::after{
+        position: absolute;
+      content: "";
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: $white-color;
+      height: 1px;
+      transform-origin: right;
+      transform: scale(0);
+      transition: transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    }
+    &:hover{
+       
+        @include min(1200){
+            &:after{
+                transform-origin:left ;
+                transform: scale(1);
+            } 
+        }
+    }
+    .item_wrap{
+        width: 100%;
+        align-items: center;
+        text-decoration: none;
+       
+        line-height: 1.5;
+       a{
+        color: $white-color;
+        font-weight: 400;
+        text-decoration: none;
+        font-size: 15px;  
+            @include min(1400){
+                font-size: 16px;
+    
+            } 
+       }
+        p{
+            font-size: 15px;  
+            @include min(1400){
+                font-size: 16px;
+    
+            } 
+        }
+    }
+    .img_wrap{
+        column-gap: 48px;
+        width: 100%;
+    }
+
+}
+
+.data{
+    white-space: nowrap;
+}
+

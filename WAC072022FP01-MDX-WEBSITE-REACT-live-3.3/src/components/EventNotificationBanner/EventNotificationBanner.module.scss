@@ -1,0 +1,66 @@
+@import "../../styles/util";
+.section {
+    padding: size(10) 0 size(9);
+    box-shadow: 0px -1px 7px rgba(0, 0, 0, 0.1);
+    background-color: var(--background-color);
+
+    &_home {
+        position: fixed;
+        top: var(--mdx-header-height);
+        width: 100%;
+        left: 0;
+        z-index: 999;
+        background-color: $white-color;
+    }
+    .notification {
+        --bs-gutter-x: 10px;
+        --bs-gutter-y: var(--bs-gutter-x);
+        &_label {
+            line-height: 1.2;
+            font-weight: 500;
+            color: #E54A03;
+            font-size: 17px;
+            @include min(768) {
+                font-size: size(22);
+            }
+        }
+        &_content {
+            line-height: calc(16/18);
+            font-size: 16px;
+            color: #000;
+            p {
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+            a {
+                color: $black-color;
+                text-underline-offset: 2px;
+                &:hover {
+                    color: $secondary-color;
+                }
+            }
+            &>* {
+                margin-top: size(5);
+                margin-bottom: size(5);
+                line-height: 1.2;
+            }
+            @include min(768) {
+                font-size: size(18);
+            }
+            span {
+                &.change {
+                    opacity: 0;
+                    will-change: opacity, transform;
+                    transition: opacity cubic-bezier(0.075, 0.82, 0.165, 1) .4s, transform cubic-bezier(0.075, 0.82, 0.165, 1) .4s;
+                    transform: translateY(3.4px);
+                    display: inline-block;
+                    &.updated {
+                        opacity: 1;
+                        transform: translateY(0px);
+                    }
+                }
+            }
+        }
+    }
+}

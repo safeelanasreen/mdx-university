@@ -1,0 +1,69 @@
+@import '../../styles/util';
+
+
+.cookie_wrap {
+    padding: 12px 0;
+    z-index: 1050;
+    @include min(768) {
+        
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    background-color: $secondary-color ;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+
+    &_body {
+        width: 100%;
+
+        @include min(768) {
+            flex: 1 0;
+
+        }
+
+        p {
+            margin-bottom: 0px;
+            color: $white-color;
+            @include max(767.98) {
+                font-size: 13px;
+            }
+            a {
+                text-underline-offset: size(3);
+                transition: color ease-in-out .15s;
+                margin-right: size(20);
+                &:hover {
+                    color: $white-color;
+                }
+            }
+
+        }
+    }
+
+    &_btn {
+        flex: 0 0 auto;
+        width: 100%;
+
+        @include min(768) {
+            width: auto;
+        }
+        @include max(991.98) {
+            display: inline-block;
+            width: auto;
+        }
+        button {
+            padding: 7px 7px;
+            font-size: 1rem;
+            min-width: 120px;
+            @include max(767.98) {
+                padding: 4px 13px;
+                min-width: auto;
+                line-height: 1;
+            }
+        }
+    }
+}

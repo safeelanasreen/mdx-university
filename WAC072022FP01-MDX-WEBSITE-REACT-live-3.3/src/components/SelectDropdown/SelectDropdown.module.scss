@@ -1,0 +1,87 @@
+@import '../../styles/util';
+
+.dropdown_item{
+    text-align: left;
+    position: relative;
+    padding-right: 35px;
+    button:global(.dropdown-toggle){
+        text-align: left!important;
+        padding-left: 0px;
+        padding-right: 0;
+        width: 100%;
+        &:after{
+            display: none;
+        }
+        svg{
+            position: absolute;
+            right: 15px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    }
+    
+}
+
+.dropdown_mob_modal{
+    :global(.modal-dialog){
+        width: 100%;
+        max-width: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+        bottom: 0;
+        top: 0;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        margin: 0px!important;
+    }
+    :global(.modal-body){
+        padding: 15px 0;
+        max-height: calc(100vh - 100px);
+        overflow: auto;
+        a{
+            font-size: 16px;
+        }
+    }
+    :global(.dropdown-item){
+        padding: 13px 16px;
+    }
+    :global(.modal-content){
+        border-radius: 12px 12px 0 0;
+        border: none!important;
+    }
+    .dropdown_item{
+        padding-right: 0px;
+    }
+    :global(.modal-footer){
+        button{
+            font-size: 17px;
+            font-weight: 500;
+        }
+    }
+    :global(.dropdown-item.active),
+    :global(.dropdown-item:active){
+        background-color: #F2EFFF;
+        color: currentColor;
+    }
+}
+
+.handle_show_btn{
+    text-align: left;
+    padding-left: 0px;
+    padding-right: 25px;
+    position: relative;
+    border-radius: 0px;
+    svg{
+        position: absolute;
+        right: 9px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    @include max(575.9){
+        padding-top: 9px;
+        padding-bottom: 9px;
+    }
+}

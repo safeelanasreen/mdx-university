@@ -1,0 +1,67 @@
+@import '../../styles/util';
+.mdx_sports_cardstack {
+    &_swiper {
+        position: relative;
+        @include max(991.98) {
+            padding-bottom: 35px;
+            margin-bottom: 40px;
+        }
+        :global(.swiper-scrollbar.swiper-scrollbar-horizontal) {
+            left: 15px;
+            width: calc(100% - 30px);
+            @include min(992) {
+                display: none;
+            }
+        }
+    }
+    .prev_nav, .next_nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        color: $white-color;
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        font-size: size(16);
+        text-transform: uppercase;
+        color: $white-color;
+        // font-family: $secondary-font;
+        font-family: $primary-font;
+        line-height: 1;
+        height: 40px;
+
+        background-color: transparent !important;
+        * {
+            background-color: transparent !important;
+        }
+
+        svg {
+            transform: translateY(-1px);
+        }
+        @include min(992) {
+            display: flex;
+        }
+        span {
+            display: flex;
+        }
+    }
+    .prev_nav {
+        left: size(30);
+        @include min(1600) {
+            left: size(50);
+        }
+        svg {
+            margin-right: size(14);
+        }
+    }
+    .next_nav {
+        right: size(30);
+        @include min(1600) {
+            right: size(50);
+        }
+        svg {
+            margin-left: size(14);
+        }
+    }
+}

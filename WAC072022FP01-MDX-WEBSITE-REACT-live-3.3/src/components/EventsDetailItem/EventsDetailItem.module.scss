@@ -1,0 +1,74 @@
+@import "../../styles/util";
+@import "../../styles/colors";
+
+
+.image_wrap{
+    position: relative;
+    margin-bottom: 28px;
+    @include aspectRatio(894,400);
+}
+.event_main_title{
+    
+    @include min(1200){
+        font-size: size(40);
+        line-height: 48px;
+    }
+    @include min-max(576,1199.9){
+        font-size: size(34);
+        line-height: 40px;
+    }
+    @include max(575.9){
+        font-size: 28px;
+        line-height: 33px;
+    }
+}
+.event_details_list{
+    padding-left: 0px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+    font-weight: 500;
+    li{
+        padding-right: size(36);
+        font-size: 16px;
+        margin-bottom: 12px;
+        svg{
+            margin-top: -4px;
+            margin-right: 5px;
+            fill:$primary-color !important;
+            
+        }
+    }
+}
+.event_details_body{
+    padding-bottom: 20px;
+    &,p{
+        font-size: 16px;
+        line-height: size(24);
+    }
+}
+.event_details_body_bottom{
+    padding-top: 40px;
+    p{
+        font-size: 16px;
+        line-height: size(24);
+    }
+    a{
+        color: $primary-color;
+    }
+}
+
+@include max(575.9){
+    .register_now_btn{
+        width: 100%;
+        text-align: center;
+    }
+}
+.event_details{
+    :global{
+        .title{
+            font-family: $primary-font;
+        }
+    }
+}

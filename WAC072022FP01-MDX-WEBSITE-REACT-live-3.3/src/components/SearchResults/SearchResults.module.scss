@@ -1,0 +1,212 @@
+@import "../../styles/util";
+.searchresult {
+  background-color: var(--light);
+  padding: 40px 0;
+  @include min(1200) {
+    padding: size(70) 0;
+  }
+
+  &_ttl {
+    font-size: 28px;
+    font-weight: 800;
+  }
+  &_top {
+    .heading_wrap {
+      margin-bottom: 15px;
+      row-gap: 20px;
+    }
+    p {
+      font-size: 18px;
+      @include min(1200) {
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+  .sort_wrap {
+    column-gap: 12px;
+    margin-bottom: 25px;
+    @include min(992) {
+      margin-bottom: 0;
+    }
+    p {
+      font-size: 18px;
+      white-space: nowrap;
+      max-width: max-content;
+    }
+  }
+
+  &_text {
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+  &_categories {
+    gap: 15px;
+    margin: size(30) 0;
+    overflow: hidden;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    @include max(575.98) {
+      width: calc(100% + size(10));
+      margin-right: size(-10);
+    }
+    @include min(768) {
+      flex-wrap: wrap;
+    }
+    button {
+      min-width: 154px;
+      padding: 17px 17px 16px;
+      display: flex;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: calc(20 / 18);
+      background-color: $white-color;
+      border: 1px solid #b1b1b1;
+      color: var(--filter-btn);
+      transition: all 0.3s cubic-bezier(0.43, 0.08, 0.41, 0.78);
+      @include min(1200) {
+        &:hover {
+          background-color: $black-color;
+          color: $white-color;
+        }
+      }
+
+      @include max(575.98) {
+        &:last-child {
+          margin-right: 12px;
+        }
+      }
+    }
+  }
+  &_card {
+    margin-bottom: 25px;
+    @include min(1200) {
+      margin-bottom: size(50);
+    }
+    .search_nodata {
+      text-align: center;
+      font-weight: 600;
+    }
+  }
+  :global {
+    .search-container {
+      @include min(1600) {
+        max-width: 1200px;
+      }
+    }
+    .searchresult-categories {
+      button {
+        &.active {
+          background-color: $black-color;
+          color: $white-color;
+        }
+      }
+    }
+  }
+}
+.loading {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+
+  .dot_1,
+  .dot_2,
+  .dot_3 {
+    width: 12px;
+    height: 12px;
+    background-color: $white-color;
+
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    z-index: 5;
+    margin: 0 4px;
+  }
+  .dot_1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+  }
+
+  .dot_2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+  }
+  @-webkit-keyframes sk-bouncedelay {
+    0%,
+    80%,
+    100% {
+      -webkit-transform: scale(0);
+    }
+    40% {
+      -webkit-transform: scale(1);
+    }
+  }
+  @keyframes sk-bouncedelay {
+    0%,
+    80%,
+    100% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
+    40% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+}
+
+.loading_black {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+
+  .dot_1,
+  .dot_2,
+  .dot_3 {
+    width: 12px;
+    height: 12px;
+    background-color: black;
+
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    z-index: 5;
+    margin: 0 4px;
+  }
+  .dot_1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+  }
+
+  .dot_2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+  }
+  @-webkit-keyframes sk-bouncedelay {
+    0%,
+    80%,
+    100% {
+      -webkit-transform: scale(0);
+    }
+    40% {
+      -webkit-transform: scale(1);
+    }
+  }
+  @keyframes sk-bouncedelay {
+    0%,
+    80%,
+    100% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
+    40% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+}

@@ -1,0 +1,178 @@
+@import "../../styles/util";
+@import "../../styles/colors";
+
+.mdx_related_course {
+  padding: 45px 0 45px;
+
+  @include min(992) {
+    padding: size(80) 0;
+  }
+
+  &.theme_dark {
+    background-color: #e3dfdf;
+  }
+
+  :global(.title) {
+    margin-bottom: 30px;
+
+    @include min(992) {
+      margin-bottom: size(50);
+    }
+  }
+
+  .mdx_related_course {
+    &_swiper {
+      padding-bottom: size(35);
+
+      @include max(1199.98) {
+        // padding-right: var(--bs-gutter-x, 0.75rem);
+        // padding-left: var(--bs-gutter-x, 0.75rem);
+        padding-bottom: size(40);
+        margin-bottom: size(40);
+      }
+    }
+  }
+
+  @include randomColor1(".related_card", " :global(.grid-cover)");
+}
+
+@include randomColor1(".course_card", "> div");
+
+.course_card {
+  background-color: white;
+}
+@include max(991.98) {
+  .anim {
+    /* opacity: 0;
+        transform: translateY(6px); */
+    // pointer-events: none;
+    transition: opacity ease-in-out 0.3s, transform ease-in-out 0.3s;
+    &.anim {
+      &_show {
+        pointer-events: all;
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+  }
+}
+.rowMargin20 {
+  margin-left: -20px;
+  margin-right: -20px;
+  --bs-gutter-y: 30px;
+  @include min(992) {
+    --bs-gutter-y: 40px;
+  }
+}
+
+.image_box_card_wrap {
+  padding: 0 20px;
+
+  @include max(991.98) {
+    // padding: 0 8px;
+    margin-top: 20px;
+  }
+}
+
+.image_box_card_slider {
+  @include max(1199.98) {
+    // margin: 0 -15px;
+    margin: 0;
+  }
+
+  :global {
+    .swiper {
+      @include max(1199.98) {
+        margin-bottom: size(40);
+        padding: 0 7px size(40);
+      }
+      @include min(1200) {
+        padding: 0 7px;
+      }
+    }
+  }
+}
+
+.stat_card_slider {
+  @include max(1199.98) {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+.box_layout {
+  @include max(575.98) {
+    --bs-gutter-y: 1.5rem;
+  }
+}
+
+.faculty_card_row {
+  --bs-gutter-y: 15px;
+  @include min(992) {
+    --bs-gutter-y: 40px;
+  }
+}
+
+@include max(991.98) {
+  .cardstack_row {
+    display: flex;
+    flex-wrap: wrap;
+    --bs-gutter-y: 10px;
+    --bs-gutter-x: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    & > * {
+      flex-basis: 50%;
+      max-width: 50%;
+      width: 100%;
+      @include max(767.98) {
+        flex-basis: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+  :global(.container) {
+    & > .cardstack_row {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+:global(
+    html:not(#INDdummy)
+      body:not(#INDdummy).INDwhiteblack
+      > :not(#INDWrap)
+      *:not(img):not(video)
+  ),
+:global(
+    html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors > :not(#INDWrap)
+  ),
+:global(
+    html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors > :not(#INDWrap)
+  ) {
+  .mdx_related_course {
+    @include randomColor1(".related_card", " :global(.grid-cover)");
+  }
+  @include randomColor1(".course_card", "> div");
+}
+
+/* High Contrast */
+:global(
+    html:not(#INDdummy) body:not(#INDdummy).INDwhiteblack > :not(#INDWrap)
+  ) {
+  .mdx_related_course {
+    @include randomColor1(".related_card", " :global(.grid-cover)");
+  }
+  @include randomColor1(".course_card", "> div");
+}
+
+:global(
+    html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors > :not(#INDWrap)
+  ),
+:global(
+    html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors > :not(#INDWrap)
+  ) {
+  @include randomColor1Important(".course_card", "> div");
+}

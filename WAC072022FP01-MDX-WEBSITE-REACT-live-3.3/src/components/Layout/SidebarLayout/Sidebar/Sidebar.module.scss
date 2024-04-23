@@ -1,0 +1,115 @@
+@import "../../../../styles/util";
+@import "../../../../styles/colors";
+
+.sidebar {
+  background-color: $black-color;
+  height: 100%;
+  overflow-y: auto;
+  padding: 0px 15px;
+  @include min(1200) {
+    padding: size(46);
+  }
+  ul {
+    padding-left: 0;
+    margin-bottom: 0;
+    display: flex;
+    list-style: none;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+
+    @include min(1200) {
+      display: block;
+      overflow-x: hidden;
+    }
+    li {
+      flex: 0 0 auto;
+      width: auto;
+      margin-right: 58px;
+      @include min(1200) {
+        margin-right: 0;
+        width: 100%;
+      }
+    }
+
+    a {
+      padding: 24px 0;
+      color: $white-color !important;
+      display: block;
+      font-weight: 500;
+      font-size: 17px;
+      text-decoration: none;
+      position: relative;
+      &::before {
+        content: "";
+        transform-origin: left;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        transition: 0.3s all;
+        transform: scaleX(0);
+        bottom: -1px;
+        height: 2px;
+        @include min(1200) {
+          height: 1px;
+        }
+      }
+      @include min(1200) {
+        border-bottom: 1px solid #2d2d2d;
+        padding: size(26) 0;
+        padding-right: size(22);
+      }
+      span {
+        position: absolute;
+        right: 2px;
+        top: 50%;
+        display: none;
+        transition: 0.3s all ease;
+        transform: translateY(-50%);
+        @include min(1200) {
+          display: inline-block;
+        }
+      }
+      &:global(.active-scroll-spy) {
+        &::before {
+          transform: scaleX(1);
+        }
+        span {
+          transform: translateY(-50%) rotate(45deg);
+          color: $primary-color;
+        }
+      }
+      @include min(1200) {
+        &:hover,
+        &:global(.active-scroll-spy) {
+          &::before {
+            transform: scaleX(1);
+          }
+          span {
+            transform: translateY(-50%) rotate(45deg);
+            color: $primary-color !important;
+            svg {
+              color: $primary-color !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+:global(html:not(#INDdummy)
+    body:not(#INDdummy).INDwhiteblack
+    > :not(#INDWrap)) {
+  .sidebar {
+    ul {
+      a {
+        color: $black-color !important;
+        font-weight: 500 !important;
+        &::before {
+          background-color: $black-color !important;
+        }
+      }
+    }
+  }
+}

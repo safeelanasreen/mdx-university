@@ -1,0 +1,290 @@
+@import "../../styles/util";
+
+.mdx_search_sec {
+  min-height: calc(100vh - 122px);
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #5d596d;
+  overflow: initial;
+
+  &.search_scrolled {
+    .search_sec {
+      position: fixed;
+    }
+    @include min(1200) {
+      .search_sec {
+        @include min(1200) {
+          padding: size(10) 0 size(10);
+        }
+        .search_wrap {
+          .icon_search {
+            svg {
+              max-width: 20px;
+            }
+          }
+          input {
+            border-bottom: none;
+            font-size: 22px;
+            padding-left: 36px;
+          }
+          .btn_clear {
+            background-color: transparent;
+            color: $white-color;
+            border: none;
+            // outline: none;
+            height: 22px;
+            padding: 0;
+            width: 22px;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            &:hover {
+              color: $primary-color;
+            }
+
+            &:before,
+            &:after {
+              width: 2px;
+              background-color: $white-color;
+            }
+            &:before {
+              transform: rotate(45deg);
+            }
+            &:after {
+              transform: rotate(-45deg);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .container {
+    @include min(1200) {
+      max-width: 1200px;
+    }
+
+    @include min(1600) {
+      max-width: 1227px;
+    }
+  }
+
+  .search_sec {
+    background-color: $secondary-color;
+    padding: 20px 0px;
+    position: static;
+    width: 100%;
+    top: 70px;
+    z-index: 11;
+    @include min(992) {
+      top: 86px;
+    }
+
+    @include min(1200) {
+      padding: size(35) 0 size(50);
+      top: 96px;
+    }
+    @include min(1600) {
+      top: 122px;
+    }
+
+    .back {
+      font-size: 13px;
+      text-decoration: none;
+      color: $white-color;
+      margin-bottom: 4px;
+      display: inline-block;
+      @include min(992) {
+        font-size: 16px;
+        margin-bottom: 2px;
+      }
+      .arrow {
+        display: inline-block;
+        transform: rotateY(145deg) translateY(-2px);
+        margin-right: 5px;
+        svg {
+          @include max(767.98) {
+            max-width: 12px;
+            max-height: 12px;
+          }
+        }
+      }
+    }
+
+    .search_wrap {
+      position: relative;
+      .icon_search {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        color: $white-color;
+
+        background-color: transparent !important;
+        * {
+          background-color: transparent !important;
+        }
+        svg {
+          @include max(991.98) {
+            max-width: 16px;
+          }
+        }
+      }
+      .btn_clear {
+        background-color: transparent;
+        color: $white-color;
+        border: none;
+        // outline: none;
+        height: 18px;
+        padding: 0;
+        width: 18px;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        background-color: transparent !important;
+        * {
+          background-color: transparent !important;
+        }
+        @include min(992) {
+          width: size(22);
+          height: size(22);
+        }
+        &:hover {
+          color: $primary-color;
+        }
+
+        &:before,
+        &:after {
+          position: absolute;
+          left: 8px;
+          top: 0;
+          content: " ";
+          height: 18px;
+          width: 18px;
+          width: 2px;
+          background-color: $white-color;
+          @include min(992) {
+            height: size(22);
+            width: size(22);
+            width: 5px;
+          }
+        }
+        &:before {
+          transform: rotate(45deg);
+        }
+        &:after {
+          transform: rotate(-45deg);
+        }
+      }
+      input {
+        color: $white-color;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid $white-color;
+        // outline: none;
+        width: 100%;
+        // font-family: $secondary-font;
+        font-size: 16px;
+        padding: 6px 30px 6px 25px;
+        text-transform: uppercase;
+        line-height: 1;
+        border-radius: 0 !important;
+        @include min(992) {
+          border-width: 2px;
+          font-size: size(35);
+          padding: size(15) 0;
+          padding-left: size(56);
+          padding-right: size(56);
+        }
+
+        &::-webkit-input-placeholder {
+          /* Edge */
+          color: rgba(255, 255, 255, 0.575);
+        }
+
+        &:-ms-input-placeholder {
+          /* Internet Explorer 10-11 */
+          color: rgba(255, 255, 255, 0.575);
+        }
+
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.575);
+        }
+      }
+    }
+  }
+
+  .results_sec {
+    background-color: $light-color;
+    flex: 1 0;
+    height: 100%;
+    padding: 30px 0;
+    overflow: hidden;
+
+    @include min(992) {
+      padding: size(50) 0;
+    }
+
+    .results_note {
+      font-size: 16px;
+
+      @include min(992) {
+        font-size: 20px;
+
+        margin-bottom: size(35);
+      }
+    }
+
+    .results_title {
+      // font-family: $secondary-font;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      line-height: 1;
+      font-size: 17px;
+      @include min(992) {
+        font-size: size(28);
+        margin-bottom: size(20);
+      }
+    }
+  }
+}
+
+/* Dark Theme */
+:global(.INDblackwhite) {
+  .search_sec {
+    border: 1px solid $stroke-color;
+    border-width: 0 0 2px;
+  }
+}
+:global(html:not(#INDdummy) body:not(#INDdummy).INDwhiteblack>:not(#INDWrap)) {
+  .mdx_search_sec {
+    .search_sec {
+      .search_wrap {
+        input {
+          border-bottom-color: $black-color !important;
+          &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            font-weight: 400 !important;
+          }
+          &::-moz-placeholder { /* Firefox 19+ */
+            font-weight: 400 !important;
+          }
+          &:-ms-input-placeholder { /* IE 10+ */
+            font-weight: 400 !important;
+          }
+          &:-moz-placeholder { /* Firefox 18- */
+            font-weight: 400 !important;
+          }
+        }
+        .btn_clear {
+          &::before, &::after {
+            background-color: $black-color;
+          }
+        }
+      }
+    }
+  }
+}

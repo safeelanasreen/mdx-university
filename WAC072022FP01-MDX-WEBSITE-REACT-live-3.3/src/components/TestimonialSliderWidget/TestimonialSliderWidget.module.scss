@@ -1,0 +1,164 @@
+@import "../../styles/util";
+.testimonial {
+  &_slider {
+    padding: 0 0 size(35);
+    @include min(992) {
+      padding: 0 size(100) size(35);
+    }
+    @include min(1200) {
+      padding: 0 size(150) size(35);
+    }
+    &_widget {
+        padding: 40px 0;
+      background-color: $blue-alt;
+      @include min(992) {
+        padding: size(80) 0;
+      }
+    }
+    &_wrap {
+      position: relative;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    text-align: center;
+    color: $white-color;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      top: 0;
+      z-index: 2;
+      background: rgba(30, 32, 83, 1);
+      width: size(80);
+      @include min(992) {
+        width: size(100);
+      }
+      @include min(1200) {
+        width: size(150);
+      }
+    }
+    &::before {
+      background: linear-gradient(
+        90deg,
+        rgba(30, 32, 83, 1) 92%,
+        rgba(30, 32, 83, 0) 100%
+      );
+      left: size(-60);
+      @include min(992) {
+        left: 0;
+      }
+    }
+    &::after {
+      background: linear-gradient(
+        -90deg,
+        rgba(30, 32, 83, 1) 92%,
+        rgba(30, 32, 83, 0) 100%
+      );
+      right: size(-60);
+      @include min(992) {
+        right: 0;
+      }
+    }
+    .slide_item {
+      max-width: calc(100% - 20px);
+      margin-left: auto;
+      margin-right: auto;
+
+      &_auth_img {
+        display: inline-block;
+        border-radius: 50%;
+        overflow: hidden;
+        line-height: 0;
+      }
+      h2 {
+        margin-bottom: size(20);
+        font-weight: 400;
+      }
+      h3 {
+        margin-bottom: size(40);
+      }
+      p, .paragraph {
+        font-size: size(16);
+        line-height: 1.6;
+      }
+    }
+  }
+  &_pagination {
+    justify-content: center;
+    display: none;
+    @include min(992) {
+      display: flex;
+    }
+    span {
+      width: size(18);
+      height: size(6);
+      background-color: $white-color;
+      opacity: 0.32;
+      display: block;
+      margin-right: size(10);
+      transition: width ease-in-out 0.3s;
+      border-radius: 0px;
+      &:last-child {
+        margin-right: 0;
+      }
+      &:global(.swiper-pagination-bullet-active) {
+        width: size(41);
+        opacity: 1;
+      }
+    }
+  }
+  &_navigation {
+    @include max(991.98) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    button {
+      width: size(45);
+      height: size(45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: $white-color;
+      background: transparent;
+      border: none;
+      // outline: none;
+      box-shadow: none;
+      z-index: 2;
+      svg {
+          width: size(30) !important;
+          height: size(30) !important;
+      }
+      @include min(992) {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      @include min(1200) {
+        width: size(68);
+        height: size(68);
+        svg {
+            width: size(40) !important;
+            height: size(40) !important;
+        }
+      }
+    }
+    .testimonial {
+      &_prev {
+        left: 0;
+        @include max(991.98) {
+          margin-right: size(22);
+        }
+      }
+      &_next {
+        right: 0;
+        @include max(991.98) {
+          margin-left: size(22);
+        }
+      }
+    }
+  }
+}

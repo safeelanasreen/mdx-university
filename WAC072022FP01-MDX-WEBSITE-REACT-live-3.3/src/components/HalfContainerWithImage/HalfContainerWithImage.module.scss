@@ -1,0 +1,125 @@
+@import "../../styles/util";
+@import "../../styles/colors";
+
+.half_fluid {
+    background-color: $blue-alt;
+    color: white;
+    .user_msg_wrap{
+        
+
+        @include min(1200){
+            padding: size(186) size(100) size(186) size(0);
+        }
+        @include min-max(992,1199.9){
+            padding: size(140) size(50) size(140) size(0);
+        }
+        @include min-max(768,991.9){
+            padding: size(100) size(0);
+        }
+        @include min-max(576,767.9){
+            padding: size(70) size(0);
+            :global(.title.title-sm){
+                margin-bottom: 35px;
+            }
+        }
+        @include max(575.9){
+            padding: 40px 0;
+            :global(.title.title-sm){
+                margin-bottom: 30px;
+            }
+        }
+    }
+    h2{
+        margin-bottom: size(40);
+    }
+    p, &_cnt{
+        font-size: size(16);
+        line-height: 26px;
+        a {
+            display: inline-block;
+        }
+    }
+    .left_half,
+    .right_half {
+        left: 50%;
+        margin-left: -50vw;
+        max-width: 100vw;
+        position: relative;
+        right: 50%;
+        width: 100vw;
+        padding: 0px;
+    }
+    .image_wrap {
+      background-size: cover;
+      background-position: center;
+      height: 100%;
+      background-color: $grey-color;
+      img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        // mix-blend-mode: luminosity;
+      }
+      @include max(991.9){
+        
+            &::before{
+                content: "";
+                width: 100%;
+                position: relative;
+                top: 0;
+                padding-bottom: 86%;
+                display: block;
+            }
+       
+      }
+    }
+
+    .user_details{
+        padding-left: 0px;
+        list-style: none;
+        font-size: size(20);
+        margin-bottom: 0px;
+        margin-top: size(65);
+        &_name{
+            font-size: size(26);
+            font-weight: 700;
+            margin-bottom: 19px;
+        }
+        li{
+            margin-bottom: 12px;
+        }
+        @include max(768){
+            font-size: 16px;
+            margin-top: 20px;
+            &_name{
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+            li{
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    @include min(992){
+        
+        .left_half {
+            padding-left:0 !important;
+            position: absolute;
+            left: 0;
+            right: 50%;
+            margin-left: auto;
+            width: auto;
+        }
+        .right_half {
+            padding-right:0 !important;
+            position: absolute;
+            right: 0;
+            left: 50%;
+            margin-left: auto;
+            width: auto;
+        }
+    }
+}
+  

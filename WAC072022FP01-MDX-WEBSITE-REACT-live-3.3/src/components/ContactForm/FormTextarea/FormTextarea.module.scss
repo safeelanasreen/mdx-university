@@ -1,0 +1,41 @@
+@import "../../../styles/util";
+
+.form_textarea {
+  --input-color: white;
+  textarea {
+    font-size: size(16);
+    color: var(--input-color);
+    resize: auto;
+    &:focus {
+      color: var(--input-color);
+    }
+    border-radius: 0px;
+    // padding-left: 0px !important;
+    // padding-right: 0px !important;
+    background-color: transparent;
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid var(--input-color);
+    }
+    &:-webkit-autofill,
+    &:-internal-autofill-selected {
+      background-color: transparent !important;
+      transition: background-color 10s ease-in 10000s, color 10s ease-in 10000s;
+    }
+  }
+
+  label {
+    padding-left: 0px !important;
+    color: var(--input-color);
+  }
+  :global(.form-control:focus ~ label),
+  :global(.form-control:not(:placeholder-shown) ~ label),
+  :global(.form-select ~ label),
+  :global(.form-control:-webkit-autofill ~ label) {
+    font-size: size(14);
+    transform: scale(1) translateY(-0.9rem) translateX(0rem);
+    opacity: 0.4;
+  }
+}

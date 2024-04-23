@@ -1,0 +1,9 @@
+@import "../../../styles/util";
+@import "../../../styles/colors";
+.card {
+    max-width: 100%;
+    padding: size(20) size(20) size(20);
+    figure {
+        @include aspectRatio(540,374);
+    }
+}

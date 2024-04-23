@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="98" height="98" viewBox="0 0 98 98">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_36572" data-name="Rectangle 36572" width="98" height="98" transform="translate(271 842)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="university_icon" transform="translate(-271 -842)" clip-path="url(#clip-path)">
+    <g id="Group_126423" data-name="Group 126423" transform="translate(-3.28 -3.954)">
+      <path id="Path_105168" data-name="Path 105168" d="M45.97,46.74,2.69,22.189,45.97,1.39l43.28,20.8Z" transform="translate(277.31 859.609)" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="2.5"/>
+      <path id="Path_105169" data-name="Path 105169" d="M65.069,21.46v30c0,3.674-11.4,6.663-25.47,6.663S14.13,55.134,14.13,51.46v-30" transform="translate(283.68 870.785)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2.5"/>
+      <line id="Line_6836" data-name="Line 6836" y2="17.577" transform="translate(362.963 883.217)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2.5"/>
+    </g>
+  </g>
+</svg>

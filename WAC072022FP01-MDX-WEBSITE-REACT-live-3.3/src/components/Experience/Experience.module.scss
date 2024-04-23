@@ -1,0 +1,168 @@
+@import "../../styles/util";
+@import "../../styles/colors";
+
+.experience_grid {
+  padding-bottom: 40px;
+
+  @include min(992) {
+    padding-bottom: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "main      main      itemOne  itemOne  itemTwo"
+      "main      main      itemFour itemFive itemFive"
+      "itemThree itemThree itemFour itemFive itemFive";
+  }
+  &_main {
+    position: relative;
+    padding: 60px 16px 40px;
+    display: flex;
+    flex-direction: column;
+    min-height: 392px;
+    @include min(992) {
+      padding: size(60) size(51);
+      min-height: 1px;
+    }
+    * {
+      background-color: transparent !important;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+      height: 100%;
+      background: linear-gradient(rgba(17, 33, 56, 0.01) 0%, #000 100%);
+    }
+  }
+  &_item {
+    * {
+      background-color: transparent !important;
+    }
+    &>* {
+      min-height: 25vh !important;
+      height: 100% !important;
+      @include min(1200) {
+        min-height: 25vh !important;
+      }
+    }
+    &:nth-of-type(1) {
+      grid-area: main;
+    }
+
+    &:nth-of-type(2) {
+      grid-area: itemOne;
+
+      & > div {
+        &::before {
+          background-color: #f47d07;
+        }
+      }
+    }
+
+    &:nth-of-type(3) {
+      grid-area: itemTwo;
+      
+      & > div {
+        &::before {
+          background-color: #ff4f00;
+        }
+      }
+    }
+
+    &:nth-of-type(4) {
+      grid-area: itemThree;
+
+      & > div {
+        &::before {
+          background-color: #2f2552;
+        }
+      }
+    }
+
+    &:nth-of-type(5) {
+      grid-area: itemFour;
+
+      & > div {
+        &::before {
+          background-color: #e30613;
+        }
+      }
+    }
+
+    &:nth-of-type(6) {
+      grid-area: itemFive;
+
+      & > div {
+        &::before {
+          background-color: #e50159;
+        }
+      }
+    }
+  }
+
+  &_content {
+    z-index: 2;
+    position: relative;
+
+    @include min(1200) {
+      padding-bottom: size(26);
+    }
+    &_navlinks {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 0;
+      padding-top: size(15);
+      margin-top: auto;
+      // @include max(767.98) {
+      //   justify-content: space-between;
+      // }
+      li {
+        margin-right: size(49);
+        font-size: size(20);
+        font-weight: bold;
+        text-transform: uppercase;
+        @include max(767.98) {
+          margin-right: 30px;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+        a {
+          text-decoration: none;
+          color: $white-color;
+          &:hover {
+            @include min(1200) {
+              color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+:global(html:not(#INDdummy) body:not(#INDdummy).INDwhiteblack>:not(#INDWrap)) {
+  .experience_grid {
+    &_content {
+      h4,h2,button {
+        color: $white-color !important;
+      }
+    }
+  }
+}
+
+
+:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)),
+:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)) {
+    .experience_grid_item {
+        * {
+            background-color: transparent !important;
+        }
+    }
+}

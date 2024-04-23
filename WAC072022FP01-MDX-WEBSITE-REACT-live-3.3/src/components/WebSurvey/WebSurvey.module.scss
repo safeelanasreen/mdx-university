@@ -1,0 +1,310 @@
+@import "../../styles/util";
+
+.survey {
+  --exp-icon-size: 108px;
+  --exp-icon-stroke: 5px;
+  --exp-label-size: #{size(30)};
+  --survey-title-size: #{size(30)};
+  --nav-button-padding-x: #{size(20)};
+  --nav-button-padding-y: #{size(13)};
+  --nav-button-width: 121px;
+  --nav-button-size: 17px;
+  --nav-icon-size: 12px;
+  --close-btn-offset: 0.4;
+
+  --unhappy-icon-size: 41px;
+  --unhappy-icon-stroke: 2px;
+  --unhappy-label-size: #{size(24)};
+  --unhappy-icon-outer-w: 227px;
+
+  --input-padding-y: 15px;
+  --input-padding-x: 20px;
+  --shadow-color: rgba(0, 0, 0, 1);
+  &_title {
+    font-size: var(--survey-title-size);
+    // font-family: $secondary-font;
+    font-weight: 900;
+  }
+  &_head {
+    margin-bottom: size(60);
+  }
+  &_exp {
+    max-width: 526px;
+    &_icon {
+      --bs-aspect-ratio: 100%;
+      width: var(--exp-icon-size);
+      background-color: var(--fill-color);
+      border-radius: 50%;
+      cursor: pointer;
+      svg {
+        z-index: 1;
+        box-shadow: inset 0px 0px 0px var(--exp-icon-stroke) var(--shadow-color);
+        border-radius: 50%;
+        transition: box-shadow cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+      }
+    }
+    &_label {
+      font-size: var(--exp-label-size);
+      font-weight: 500;
+      line-height: calc(40 / 30);
+      margin-top: size(20);
+    }
+    > ul,
+    > form > ul {
+      > li {
+        flex-basis: 33.3333%;
+        --stroke-color: black;
+        &:hover {
+          @include min(1200) {
+            --stroke-color: white;
+            --fill-color: #{$black-color};
+            --exp-icon-stroke: 1px !important;
+            --shadow-color: var(--fill-color);
+            &:nth-child(1) {
+              --fill-color: green;
+            }
+            &:nth-child(2) {
+              --fill-color: orange;
+            }
+            &:nth-child(3) {
+              --fill-color: red;
+            }
+            svg {
+              fill: var(--stroke-color);
+              path {
+                fill: var(--stroke-color);
+              }
+            }
+          }
+        }
+        &.active {
+          --stroke-color: white;
+          --shadow-color: var(--fill-color);
+          --exp-icon-stroke: 1px !important;
+          &:nth-child(1) {
+            --fill-color: green;
+          }
+          &:nth-child(2) {
+            --fill-color: orange;
+          }
+          &:nth-child(3) {
+            --fill-color: red;
+          }
+          svg {
+            fill: var(--stroke-color);
+            path {
+              fill: var(--stroke-color);
+            }
+          }
+        }
+      }
+    }
+  }
+  &_more {
+    &_input {
+      --input-color: #000 !important;
+      select {
+        border: 1px solid #c1c1c1 !important;
+        max-width: 100% !important;
+        border-radius: 7px !important;
+        padding-left: var(--input-padding-x) !important;
+        padding-right: 35px !important;
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="19" height="17" viewBox="0 0 19 17"><g id="Group_128113" data-name="Group 128113" transform="translate(-1302 -815)"><g id="Rectangle_37264" data-name="Rectangle 37264" transform="translate(1302 815)" fill="rgba(255,255,255,0)" stroke="%23707070" stroke-width="1" opacity="0"><rect width="19" height="17" stroke="none"/><rect x="0.5" y="0.5" width="18" height="16" fill="none"/></g><path id="Path_108410" data-name="Path 108410" d="M8.865,0,0,8.531l1.741,2.429L8.865,4.1l7.127,6.86,1.74-2.429Z" transform="translate(1320.452 829.373) rotate(180)" fill="%237b7b7b"/></g></svg>') !important;
+        background-position: right size(25) center !important;
+        &:hover,
+        &:focus {
+          background-color: transparent !important;
+          border: 1px solid #c1c1c1 !important;
+        }
+        ~ label {
+          padding-left: var(--input-padding-x) !important;
+        }
+      }
+      textarea {
+        border: 1px solid #c1c1c1 !important;
+        max-width: 100% !important;
+        min-width: 100% !important;
+        border-radius: 7px !important;
+        padding-left: var(--input-padding-x) !important;
+        padding-right: var(--input-padding-x) !important;
+        font-size: 16px !important;
+        min-height: 90px !important;
+        @include min(1200) {
+          font-size: size(22) !important;
+        }
+        ~ label {
+          padding-left: var(--input-padding-x) !important;
+          font-size: 16px !important;
+          opacity: 0.3 !important;
+          @include min(1200) {
+            font-size: size(22) !important;
+          }
+        }
+        &:hover,
+        &:focus {
+          background-color: transparent !important;
+          border: 1px solid #c1c1c1 !important;
+        }
+      }
+      :global {
+        .form-select {
+          &.form_select {
+            padding-left: var(--input-padding-x) !important;
+            padding-right: 35px !important;
+          }
+        }
+      }
+    }
+  }
+  &_unhappy {
+    &_el {
+      --shadow-color: rgba(0, 0, 0, 1);
+      padding: size(32) 0;
+      border-bottom: 1px solid rgba(112, 112, 112, 0.15);
+      &_stack {
+        width: var(--unhappy-icon-outer-w);
+        max-width: 50%;
+      }
+      &_icon {
+        width: var(--unhappy-icon-size);
+        --bs-aspect-ratio: 100%;
+        border-radius: 50%;
+        box-shadow: inset 0px 0px 0px var(--unhappy-icon-stroke) var(--shadow-color);
+        background-color: var(--fill-color);
+      }
+      .text {
+        font-size: var(--unhappy-label-size);
+        font-weight: 500;
+        padding-right: 15px;
+      }
+      > ul,
+      > form > ul {
+        > li {
+          --stroke-color: black;
+          cursor: pointer;
+          &:hover {
+            @include min(1200) {
+              --stroke-color: white;
+              --fill-color: #{$black-color};
+              --exp-icon-stroke: 1px !important;
+              --shadow-color: var(--fill-color);
+              &:nth-child(1) {
+                --fill-color: green;
+              }
+              &:nth-child(2) {
+                --fill-color: orange;
+              }
+              &:nth-child(3) {
+                --fill-color: red;
+              }
+              svg {
+                fill: var(--stroke-color);
+                path {
+                  fill: var(--stroke-color);
+                }
+              }
+            }
+          }
+          &.active {
+            --stroke-color: white;
+            --fill-color: #{$black-color};
+            --exp-icon-stroke: 1px !important;
+            --shadow-color: var(--fill-color);
+            &:nth-child(1) {
+              --fill-color: green;
+            }
+            &:nth-child(2) {
+              --fill-color: orange;
+            }
+            &:nth-child(3) {
+              --fill-color: red;
+            }
+            svg {
+              fill: var(--stroke-color);
+              path {
+                fill: var(--stroke-color);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &_footer {
+    padding-top: size(40);
+    &_nav {
+      min-width: var(--nav-button-width);
+      line-height: 1.22;
+      // padding-left: var(--nav-button-padding-x);
+      // padding-right: var(--nav-button-padding-x);
+      // padding-top: var(--nav-button-padding-y);
+      // padding-bottom: var(--nav-button-padding-y);
+      padding: var(--nav-button-padding-y) var(--nav-button-padding-x);
+      font-size: var(--nav-button-size);
+      svg {
+        max-width: var(--nav-icon-size);
+        max-height: var(--nav-icon-size);
+      }
+      &_prev {
+        margin-right: 10px;
+        svg {
+          margin-right: 9.5px;
+        }
+      }
+      &_next {
+        margin-left: 10px;
+        svg {
+          margin-left: 9.5px;
+        }
+      }
+    }
+  }
+  &_modal {
+    &body {
+      container-type: inline-size;
+      container-name: modalBody;
+    }
+  }
+}
+
+@container modalBody (max-width: 700px) {
+  .survey {
+    --exp-icon-size: 85px;
+    --exp-label-size: #{size(24)};
+    --survey-title-size: #{size(27)};
+    --nav-button-padding-x: #{size(16)};
+    --nav-button-padding-y: #{size(10)};
+    --nav-button-width: 100px;
+    --nav-button-size: 15px;
+    --nav-icon-size: 10px;
+
+    --unhappy-label-size: #{size(22)};
+    --unhappy-icon-size: 40px;
+    --unhappy-icon-outer-w: 180px;
+    --exp-icon-stroke: 3px;
+  }
+}
+@container modalBody (max-width: 500px) {
+  .survey {
+    --exp-icon-size: 70px;
+    --exp-label-size: #{size(21)};
+    --survey-title-size: #{size(24)};
+
+    --unhappy-icon-size: 35px;
+    --unhappy-icon-outer-w: 155px;
+    --unhappy-label-size: #{size(20)};
+
+    &_more {
+      --input-padding-x: 12px;
+    }
+  }
+}
+@container modalBody (max-width: 400px) {
+  .survey {
+    --exp-icon-size: 60px;
+    --exp-label-size: #{size(18)};
+    --survey-title-size: #{size(19)};
+
+    --unhappy-label-size: #{size(18)};
+  }
+}

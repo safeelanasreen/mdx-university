@@ -1,0 +1,74 @@
+@import "../../styles/util";
+
+.section {
+  background-color: var(--background-color);
+  --section-padding-y: #{size(65)};
+  --section-padding-x: 0;
+  padding: var(--section-padding-y) var(--section-padding-x);
+
+  &_title {
+    padding-bottom: size(20);
+  }
+  .faculties_swiper_wrap{
+    position: relative;
+  }
+ .facultycard_wrap{
+  height: 100%;
+ }
+ .swiper_navs_prev,.swiper_navs_next{
+  position: absolute;
+  z-index: 2;
+  
+  top: 50%;
+  transform: translateY(-50%);
+  @include max(1199.98){
+    display: none;
+  }
+ }
+ .swiper_navs_prev{
+ 
+    left: 50px;
+
+  
+ }
+ .swiper_navs_next{
+
+  right: 50px;
+
+  
+ }
+ :global{
+  .swiper-slide{
+    height: auto;
+  }
+  .swiper-scrollbar{
+    @include min(1200){
+  display: none;
+    }
+   }
+  
+  .swiper{
+    @include max(1199.98){
+      padding-bottom: 30px;
+    }
+  }
+ }
+
+}
+.card_stack {
+    --bs-gutter-x: #{size(19)};
+    --bs-gutter-y: var(--bs-gutter-x);
+}
+
+/* High Contrast */
+:global(html:not(#INDdummy) body:not(#INDdummy).INDwhiteblack>:not(#INDWrap)) {
+  .section  {
+    background-color: var(--background-color) !important;
+  }
+}
+:global(html:not(#INDdummy) body:not(#INDdummy).INDblackwhite>:not(#INDWrap) *:not(img):not(video)),:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)),
+:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)) {
+  .section {
+    background-color: var(--background-color) !important;
+  }
+}

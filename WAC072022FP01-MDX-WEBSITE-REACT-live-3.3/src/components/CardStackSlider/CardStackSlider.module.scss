@@ -1,0 +1,99 @@
+@import '../../styles/util';
+.mdx_cardstack {
+    :global(.title) {
+        margin-bottom: 30px;
+
+        @include min(992) {
+            margin-bottom: size(50);
+        }
+    }
+    &_swiper {
+        @include max(1199.98) {
+            padding-bottom: size(35) !important;
+            margin-bottom: size(45);
+            overflow: visible;
+        }
+        :global(.swiper-slide) {
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    &_item {
+        &_gap {
+        
+        }
+    }
+
+}
+.cardstack_slider {
+    @include randomColorImportant('.course_card', '> div');
+    padding: 40px 0;
+    @include min(1200) {
+        padding: size(80) 0;
+    }
+    :global(.swiper-scrollbar) {
+        @include min(1200) {
+            visibility: hidden;
+        }
+    }
+    &_wrap {
+        position: relative;
+        @include max(1199.98) {
+            // padding-right: var(--bs-gutter-x, 0.75rem);
+            // padding-left: var(--bs-gutter-x, 0.75rem);
+        }
+        .swiper_navs {
+            &_prev, &_next {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 1;
+                @include max(1199.98) {
+                    visibility: hidden;
+                }
+            }
+            &_prev {
+                left: var(--bs-gutter-x, 0.75rem);
+                @include min(1200) {
+                  left: size(50);
+                }
+            }
+            &_next {
+                right: var(--bs-gutter-x, 0.75rem);
+                @include min(1200) {
+                  right: size(50);
+                }
+            }
+        } 
+    }
+    :global(.swiper-button-disabled) {
+        visibility: hidden;
+    }
+}
+
+:global(.container), :global(.container-fluid) {
+    .cardstack_slider {
+        &_wrap {
+            @include min(768) {
+                
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            }
+            position: relative;
+        }
+    }
+}
+:global(html:not(#INDdummy) body:not(#INDdummy).INDwhiteblack>:not(#INDWrap) *:not(img):not(video)),:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)),
+:global(html:not(#INDdummy) body:not(#INDdummy).INDbackgroundColors>:not(#INDWrap)) {
+    .cardstack_slider {
+      @include randomColorImportant('.course_card', '> div');
+    }
+  }
+  
+  /* High Contrast */
+  :global(html:not(#INDdummy) body:not(#INDdummy).INDwhiteblack>:not(#INDWrap)) {
+    .cardstack_slider {
+      @include randomColorImportant('.course_card', '> div');
+    }
+  }

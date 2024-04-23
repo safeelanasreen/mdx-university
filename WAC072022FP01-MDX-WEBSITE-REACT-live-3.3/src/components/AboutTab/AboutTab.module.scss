@@ -1,0 +1,56 @@
+@import "../../styles/util";
+.tab_content{
+    &_desktop_ttl{
+        font-size: size(75);
+        margin-bottom: size(15);
+        font-weight: 400;
+        @include min(1400){
+          font-size: size(85);
+          margin-bottom: size(34);
+  
+  
+        }
+      }
+      &_desktop_text{
+        p{
+          font-size: 16px;
+          line-height: 1.5;
+          max-width: 88%;
+          margin-bottom: size(30);
+          @include min(1400){
+            font-size: 18px;
+            margin-bottom: size(42);
+  
+  
+          }
+        }
+      }
+      .hamburger_btn{
+        font-size: 16px;
+    
+      }
+      .tab_content_count_wrap{
+        column-gap: size(102);
+        .count{
+          max-width: fit-content;
+          margin-bottom: size(32);
+          @include min(1400){
+            margin-bottom: size(42);
+     
+          }
+          p{
+            font-size: size(19);
+          }
+          &_num{
+            font-size: size(72);
+            line-height: 1.5;
+            font-weight: 400;
+            @include min(1400){
+              font-size: size(82);
+    
+            }
+          }
+        }
+    
+      }
+}

@@ -1,0 +1,110 @@
+@import '../../styles/util';
+.recent_stack_widget {
+    padding: 45px 0;
+    // background-color: $light-color;
+    background-color: #f2f2f2;
+    @include min(992) {
+        padding: size(80) 0;
+    }
+    &_stack {
+        position: relative;
+    }
+    &_slider {
+        position: relative;
+        width: 100%;
+        flex-basis: 100%;
+        max-width: 100%;
+        @include min(992) {
+            
+            flex-basis: 68%;
+            max-width: 68%;
+        }
+    }
+    &_wrap {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 100%;
+        width: 1235px;
+        &>* {
+            @include min(992) {
+                padding-left: size(8);
+                padding-right: size(8);
+            }
+        }
+    }
+    &_list {
+        width: 100%;
+        flex-basis: 100%;
+        max-width: 100%;
+        @include min-max(768, 991.98) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        @include min(992) {
+            flex-basis: 32%;
+            max-width: 32%;
+        }
+        @include max(767.98) {
+            margin-top: size(30);
+        }
+        &_item {
+            position: relative;
+            width: 100%;
+            @include min-max(768, 991.98) {
+                flex-basis: calc(50% - size(10));
+                max-width: calc(50% - size(10));
+                margin-top: size(20);
+                &:nth-child(odd) {
+                    margin-right: size(10);
+                }
+                &:nth-child(even) {
+                    margin-left: size(10);
+                }
+            }
+            &+.recent_stack_widget_list_item {
+                @include min(992) {
+                    margin-top: size(20);
+                }
+            }
+            &_bg {
+                width: 100%;
+                position: relative;
+                padding-bottom: calc((272/395)*100%);
+                &::before {
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    height: 50%;
+                    left: 0;
+                    bottom: 0;
+                    background: rgb(0,0,0);
+                    background: linear-gradient(360deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,0) 100%);
+                    position: absolute;
+                    z-index: 1;
+                }
+            }
+            &_title {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: size(25);
+                padding-right: size(120);
+                color: $white-color;
+                font-size: size(24);
+                font-weight: 500;
+                z-index: 1;
+                h3 {
+                    font-size: size(24);
+                    font-weight: 400;
+                    margin: 0;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;  
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+    
+}

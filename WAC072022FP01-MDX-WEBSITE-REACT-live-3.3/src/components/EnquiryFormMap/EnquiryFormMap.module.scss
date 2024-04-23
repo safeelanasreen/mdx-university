@@ -1,0 +1,321 @@
+@import "../../styles/util";
+
+.mdx_course_intro {
+  position: relative;
+  // overflow: visible;
+  &_wrap {
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    background-position: center;
+    background-blend-mode: screen;
+    background-color: #2f2552;
+
+    @include min(1200) {
+      padding: 30px 0 30px;
+    }
+    @include min-max(992, 1199.9) {
+      padding: 30px 0;
+    }
+    @include min-max(768, 991.9) {
+      padding: 30px 0;
+    }
+    @include min-max(576, 767.9) {
+      padding: 30px 0;
+    }
+    @include max(575.9) {
+      padding: 30px 0px;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0px;
+      li {
+        font-size: size(16);
+        line-height: 24px;
+        min-height: 25px;
+      }
+    }
+    &:before {
+      content: "";
+      width: 60%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: block;
+      pointer-events: none;
+
+      background: rgb(47, 37, 82);
+      background: linear-gradient(
+        90deg,
+        rgba(47, 37, 82, 0) 0%,
+        rgba(47, 37, 82, 1) 41%
+      );
+    }
+  }
+  &_look_google_btn {
+    background-color: #1c1c1c;
+    font-size: size(20);
+    font-family: $primary-font;
+    color: white;
+    text-decoration: none;
+    padding: 5px 37px 5px 15px;
+    position: relative;
+    margin-bottom: 50px;
+    margin-right: auto;
+    transition: color 0.3s ease-in-out;
+    will-change: color;
+    &:after {
+      content: "";
+      width: 23px;
+      height: 2px;
+      background-color: currentColor;
+      top: 20px;
+      position: absolute;
+      right: 10px;
+    }
+    &:hover {
+      color: #ccc;
+    }
+  }
+  &_title_header {
+    height: 100%;
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    ul {
+      margin-top: auto;
+      margin-bottom: 0px;
+    }
+    // @include min(992){
+    //     padding: 0px 0px 0px 40px;
+    // }
+    @include min-max(768, 991.9) {
+      order: 1;
+      max-width: 50%;
+    }
+
+    @include max(991.9) {
+      min-height: 400px;
+      background-position: right 62% top 23%;
+      padding: 60px 15px 40px 15px;
+      .mdx_course_intro_look_google_btn {
+        margin-left: auto;
+      }
+    }
+    @include max(767.9) {
+      order: 2;
+      max-width: 100%;
+      .mdx_course_intro_look_google_btn {
+        margin-bottom: 0px;
+        margin-top: auto;
+      }
+    }
+    @include max(575.9) {
+      padding: 40px 15px;
+    }
+  }
+  &_title {
+    font-size: size(30);
+    font-weight: 800;
+    // font-family: $secondary-font;
+    color: white;
+    margin-top: auto;
+    text-transform: uppercase;
+    @include min-max(1200, 1299.9) {
+      font-size: size(22);
+    }
+    @include max(575.9) {
+      font-size: 25px;
+    }
+    @include max(379.9) {
+      font-size: 22px;
+    }
+  }
+
+  &_address_wrap {
+    position: relative;
+    padding: 60px 50px 50px 50px;
+    width: 100%;
+    @include max(991.9) {
+      order: 3;
+    }
+    @include max(575.9) {
+      padding: 40px 16px 25px 16px;
+    }
+    > * {
+      position: relative;
+    }
+    &:before {
+      content: "";
+      top: 0;
+      left: 0;
+      display: block;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: #1c1c1c;
+    }
+  }
+  &_address_title {
+    font-size: size(16);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  &_follow_links {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    li {
+      display: inline-flex;
+      margin-right: 13px;
+      a {
+        color: white;
+        transition: color 0.3s ease-in;
+        will-change: color;
+        &:hover {
+          color: rgba(white, 0.6);
+        }
+      }
+    }
+  }
+  &_follow_title {
+    font-size: size(20);
+    color: white;
+    font-weight: 400;
+    position: relative;
+    display: flex;
+    &:before {
+      content: "";
+      width: 22px;
+      height: 1px;
+      display: block;
+      background-color: currentColor;
+      margin: 11px 10px 0px 0px;
+    }
+  }
+
+  &_contact_form {
+    width: 100%;
+
+    z-index: 10;
+    @include min(1400) {
+      margin-bottom: -175px;
+    }
+    @include min(992) {
+      padding: 60px 50px;
+      max-width: 583px;
+    }
+    @include min-max(768, 991.9) {
+      order: 2;
+      max-width: 50%;
+    }
+    @include max(767.9) {
+      order: 1;
+      max-width: 100%;
+    }
+  }
+
+  &_address_content {
+    @include min(1400) {
+      max-width: calc(100% - 483px);
+    }
+    .col_follow_us,
+    .col_our_contact,
+    .col_our_address {
+      width: 100%;
+    }
+    .mdx_phone_number {
+      white-space: nowrap;
+      color: white;
+    }
+    @include min(1600) {
+      .col_our_address {
+        max-width: 33.58%;
+        flex: 0 0 33.58%;
+      }
+      .col_our_contact {
+        max-width: 36.92%;
+        flex: 0 0 36.92%;
+      }
+      .col_follow_us {
+        max-width: 29.5%;
+        flex: 0 0 29.5%;
+      }
+    }
+    @include min-max(1400, 1599.9) {
+      .col_our_address,
+      .col_our_contact {
+        max-width: 50%;
+        flex: 0 0 50%;
+      }
+      .col_follow_us {
+        max-width: 100%;
+        flex: 0 0 100%;
+      }
+    }
+    @include min-max(768, 1399.9) {
+      .col_our_address {
+        max-width: 33.58%;
+        flex: 0 0 33.58%;
+      }
+      .col_our_contact {
+        max-width: 36.92%;
+        flex: 0 0 36.92%;
+      }
+      .col_follow_us {
+        max-width: 29.5%;
+        flex: 0 0 29.5%;
+      }
+    }
+    @include min-max(576, 767.9) {
+      .col_our_address,
+      .col_our_contact {
+        max-width: 50%;
+        flex: 0 0 50%;
+      }
+    }
+
+    @include max(575.9) {
+      .col_our_address,
+      .col_our_contact {
+        ul {
+          margin-bottom: 27px;
+        }
+      }
+      .col_follow_us {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .mdx_course_intro_address_title {
+          display: none;
+        }
+        .mdx_course_intro_follow_title,
+        ul {
+          padding-top: 0px;
+          padding-bottom: 0px;
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}
+
+@include max(991.9) {
+  .mdx_course_intro_wrap:before {
+    display: none;
+  }
+
+  .mdx_course_intro_title_header {
+    max-width: 100%;
+    height: auto !important;
+    background-size: cover;
+  }
+  .mdx_course_intro_footer_list {
+    display: block;
+    padding: 30px 0px 0px 0px;
+  }
+}

@@ -1,0 +1,123 @@
+@import '../../styles/util';
+
+.our_partners {
+    background-color: $black-color !important;
+    padding: size(40) 0;
+    --bs-gutter-x: 1.5rem;
+    @include min(992) {
+        padding: size(64) 0 size(5) 0px;
+    }
+
+    h2 {
+        max-width: 500px;
+    }
+    * {
+        background-color: transparent !important;
+    }
+
+    &_list {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 0;
+        padding-top: 10px;
+        margin-left: -16px;
+        margin-right: -16px;
+        margin-bottom: 0;
+        @include min(768) {
+            margin-left: size(-35);
+            margin-right: size(-35);
+        }
+        @include min(992) {
+            padding-top: 4.9rem;
+        }
+        li {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            opacity: 0.5;
+            transition: opacity cubic-bezier(0.075, 0.82, 0.165, 1) .3s;
+            margin-bottom: 40px;
+            margin-left: 16px;
+            margin-right: 16px;
+
+            // max-width: calc(50% - 32px);
+            
+            img {
+                height: 100% !important;
+                width: auto !important;
+                max-width: 100% !important;
+                object-fit: contain !important;
+                object-position: left;
+            }
+
+            @include min(768) {
+                margin-bottom: size(50);
+                margin-left: size(35);
+                margin-right: size(35);
+                // max-width: 24.33%;
+            }
+
+            @include max(1599.98) {
+                max-width: 130px;
+            }
+
+            @include min(1600) {
+                margin-bottom: size(50);
+                margin-left: size(20);
+                margin-right: size(20);
+                // max-width: 33.33%;
+            }
+
+            @include max(767.98) {
+                max-width: 33.33%;
+                margin-bottom: 20px;
+
+                &:nth-of-type(2n) {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+
+            @for $i from 1 through 22 {
+                &:nth-child(#{$i}) {
+                    animation: opacityAnim 3s linear infinite #{$i*5}s;
+                }
+            }
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &>div {
+                position: relative;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@keyframes opacityAnim {
+    0% {
+        opacity: 0.5;
+    }
+
+    35% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.5;
+    }
+}
+:global(html:not(#INDdummy) body:not(#INDdummy).INDwhiteblack>:not(#INDWrap) *:not(img):not(video)) {
+    .our_partners {
+        &_list {
+            li {
+                img {
+                    -webkit-filter: brightness(0);
+                    filter: brightness(0);
+                }
+            }
+        }
+    }
+}

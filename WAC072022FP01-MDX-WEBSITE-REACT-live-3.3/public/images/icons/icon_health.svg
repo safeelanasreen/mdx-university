@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="52.505" height="48.533" viewBox="0 0 52.505 48.533">
+  <g id="icon_health" transform="translate(-50.751 -1574.952)">
+    <g id="Group_66156" data-name="Group 66156" transform="translate(52 1576)">
+      <g id="Group_21" data-name="Group 21" transform="translate(0 0)">
+        <g id="Group_7" data-name="Group 7">
+          <path id="Path_21" data-name="Path 21" d="M1192.484,366.365l24.5-7.5,25.5,8.125" transform="translate(-1192.484 -358.865)" fill="none" stroke="#fff" stroke-linecap="square" stroke-width="2"/>
+          <line id="Line_2" data-name="Line 2" y1="22.666" transform="translate(24.352 23.82)" fill="none" stroke="#fff" stroke-linecap="square" stroke-width="2"/>
+          <path id="Path_94850" data-name="Path 94850" d="M1196.307,396.937c9.069-8.837,23.929-8.952,23.929-8.952v24.579s-14.014-.518-23.929,7.174Z" transform="translate(-1171.695 -373.168)" fill="#fff" stroke="#fff" stroke-linecap="square" stroke-linejoin="bevel" stroke-width="2"/>
+          <path id="Path_94851" data-name="Path 94851" d="M1220.237,396.937c-9.07-8.837-23.93-8.952-23.93-8.952v24.579s14.014-.518,23.93,7.174Z" transform="translate(-1195.885 -373.168)" fill="#fff" stroke="#fff" stroke-linecap="square" stroke-linejoin="bevel" stroke-width="2"/>
+        </g>
+      </g>
+    </g>
+    <line id="Line_6450" data-name="Line 6450" y2="25" transform="translate(76.5 1594.5)" fill="none" stroke="#e30613" stroke-width="2"/>
+  </g>
+</svg>

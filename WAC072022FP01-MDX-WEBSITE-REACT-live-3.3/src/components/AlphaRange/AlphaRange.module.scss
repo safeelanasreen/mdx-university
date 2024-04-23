@@ -1,0 +1,44 @@
+@import "../../styles/util";
+.range {
+    --el-size: 43px;
+    --el-padding-x: #{size(5)};
+    --el-padding-y: #{size(5)};
+    --el-font-size: #{size(22)};
+    --el-font-weight: 500;
+    --el-background-active-color: #E30613;
+    --el-background-hover-color: #F5F5F5;
+    --el-background-color: transparent;
+
+    
+    --el-active-color: #FFFFFF;
+    --el-hover-color: #000000;
+    --el-color: #000000;
+    ul {
+        list-style: none;
+        gap: 3px;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            display: none;
+          }
+        li {
+            min-width: var(--el-size);
+            min-height: var(--el-size);
+            padding: var(--el-padding-y) var(--el-padding-x);
+            cursor: pointer;
+            font-size: var(--el-font-size);
+            font-weight: var(--el-font-weight);
+            background-color: var(--el-background-color);
+            color: var(--el-color);
+            @include min(1200) {
+                &:hover {
+                    background-color: var(--el-background-hover-color);
+                    color: var(--el-hover-color);
+                }
+            }
+            &:global(.active-scroll-spy) {
+                background-color: var(--el-background-active-color);
+                color: var(--el-active-color);
+            }
+        }
+    }
+}

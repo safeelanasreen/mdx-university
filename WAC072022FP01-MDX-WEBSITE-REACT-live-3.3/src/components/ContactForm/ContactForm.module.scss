@@ -1,0 +1,75 @@
+@import "../../styles/util";
+
+.mdx_course_intro {
+  &_title {
+    font-size: size(30);
+    font-weight: 800;
+    // font-family: $secondary-font;
+    color: white;
+    margin-top: auto;
+    text-transform: uppercase;
+
+    @include min-max(1200, 1299.9) {
+      font-size: size(22);
+    }
+
+    @include max(575.9) {
+      font-size: 25px;
+    }
+
+    @include max(379.9) {
+      font-size: 22px;
+    }
+  }
+
+  &_contact_form {
+    &_wrap {
+      padding-left: 15px;
+      padding-right: 15px;
+      width: 100%;
+
+      &.bg_red {
+        background-color: #e30a0a !important;
+        padding: 45px;
+        * {
+          background-color: transparent !important;
+        }
+
+        @include min(1200) {
+          border-radius: 30px;
+          min-height: 607px;
+        }
+
+        @include max(575.9) {
+          padding: 40px 15px;
+        }
+      }
+
+      button {
+        color: #000000;
+        border-radius: 30px;
+        border: none;
+        padding: 13px 34px;
+        font-size: size(20);
+        font-weight: 500;
+        margin-top: 26px;
+      }
+
+      button {
+        transition: background-color 0.3s ease-in-out;
+        will-change: background-color;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.75);
+        }
+      }
+    }
+  }
+}
+
+.form_wrap {
+  @include min(992) {
+    // max-height: calc(100vh - 333px);
+    // overflow-y: auto;
+  }
+}
